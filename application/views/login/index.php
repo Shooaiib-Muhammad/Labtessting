@@ -2,7 +2,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sign In & Sign Up Form</title>
+  <title>Forwad Sports (Login Or Sigh UP)
+  </title>
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/1788c719dd.js" crossorigin="anonymous"></script>
@@ -1072,7 +1073,7 @@
       </div>
       <div class="panel panel__right">
         <div class="panel__content">
-          <h3 class="panel__title">Welcome To Forward Sports</h3>
+          <h3 class="panel__title">Sign In Here</h3>
           <br>
 
           <button class="btn btn-transparent" id="sign-in-btn">
