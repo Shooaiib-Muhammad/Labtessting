@@ -8,11 +8,16 @@ class Test extends CI_Controller
  {
   parent::__construct();
 
-  //$this->load->model('usermodel', 'model');
+  $this->load->model('homeModal');
  }
  public function index()
  {
-  $this->load->view('index');
+ 
+  $data['getData'] = $this->homeModal->getData();
+  
+  $data['getTop6'] = $this->homeModal->getTop6();
+  $this->load->view('index',$data);
+
  }
 
  
