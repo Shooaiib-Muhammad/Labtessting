@@ -15,7 +15,8 @@ class AlltestPackage extends CI_Controller
 
     $data['getData'] = $this->homeModal->getData();
   
-    $data['getTop6'] = $this->homeModal->getTop6();
+    $data['getTop4'] = $this->homeModal->getTop4();
+   // print_r($data['getTop4']);
   $this->load->view('alltestPackage',$data);
 
  }
