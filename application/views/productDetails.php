@@ -90,7 +90,7 @@ $StandardDesc = $getPrddetails[0]['StandardDesc'];
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 feature">
                                     <img src="<?php echo base_url(); ?>assets/images/phone-call.png" alt="Hotline" title="Hotline" />
                                     <div class="details">
-                                        <h3>Hotline</h3>Talk to help line for your question on 4141 456 789, 4125 666 888
+                                        <h3>Hotline</h3>Talk to help line for your question on +052-3571801
                                     </div>
                                 </div>
                             </div>
@@ -242,7 +242,7 @@ $StandardDesc = $getPrddetails[0]['StandardDesc'];
                                     <!-- end product image -->
 
                                     <!-- Start product button -->
-                                    <form class="variants add" action="<?php echo base_url(); ?>/ProductDetails/test/<?php echo $TestID; ?>">
+                                    <form class="variants add" action="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>">
                                         <button class="btn btn-addto-cart" type="button" tabindex="0">Select Options</button>
                                     </form>
                                     <div class="button-set">
@@ -321,7 +321,7 @@ $StandardDesc = $getPrddetails[0]['StandardDesc'];
                                 <!-- start product image -->
                                 <div class="product-image">
                                     <!-- start product image -->
-                                    <a href="<?php echo base_url(); ?>/ProductDetails/test/<?php echo $TestID; ?>">
+                                    <a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>">
                                         <!-- image -->
                                         <img class="primary blur-up lazyload" data-src="/sports/assets/img/img/<?php echo  $image; ?>" src="/sports/assets/img/img/<?php echo  $image; ?>" alt="image" title="product">
                                         <!-- End image -->
@@ -337,7 +337,7 @@ $StandardDesc = $getPrddetails[0]['StandardDesc'];
                                 <div class="product-details text-center">
                                     <!-- product name -->
                                     <div class="product-name">
-                                        <a href="<?php echo base_url(); ?>/ProductDetails/test/<?php echo $TestID; ?>"><?php echo $Name ?></a>
+                                        <a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>"><?php echo $Name ?></a>
                                     </div>
                                     <!-- End product name -->
                                 </div>

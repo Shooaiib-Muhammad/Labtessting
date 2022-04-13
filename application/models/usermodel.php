@@ -19,7 +19,7 @@ class UserModel extends CI_Model
     VALUES
         ('$Email' ,'$Password','$Suppliername','$Country','$City','$PhoneNo','$D')");
 if($query){
-    Echo "Data Insertion Done";
+    $_SESSION['Products'] = [];
 }
     else{
         Echo "Data Insertion Error";

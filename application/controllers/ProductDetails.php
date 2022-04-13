@@ -33,5 +33,14 @@ Public function test($id){
       }
       $this->load->view('productDetails', $data);
 }
+
+Public function setCart(){
+     print_r($_POST);
+     $valuesArray = [$_POST['Name'],$_POST['Price'],$_POST['ImageURL']];
+     array_push($_SESSION['Products'],$valuesArray);
+     print_r($_SESSION['Products']);
+     die;
+    $this->load->view('index');
+}
  
 }

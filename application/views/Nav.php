@@ -1,7 +1,7 @@
 <nav class="grid__item" id="AccessibleNav">
    <!-- for mobile -->
-   <ul id="siteNav" class="site-nav medium center hidearrow">
-      <li class="lvl1 parent megamenu"><a href="#">Lab Test Servicess <i class="anm anm-angle-down-l"></i></a>
+   <ul id="siteNav" class="site-nav medium right hidearrow">
+      <li class="lvl1 parent megamenu" ><a href="#" style="background-color:black;color:white;padding:5px;border-radius:10px">Test Services <i class="anm anm-angle-down-l"></i></a>
          <div class="megamenu style1">
             <ul class="grid mmWrapper">
                <li class="grid__item large-up--one-whole">
@@ -23,7 +23,7 @@
                                     $Name = $keys['Name'];
                                     $TestID = $keys['TestID'];
                            ?>
-                                    <li class="lvl-2"><a href="<?php echo base_url(); ?>/ProductDetails/test/<?php echo $TestID; ?>" class="site-nav lvl-2"><?php echo $Name; ?></a></li>
+                                    <li class="lvl-2"><a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="site-nav lvl-2"><?php echo $Name; ?></a></li>
                            <?php
                                  }
                               }
@@ -42,7 +42,7 @@
                                     $Name = $keys['Name'];
                                     $TestID = $keys['TestID'];
                            ?>
-                                    <li class="lvl-2"><a href="<?php echo base_url(); ?>/ProductDetails/test/<?php echo $TestID; ?>" class="site-nav lvl-2"><?php echo $Name; ?></a></li>
+                                    <li class="lvl-2"><a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="site-nav lvl-2"><?php echo $Name; ?></a></li>
                            <?php
                                  }
                               }
@@ -61,7 +61,7 @@
                                     $Name = $keys['Name'];
                                     $TestID = $keys['TestID'];
                            ?>
-                                    <li class="lvl-2"><a href="<?php echo base_url(); ?>/ProductDetails/test/<?php echo $TestID; ?>" class="site-nav lvl-2"><?php echo $Name; ?></a></li>
+                                    <li class="lvl-2"><a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="site-nav lvl-2"><?php echo $Name; ?></a></li>
                            <?php
                                  }
                               }
@@ -77,7 +77,7 @@
             </ul>
          </div>
       </li>
-      <li class="lvl1 parent megamenu"><a href="#">Offered Packages <i class="anm anm-angle-down-l"></i></a>
+      <li class="lvl1 parent megamenu"><a href="#" style="background-color:black;color:white;padding:5px;border-radius:10px">Offered Packages <i class="anm anm-angle-down-l"></i></a>
          <div class="megamenu style4">
             <ul class="grid grid--uniform mmWrapper">
                <li class="grid__item lvl-1 col-md-3 col-lg-3"><a href="#" class="site-nav lvl-1">Balls</a>
@@ -89,7 +89,7 @@
                               $Name = $keys['Name'];
                               $TestID = $keys['TestID'];
                      ?>
-                              <li class="lvl-2"><a href="<?php echo base_url(); ?>/ProductDetails/test/<?php echo $TestID; ?>" class="site-nav lvl-2"><?php echo $Name; ?></a></li>
+                              <li class="lvl-2"><a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="site-nav lvl-2"><?php echo $Name; ?></a></li>
                      <?php
                            }
                         }
@@ -106,7 +106,7 @@
                               $Name = $keys['Name'];
                               $TestID = $keys['TestID'];
                      ?>
-                              <li class="lvl-2"><a href="<?php echo base_url(); ?>/ProductDetails/test/<?php echo $TestID; ?>" class="site-nav lvl-2"><?php echo $Name; ?></a></li>
+                              <li class="lvl-2"><a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="site-nav lvl-2"><?php echo $Name; ?></a></li>
                      <?php
                            }
                         }
@@ -126,7 +126,7 @@
                               $Name = $keys['Name'];
                               $TestID = $keys['TestID'];
                      ?>
-                              <li class="lvl-2"><a href="<?php echo base_url(); ?>/ProductDetails/test/<?php echo $TestID; ?>" class="site-nav lvl-2"><?php echo $Name; ?></a></li>
+                              <li class="lvl-2"><a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="site-nav lvl-2"><?php echo $Name; ?></a></li>
                      <?php
                            }
                         }

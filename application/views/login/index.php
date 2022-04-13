@@ -52,7 +52,7 @@
     width: 2000px;
     height: 2000px;
     border-radius: 50%;
-    background: linear-gradient(-45deg, #b538d1, #d672ec);
+    background: linear-gradient(-45deg, black, black);
     right: 48%;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -197,7 +197,7 @@
     outline: none;
     border-radius: 3.0625rem;
     cursor: pointer;
-    background-color: #b538d1;
+    background-color: black;
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
@@ -1064,7 +1064,7 @@
     <div class="container__panels">
       <div class="panel panel__left">
         <div class="panel__content">
-          <h3 class="panel__title">Welcome To Forward Sports</h3> <br>
+          <h3 class="panel__title">Are You New to our Site? Click here to Sign Up</h3> <br>
           <button class="btn btn-transparent" id="sign-up-btn">
             Sign Up
           </button>
@@ -1073,7 +1073,7 @@
       </div>
       <div class="panel panel__right">
         <div class="panel__content">
-          <h3 class="panel__title">Sign In Here</h3>
+          <h3 class="panel__title">Already have an account? Click here to Sign In</h3>
           <br>
 
           <button class="btn btn-transparent" id="sign-in-btn">

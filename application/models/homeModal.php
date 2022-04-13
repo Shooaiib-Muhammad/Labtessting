@@ -54,7 +54,7 @@ WHERE        (Status = 1) and TestType='Package'");
 public function getpckgtestdetails($id){
     $query = $this->db->query("SELECT   dbo.tbl_Fit_Pckg_D.*
 FROM            dbo.tbl_Fit_Pckg_D
-WHERE        (TestID = $id)");
+WHERE        (TestID = $id) and (Status = 1)");
     return $query->result_array();
 }
 

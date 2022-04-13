@@ -327,7 +327,7 @@ $this->load->view('Header');
                                                         <img class="grid-view-item__image" src="../sports/assets/img/img/<?php echo $image; ?>" alt="../sports/assets/img/img/<?php echo $image; ?>" />
                                                     </a>
                                                 </div>
-                                                <div class="details"> <a class="grid-view-item__title" href="<?php echo base_url(); ?>/ProductDetails/test/<?php echo $TestID; ?>"><?php echo $keys['Name']; ?></a>
+                                                <div class="details"> <a class="grid-view-item__title" href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>"><?php echo $keys['Name']; ?></a>
                                                     <div class="grid-view-item__meta"><span class="product-price__price"><span class="money">$ <?php echo $keys['StandardPrice']; ?></span></span></div>
                                                 </div>
                                             </div>
@@ -453,7 +453,7 @@ $this->load->view('Header');
                                     <div class="grid-view_image">
 
                                         <!-- start product image -->
-                                        <a href="<?php echo base_url(); ?>/ProductDetails/test/<?php echo $TestID; ?>" class="grid-view-item__link">
+                                        <a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="grid-view-item__link">
                                             <!-- image -->
                                             <img class="grid-view-item__image primary blur-up lazyload" data-src="../sports/assets/img/img/<?php echo  $image; ?>" src="../sports/assets/img/img/<?php echo  $image; ?>" alt="image" title="product">
                                             <!-- End image -->
@@ -488,7 +488,7 @@ $this->load->view('Header');
                                                 </div> -->
                                             <!-- product button -->
                                             <div class="button-set">
-                                                <a href="<?php echo base_url(); ?>/ProductDetails/test/<?php echo $TestID; ?>" title="Quick View" class="quick-view-popup quick-view" tabindex="0">
+                                                <a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" title="Quick View" class="quick-view-popup quick-view" tabindex="0">
                                                     <i class="icon anm anm-search-plus-r"></i>
                                                 </a>
                                                 <!-- Start product button -->

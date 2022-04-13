@@ -1,3 +1,4 @@
+<?php  ?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -18,6 +19,19 @@
  <!-- Main Style CSS -->
  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/responsive.css">
+ <style>
+     .stickyNav {
+    position: fixed;
+    top: 0;
+    z-index: 333;
+    width: 100%;
+    left: 0;
+    background-color: #060606;
+    color:white;
+    box-shadow: 0 0 7px rgb(0 0 0 / 20%);
+    -webkit-box-shadow: 0 0 7px rgb(0 0 0 / 20%);
+}
+ </style>
 </head>
 
 <body class="template-index belle template-index-belle">
@@ -68,8 +82,8 @@
     <div class="row align-items-center">
      <!--Desktop Logo-->
      <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
-      <a href="<?php echo base_url(); ?>/test">
-       <img src="<?php echo base_url(); ?>assets/images/frwdlogo.jpg" width="100" alt="Forward Sports Pvt Ltd." title="Forward Sports Pvt Ltd." />
+      <a href="<?php echo base_url(); ?>test">
+       <img src="<?php echo base_url(); ?>assets/images/Forward.png" width="100" alt="Forward Sports Pvt Ltd." title="Forward Sports Pvt Ltd." />
       </a>
      </div>
      <!--End Desktop Logo-->
@@ -89,7 +103,7 @@
      <!--Mobile Logo-->
      <div class="col-6 col-sm-6 col-md-6 col-lg-2 d-block d-lg-none mobile-logo">
       <div class="logo">
-       <a href="<?php echo base_url(); ?>/test">
+       <a href="<?php echo base_url(); ?>test">
         <img src="<?php echo base_url(); ?>assets/images/logo.svg" alt="Belle Multipurpose Html Template" title="Belle Multipurpose Html Template" />
        </a>
       </div>
@@ -98,64 +112,63 @@
      <div class="col-4 col-sm-3 col-md-3 col-lg-2">
       <div class="site-cart">
        <a href="#;" class="site-header__cart" title="Cart">
-        <i class="icon anm anm-bag-l"></i>
-        <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">2</span>
+        <i class="icon anm anm-bag-l" style="color:white"></i>
+        <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count"><?php echo count($_SESSION['Products']) ?></span>
        </a>
        <!--Minicart Popup-->
        <div id="header-cart" class="block block-cart">
-        <ul class="mini-products-list">
-         <li class="item">
-          <a class="product-image" href="#">
-           <img src="assets/images/product-images/cape-dress-1.jpg" alt="3/4 Sleeve Kimono Dress" title="" />
-          </a>
-          <div class="product-details">
-           <a href="#" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>
-           <a href="#" class="edit-i remove"><i class="anm anm-edit" aria-hidden="true"></i></a>
-           <a class="pName" href="cart.html">Sleeve Kimono Dress</a>
-           <div class="variant-cart">Black / XL</div>
-           <div class="wrapQtyBtn">
-            <div class="qtyField">
-             <span class="label">Qty:</span>
-             <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
-             <input type="text" id="Quantity" name="quantity" value="1" class="product-form__input qty">
-             <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
-            </div>
+           <?php 
+           $totalPrice = 0;
+           if(count($_SESSION['Products']) > 0){
+            foreach ($_SESSION['Products'] as $products) {
+                $totalPrice += ($products['quantity'] * $products['price']);
+               echo '<ul class="mini-products-list">';
+               echo '<li class="item">';
+              
+               echo '<a class="product-image" href="#"><img src="assets/images/product-images/'.$products['imageName'].'" alt="'.$products['imageName'].'" title="" /></a>';
+               echo '<div class="product-details">';
+               echo '  <a href="#" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>
+               <a href="#" class="edit-i remove"><i class="anm anm-edit" aria-hidden="true"></i></a>
+               <a class="pName" href="cart.html">'.$products['name'].'</a>
+               <div class="wrapQtyBtn">
+                <div class="qtyField">
+                 <span class="label">Qty:'.$products['quantity'].'</span>
+                </div>
+               </div>
+               <div class="priceRow">
+                <div class="product-price">
+                 <span class="money">'.$products['price'].'</span>
+                </div>
+               </div>
+              </div>
+             </li>';
+ 
+            }
+           }
+           else{
+            echo '<ul class="mini-products-list">';
+            echo '<li class="item">';
+           
+              echo '<div class="product-details">';
+            echo '<a class="pName">No Items found in Card</a>
+           
            </div>
-           <div class="priceRow">
-            <div class="product-price">
-             <span class="money">$59.00</span>
-            </div>
-           </div>
-          </div>
-         </li>
-         <li class="item">
-          <a class="product-image" href="#">
-           <img src="assets/images/product-images/cape-dress-2.jpg" alt="Elastic Waist Dress - Black / Small" title="" />
-          </a>
-          <div class="product-details">
-           <a href="#" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>
-           <a href="#" class="edit-i remove"><i class="anm anm-edit" aria-hidden="true"></i></a>
-           <a class="pName" href="cart.html">Elastic Waist Dress</a>
-           <div class="variant-cart">Gray / XXL</div>
-           <div class="wrapQtyBtn">
-            <div class="qtyField">
-             <span class="label">Qty:</span>
-             <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
-             <input type="text" id="Quantity" name="quantity" value="1" class="product-form__input qty">
-             <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
-            </div>
-           </div>
-           <div class="priceRow">
-            <div class="product-price">
-             <span class="money">$99.00</span>
-            </div>
-           </div>
-          </div>
-         </li>
+          </li>';
+           }
+           ?>
+        
+      
+         
+          
+          
+         
+         
+          
+ 
         </ul>
         <div class="total">
          <div class="total-in">
-          <span class="label">Cart Subtotal:</span><span class="product-price"><span class="money">$748.00</span></span>
+          <span class="label">Cart Subtotal:</span><span class="product-price"><span class="money"><?php echo $totalPrice; ?></span></span>
          </div>
          <div class="buttonSet text-center">
           <a href="cart.html" class="btn btn-secondary btn--small">View Cart</a>
@@ -165,9 +178,9 @@
        </div>
        <!--EndMinicart Popup-->
       </div>
-      <div class="site-header__search">
-       <button type="button" class="search-trigger"><i class="icon anm anm-search-l"></i></button>
-      </div>
+      <!-- <div class="site-header__search">
+       <button type="button" class="search-trigger" style="color: white;"><i class="icon anm anm-search-l" style="color: white;"></i></button>
+      </div> -->
      </div>
     </div>
    </div>
