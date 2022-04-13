@@ -19,6 +19,8 @@ class Test extends CI_Controller
   $this->load->view('index',$data);
 
  }
-
+public function innovation(){
  
+  $this->load->view('innovation');
+}
 }

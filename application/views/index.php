@@ -15,7 +15,7 @@ $this->load->view('Header');
                     <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                         <div class="slideshow__text-content bottom">
                             <div class="wrap-caption center">
-                                <h2 class="h1 mega-title slideshow__title">Forward innovation Testing Online Services</h2>
+                                <h2 class="h1 mega-title slideshow__title">Keep Your Goal High </h2>
                                 <span class="mega-subtitle slideshow__subtitle">A high-tech facility with latest testing equipment to perform testing as per international standards and practices</span>
                                 <a href="<?php echo base_url(); ?>AlltestPackage"> <span class="btn">Book Now</span></a>
                             </div>
