@@ -476,7 +476,7 @@ $this->load->view('Header');
                                             <!-- product price -->
                                             <div class="product-price">
                                                 <!-- <span class="old-price">$500.00</span> -->
-                                                <span class="price"><?php echo $StandardPrice; ?></span>
+                                                <span class="price"> $ <?php echo $StandardPrice; ?></span>
                                             </div>
                                             <!-- End product price -->
                                             <!-- <div class="product-review">

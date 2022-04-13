@@ -76,7 +76,7 @@ $this->load->view('Header');
      <li>Printing durability</li>
      <li>Seam strength</li>
      <li>Clip buckle strength</li>
-     <li>Weight bearing strength/li>
+     <li>Weight bearing strength</li>
      <li>We also offer quality control and monitoring.</li>
     </ul>
     </p>

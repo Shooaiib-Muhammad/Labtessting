@@ -41,6 +41,98 @@ $this->load->view('Header');
     </div>
     <!--End Home slider-->
     <!--Collection Tab slider-->
+    <div class="product-rows section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="section-header text-center">
+                        <h2 class="h2">Featured packages</h2>
+                        <p>Our Most popular packages</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-products">
+                <div class="row">
+                    <?php
+                    //print_r($getTop6);
+                    foreach ($getTop6 as $keys) {
+                        if ($keys['TestType'] == 'Package') {
+                            $image = $keys['Image'];
+                            $Name = $keys['Name'];
+                            $StandardPrice = $keys['StandardPrice'];
+                            $TestID = $keys['TestID'];
+                    ?>
+                            <div class="col-6 col-sm-6 col-md-4 col-lg-3 item grid-view-item style2">
+                                <div class="grid-view_image">
+                                    <!-- start product image -->
+                                    <a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="grid-view-item__link">
+                                        <!-- image -->
+                                        <img class="grid-view-item__image primary blur-up lazyload" data-src="/sports/assets/img/img/<?php echo  $image; ?>" src="/sports/assets/img/img/<?php echo  $image; ?>" alt="image" width="100%" height="70%" title="product">
+                                        <!-- End image -->
+                                        <!-- Hover image -->
+                                        <img class="grid-view-item__image hover blur-up lazyload" width="100%" height="70%" data-src="/sports/assets/img/img/<?php echo  $image; ?>" src="/sports/assets/img/img/<?php echo  $image; ?>" alt="image" title="product">
+                                        <!-- End hover image -->
+                                        <!-- product label -->
+
+                                        <!-- End product label -->
+                                    </a>
+                                    <!-- end product image -->
+                                    <!--start product details -->
+                                    <div class="product-details hoverDetails text-center mobile">
+                                        <!-- product name -->
+                                        <div class="product-name">
+                                            <a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>"><?php echo $Name; ?></a>
+                                        </div>
+                                        <!-- End product name -->
+                                        <!-- product price -->
+                                        <div class="product-price">
+
+                                            <span class="price"> $ <?php echo $StandardPrice; ?></span>
+                                        </div>
+                                        <!-- End product price -->
+
+                                        <!-- product button -->
+                                        <div class="button-set">
+                                            <a href="javascript:void(0)" title="Quick View" class="quick-view-popup quick-view" data-toggle="modal" data-target="#content_quickview">
+                                                <i class="icon anm anm-search-plus-r"></i>
+                                            </a>
+                                            <!-- Start product button -->
+                                            <form class="variants add" action="#" onclick="window.location.href='cart.html'" method="post">
+                                                <button class="btn cartIcon btn-addto-cart" type="button" tabindex="0"><i class="icon anm anm-bag-l"></i></button>
+                                            </form>
+                                            <div class="wishlist-btn">
+                                                <a class="wishlist add-to-wishlist" href="wishlist.html">
+                                                    <i class="icon anm anm-heart-l"></i>
+                                                </a>
+                                            </div>
+                                            <div class="compare-btn">
+                                                <a class="compare add-to-compare" href="compare.html" title="Add to Compare">
+                                                    <i class="icon anm anm-random-r"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- end product button -->
+                                    </div>
+                                    <!-- Variant -->
+
+                                    <!-- End Variant -->
+                                    <!-- End product details -->
+                                </div>
+                            </div>
+                    <?php
+
+                        }
+                    }
+                    ?>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="tab-slider-product section">
         <div class="container">
             <div class="row">
@@ -120,7 +212,7 @@ $this->load->view('Header');
                                                         <!-- product price -->
                                                         <div class="product-price">
 
-                                                            <span class="price" id='Price<?php echo $TestID; ?>'><?php echo $StandardPrice ?></span>
+                                                            <span class="price" id='Price<?php echo $TestID; ?>'> $ <?php echo $StandardPrice ?></span>
                                                         </div>
                                                         <!-- End product price -->
 
@@ -206,7 +298,7 @@ $this->load->view('Header');
                                                         <!-- product price -->
                                                         <div class="product-price">
 
-                                                            <span class="price"><?php echo $StandardPrice ?></span>
+                                                            <span class="price"> $ <?php echo $StandardPrice ?></span>
                                                         </div>
                                                         <!-- End product price -->
 
@@ -309,7 +401,7 @@ $this->load->view('Header');
                                                         <!-- product price -->
                                                         <div class="product-price">
 
-                                                            <span class="price"><?php echo $StandardPrice ?></span>
+                                                            <span class="price"> $ <?php echo $StandardPrice ?></span>
                                                         </div>
                                                         <!-- End product price -->
 
@@ -381,111 +473,23 @@ $this->load->view('Header');
 <!--End Logo Slider-->
 
 <!--Featured Product-->
-<div class="product-rows section">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="section-header text-center">
-                    <h2 class="h2">Featured packages</h2>
-                    <p>Our most popular packages</p>
-                </div>
-            </div>
-        </div>
-        <div class="grid-products">
-            <div class="row">
-                <?php
-                //print_r($getTop6);
-                foreach ($getTop6 as $keys) {
-                    if ($keys['TestType'] == 'Package') {
-                        $image = $keys['Image'];
-                        $Name = $keys['Name'];
-                        $StandardPrice = $keys['StandardPrice'];
-                        $TestID = $keys['TestID'];
-                ?>
-                        <div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
-                            <div class="grid-view_image">
-                                <!-- start product image -->
-                                <a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="grid-view-item__link">
-                                    <!-- image -->
-                                    <img class="grid-view-item__image primary blur-up lazyload" data-src="/sports/assets/img/img/<?php echo  $image; ?>" src="/sports/assets/img/img/<?php echo  $image; ?>" alt="image" title="product">
-                                    <!-- End image -->
-                                    <!-- Hover image -->
-                                    <img class="grid-view-item__image hover blur-up lazyload" data-src="/sports/assets/img/img/<?php echo  $image; ?>" src="/sports/assets/img/img/<?php echo  $image; ?>" alt="image" title="product">
-                                    <!-- End hover image -->
-                                    <!-- product label -->
 
-                                    <!-- End product label -->
-                                </a>
-                                <!-- end product image -->
-                                <!--start product details -->
-                                <div class="product-details hoverDetails text-center mobile">
-                                    <!-- product name -->
-                                    <div class="product-name">
-                                        <a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>"><?php echo $Name; ?></a>
-                                    </div>
-                                    <!-- End product name -->
-                                    <!-- product price -->
-                                    <div class="product-price">
-
-                                        <span class="price"><?php echo $StandardPrice; ?></span>
-                                    </div>
-                                    <!-- End product price -->
-
-                                    <!-- product button -->
-                                    <div class="button-set">
-                                        <a href="javascript:void(0)" title="Quick View" class="quick-view-popup quick-view" data-toggle="modal" data-target="#content_quickview">
-                                            <i class="icon anm anm-search-plus-r"></i>
-                                        </a>
-                                        <!-- Start product button -->
-                                        <form class="variants add" action="#" onclick="window.location.href='cart.html'" method="post">
-                                            <button class="btn cartIcon btn-addto-cart" type="button" tabindex="0"><i class="icon anm anm-bag-l"></i></button>
-                                        </form>
-                                        <div class="wishlist-btn">
-                                            <a class="wishlist add-to-wishlist" href="wishlist.html">
-                                                <i class="icon anm anm-heart-l"></i>
-                                            </a>
-                                        </div>
-                                        <div class="compare-btn">
-                                            <a class="compare add-to-compare" href="compare.html" title="Add to Compare">
-                                                <i class="icon anm anm-random-r"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- end product button -->
-                                </div>
-                                <!-- Variant -->
-
-                                <!-- End Variant -->
-                                <!-- End product details -->
-                            </div>
-                        </div>
-                <?php
-
-                    }
-                }
-                ?>
-
-
-
-
-
-            </div>
-        </div>
-    </div>
-</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-
-    $('.AddToCartButton').click(function(e){
+    $('.AddToCartButton').click(function(e) {
         let name = $(`#Name${this.id}`).text()
         let price = $(`#Price${this.id}`).text()
-        let image = $(`#Image${this.id}`).attr("data-src") 
+        let image = $(`#Image${this.id}`).attr("data-src")
 
         let url = '<?php echo base_url(); ?>ProductDetails/setCart';
-        $.post(url,{'Name':name,'Price':price,'ImageURL':image},
-        function(data, status) {
-         console.log("Data", data);   
-        })
+        $.post(url, {
+                'Name': name,
+                'Price': price,
+                'ImageURL': image
+            },
+            function(data, status) {
+                console.log("Data", data);
+            })
     });
 </script>
 <!--End Featured Product-->
