@@ -2,8 +2,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Forwad Sports (Login Or Sigh UP)
-  </title>
+  <title>Forward Sports Pvt Ltd.</title>
+  <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/Forward.png" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/1788c719dd.js" crossorigin="anonymous"></script>
@@ -504,27 +504,61 @@
       left: 50%;
     }
   }
+
+  .alert {
+    padding: 20px;
+  background-color: black;
+  color: white;
+  border-radius:10px;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
 </style>
 
 <body>
   <div class="container">
     <div class="container__forms">
       <div class="form">
-        <form action="" class="form__sign-in">
+        <form action="<?php echo base_url(); ?>Login/process_login" method="post" class="form__sign-in">
+        <?php
+    if ($this->session->flashdata('info')) {
+    ?>
+    <div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <strong><?php echo $this->session->flashdata('info') ?></strong>
+</div>
+      <h4 style="border: 1px solid black;"></h4>
+    <?php
+    }
+
+    ?>
           <h2 class="form__title">Sign In</h2>
           <div class="form__input-field">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username"   required />
+            <input type="text" placeholder="Username" name="username" required />
           </div>
           <div class="form__input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password"   required />
+            <input type="password" placeholder="Password" name="password" required />
           </div>
           <input class="form__submit" type="submit" value="Login" />
 
         </form>
 
-        <form action="../index.php/Login/create" method="post" class="form__sign-up">
+        <form action="<?php echo base_url(); ?>Login/create" method="post" class="form__sign-up">
           <h2 class="form__title">Sign Up</h2>
           <div class="form__input-field">
             <i class="fas fa-envelope"></i>
@@ -543,7 +577,7 @@
 
             <div class="d-flex align-items-start flex-column  " style="padding: 10px;">
 
-              <select id="country" name="country" required style="width: 21.8rem;">
+              <select id="country" name="country" required style="width: 17.8rem;">
                 <option value="" disabled selected>Select the Country</option>
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
@@ -797,7 +831,7 @@
           <div class="d-flex  flex-column  align-items-center form__input-field">
             <div class=" d-flex align-items-start flex-column " style="padding: 10px;">
 
-              <select name="city" id="city"  required style="width: 21.8rem;">
+              <select name="city" id="city" required style="width: 17.8rem;">
                 <option value="" disabled selected>Select The City</option>
                 <option value="Islamabad">Islamabad</option>
                 <option value="" disabled>Punjab Cities</option>
@@ -1064,7 +1098,10 @@
     <div class="container__panels">
       <div class="panel panel__left">
         <div class="panel__content">
+        <img src="<?php echo base_url(); ?>assets/images/Forward.png" width="100" alt="Forward Sports Pvt Ltd." title="Forward Sports Pvt Ltd." />
+           
           <h3 class="panel__title">Are You New to our Site? Click here to Sign Up</h3> <br>
+        
           <button class="btn btn-transparent" id="sign-up-btn">
             Sign Up
           </button>
@@ -1073,6 +1110,8 @@
       </div>
       <div class="panel panel__right">
         <div class="panel__content">
+        <img src="<?php echo base_url(); ?>assets/images/Forward.png" width="100" alt="Forward Sports Pvt Ltd." title="Forward Sports Pvt Ltd." />
+           
           <h3 class="panel__title">Already have an account? Click here to Sign In</h3>
           <br>
 
@@ -1086,9 +1125,10 @@
   </div>
 
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"  crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
+
   window.onload = function(e) {
     $('#city').select2();
     $('#country').select2();

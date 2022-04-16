@@ -19,8 +19,25 @@ class Test extends CI_Controller
   $this->load->view('index',$data);
 
  }
-public function innovation(){
+
+ public function Cart()
+ {
+    $data['getData'] = $this->homeModal->getData();
+  
+    $data['getTop6'] = $this->homeModal->getTop6();
+  $this->load->view('Cart',$data);
+
+ }
+
+ public function checkout()
+ {
+    $data['getData'] = $this->homeModal->getData();
+  
+    $data['getTop6'] = $this->homeModal->getTop6();
+  $this->load->view('checkout',$data);
+
+ }
+
+
  
-  $this->load->view('innovation');
-}
 }

@@ -58,6 +58,61 @@ WHERE        (TestID = $id) and (Status = 1)");
     return $query->result_array();
 }
 
+public function orderPlacement(){
+  date_default_timezone_set('Asia/Karachi');
+  $date = date("Y-m-d H:i:s");
+  $user_id = $this->session->userdata('user_id');
+$totalPrice = 0;
+$testIds = [];
+$testNames = [];
+$testAmounts = [];
+$testQuantities = [];
+$testIdsConvert='';
+$testNamesConvert='';
+$testAmountsConvert='';
+$testQuantitiesConvert='';
+foreach ($_SESSION['Products'] as $products) {
+  $products[1] = intval($products[4]) * intval($products[3]);
+  $totalPrice +=  $products[1];
+  array_push($testIds,$products[5]);
+  array_push($testNames,$products[0]);
+  array_push($testAmounts,$products[4]);
+  array_push($testQuantities,$products[3]);
+ 
+}
+if(count($testIds)>1){
+ $testIdsConvert = implode(",",$testIds);
+}else{
+  $testIdsConvert = $testIds[0];
+}
+if(count($testNames)>1){
+  $testNamesConvert = implode(",",$testNames);
+ }else{
+   $testNamesConvert = $testNames[0];
+ }
+ if(count($testAmounts)>1){
+  $testAmountsConvert = implode(",",$testAmounts);
+ }else{
+   $testAmountsConvert = $testAmounts[0];
+ }
+ if(count($testQuantities)>1){
+  $testQuantitiesConvert = implode(",",$testQuantities);
+ }else{
+   $testQuantitiesConvert = $testQuantities[0];
+ }
+
+  $query = $this->db->query("INSERT INTO dbo.tbl_Outward_Transaction ( TestID ,TestName ,TAmount ,TQuantity ,Amount ,UserID  ,RequestDate ) VALUES ( '$testIdsConvert' ,'$testNamesConvert' ,'$testAmountsConvert' ,'$testQuantitiesConvert' ,$totalPrice ,'$user_id' ,'$date'  )");
+  if($query){
+    $_SESSION['Products'] = [];
+    return true;
+  }
+  else{
+    return false;
+  }
+  
+}
+
+
 }
 
 

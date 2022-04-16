@@ -30,4 +30,26 @@ class Login extends CI_Controller {
 			       
          
     }
+
+    public function process_login(){
+
+        $user = $this->input->post('username');
+		$password = $this->input->post('password');
+		$this->model->loginn($user, $password);
+	
+		if($this->session->has_userdata('user_id')){
+			if($password=='123'){
+				redirect('changepwd');
+			}else{
+			redirect('Test');
+			}
+
+		}
+    }
+
+	public function logout()
+    {
+		$this->session->sess_destroy();
+		redirect('Test');
+    }
 }

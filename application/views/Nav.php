@@ -14,18 +14,34 @@
                      //     }
                      // }
                      ?>
-                     <li class="grid__item lvl-1 col-md-3 col-lg-3"><a href="#" class="site-nav lvl-1">Organizations </a>
+                     <li class="grid__item lvl-1 col-md-3 col-lg-3"><a href="#" class="site-nav lvl-1">Innovations </a>
                         <ul class="subLinks">
 
                            <li class="lvl-2"><a href="<?php echo base_url(); ?>innovation" class="site-nav lvl-2">Innovations</a></li>
+               
+
+                        </ul>
+                     </li>
+
+                     <li class="grid__item lvl-1 col-md-3 col-lg-3"><a href="#" class="site-nav lvl-1">Organizations Hierarchy </a>
+                        <ul class="subLinks">
+
+                          
                            <li class="lvl-2"><a href="#" class="site-nav lvl-2">Organizations Hierarchy</a></li>
+
+                         
+
+                        </ul>
+                     </li>
+                     <li class="grid__item lvl-1 col-md-3 col-lg-3"><a href="#" class="site-nav lvl-1">Lab Tour </a>
+                        <ul class="subLinks">
+
+                        
 
                            <li class="lvl-2"><a href="#" class="site-nav lvl-2">Lab Tour</a></li>
 
                         </ul>
                      </li>
-
-
 
                   </ul>
                </li>
@@ -178,6 +194,8 @@
 
             </ul>
       </li>
-      <li class="lvl1 parent megamenu"><a href="<?php echo base_url(); ?>AlltestPackage" style="background-color:black;color:white;padding:5px;border-radius:10px">BUY NOW !<i class="anm anm-angle-down-l"></i></a>
+      <li class="lvl1 parent megamenu"><a href="<?php echo base_url(); ?>AlltestPackage" style="background-color:black;color:white;padding:5px;border-radius:10px">BOOK NOW !<i class="anm anm-angle-down-l"></i></a>
 
       </li>
+   </ul>
+</nav>

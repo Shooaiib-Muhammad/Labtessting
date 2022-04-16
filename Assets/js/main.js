@@ -60,8 +60,8 @@
 	  1. Preloader Loading ----------------------- 
 	  -----------------------------------------*/
 	function pre_loader(){
-		$("#load").fadeOut();
-		$('#pre-loader').delay(0).fadeOut('slow');
+		$("#load").fadeOut(8000);
+		$('#pre-loader').delay(0).fadeOut(3000);
 	}
 	pre_loader();
 		

@@ -15,18 +15,32 @@ $StandardPrice = $getPrddetails[0]['StandardPrice'];
 $Image = $getPrddetails[0]['Image'];
 $method = $getPrddetails[0]['Method'];
 $StandardDesc = $getPrddetails[0]['StandardDesc'];
+$TestID = $getPrddetails[0]['TestID'];
 // echo $Image;
 
 ?>
-<div id="page-content">
+   <input class="cart__qty-input" type="text" style="display: none;" id="TestId" name="updates[]" value="<?php echo $TestID ?>" pattern="[0-9]*">
+   <input class="cart__qty-input" type="text" style="display: none;" id="OriginalPrice" name="updates[]" value="<?php echo $StandardPrice; ?>" pattern="[0-9]*">
+     
+   <div id="page-content">
+<div class="collection-header">
+        <div class="collection-hero">
+            <div class=" collection-hero__imageCustom"><img class="blur-up lazyload" data-src="<?php Echo base_url();?>assets/images/cat-women6.jpg" src="assets/images/cat-women2.jpg" height="150px" width="100%" style="background-size: fixed; background-repeat:no-repeat;" alt="Women" title="Women" /></div>
+            <div class="collection-hero__title-wrapper">
+                <!-- <h1 class="collection-hero__title page-width"></h1> -->
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
     <!--MainContent-->
     <div id="MainContent" class="main-content" role="main">
         <!--Breadcrumb-->
-        <div class="bredcrumbWrap">
+        <!-- <div class="bredcrumbWrap">
             <div class="container breadcrumbs">
                 <a href="#" title="Back to the home page">Home</a><span aria-hidden="true">›</span><span><?php echo $name; ?></span>
             </div>
-        </div>
+        </div> -->
         <!--End Breadcrumb-->
 
         <div id="ProductSection-product-template" class="product-template__container prstyle2 container">
@@ -52,7 +66,7 @@ $StandardDesc = $getPrddetails[0]['StandardDesc'];
                             <div class="product-thumb product-thumb-1">
                                 <div id="gallery" class="product-dec-slider-1 product-tab-left">
                                     <a data-image="/sports/assets/img/img/<?php echo  $Image; ?>" data-zoom-image="/sports/assets/img/img/<?php echo  $Image; ?>" class="slick-slide slick-cloned" data-slick-index="-4" aria-hidden="true" tabindex="-1">
-                                        <img class="blur-up lazyload" src="/sports/assets/img/img/<?php echo  $Image; ?>" alt="" />
+                                        <img class="blur-up lazyload" id='Image<?php echo $TestID; ?>' src="/sports/assets/img/img/<?php echo  $Image; ?>" alt="" />
                                     </a>
                                     <a data-image="/sports/assets/img/img/<?php echo  $Image; ?>" data-zoom-image="/sports/assets/img/img/<?php echo  $Image; ?>" class="slick-slide slick-cloned" data-slick-index="-3" aria-hidden="true" tabindex="-1">
                                         <img class="blur-up lazyload" src="/sports/assets/img/img/<?php echo  $Image; ?>" alt="" />
@@ -100,7 +114,7 @@ $StandardDesc = $getPrddetails[0]['StandardDesc'];
 
                     <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                         <div class="product-single__meta">
-                            <h1 class="product-single__title"><?php echo $name; ?></h1>
+                            <h1 class="product-single__title" id='Name<?php echo $TestID; ?>'><?php echo $name; ?></h1>
                             <div class="product-nav clearfix">
                                 <a href="#" class="next" title="Next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                             </div>
@@ -108,7 +122,7 @@ $StandardDesc = $getPrddetails[0]['StandardDesc'];
                             <p class="product-single__price product-single__price-product-template">
 
                                 <span class="product-price__price product-price__price-product-template product-price__sale product-price__sale--single">
-                                    <span id="ProductPrice-product-template"><span class="money">$ <?php echo $StandardPrice ?></span></span>
+                                    <span id="ProductPrice-product-template">$ <span class="money" id='Price<?php echo $TestID; ?>'> <?php echo $StandardPrice ?></span></span>
                                 </span>
                             </p>
                             <div class="product-single__description rte">
@@ -154,24 +168,36 @@ $StandardDesc = $getPrddetails[0]['StandardDesc'];
                             </div>
                             <form method="post" action="http://annimexweb.com/cart/add" id="product_form_10508262282" accept-charset="UTF-8" class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
 
-
+                             
+     
 
                                 <!-- Product Action -->
                                 <div class="product-action clearfix">
                                     <div class="product-form__item--quantity">
-                                        <div class="wrapQtyBtn">
-                                            <div class="qtyField">
-                                                <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
-                                                <input type="text" id="Quantity" name="quantity" value="1" class="product-form__input qty">
-                                                <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
+                                        <div class="wrapQtyBtn2 detailsCustom">
+                                            <div class="qtyField2">
+                                                <a class="qtyBtn2 minus2" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
+                                                <input type="text" id="Quantity2" name="quantity" value="1" class="product-form__input qty2" disabled>
+                                                <a class="qtyBtn2 plus2" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="product-form__item--submit">
-                                        <button type="button" name="add" class="btn product-form__cart-submit">
+                                    <?php
+                                                        if ($this->session->has_userdata('user_id')) {
+                                                        ?>
+                                                          <div class="product-form__item--submit">
+                                        <button type="button" name="add" class="btn product-form__cart-submit AddToCartButton" id='<?php echo $TestID; ?>'>
                                             <span>Add to cart</span>
                                         </button>
                                     </div>
+                                                        <?php } else { ?>
+                                                            <div class="product-form__item--submit">
+                                        <button type="button" name="add" class="btn product-form__cart-submit LoginAddToCartButton" id='<?php echo $TestID; ?>'>
+                                            <span>Add to cart</span>
+                                        </button>
+                                    </div>
+                                                        <?php } ?>
+                                   
                                 </div>
                                 <!-- End Product Action -->
                             </form>
@@ -374,8 +400,48 @@ $StandardDesc = $getPrddetails[0]['StandardDesc'];
 </div>
 <!--End Body Content-->
 </div>
-<!--Footer-->
 <?php
 
 $this->load->view('Footer');
 ?>
+<script>
+    $('.AddToCartButton').click(function(e) {
+        let name = $(`#Name${this.id}`).text()
+        let price = parseInt($(`#OriginalPrice`).val())
+        let Quantity = $(`#Quantity2`).val()
+        // console.log("Data",Quantity)
+        let image = $(`#Image${this.id}`).attr("src")
+    
+        let url = '<?php echo base_url(); ?>ProductDetails/setCart';
+        $.post(url, {
+                'Name': name,
+                'Price': price,
+                'ImageURL': image,
+                'Quantity':Quantity,
+                'TestId':this.id
+            },
+            function(data, status) {
+                let htmlGet = data[1];
+                let htmlGetModified = htmlGet.replace(/\\/g, '');
+                $('#header-cart').html('');
+                $('#CartCount').html('');
+                $('#header-cart').html(htmlGetModified);
+                $('#CartCount').html(data[2]);
+            })
+    });
+
+    $('.LoginAddToCartButton').click(function(e) {
+        let name = $(`#Name${this.id}`).text()
+        let price = $(`#Price${this.id}`).text()
+        let image = $(`#Image${this.id}`).attr("src")
+        let url = '<?php echo base_url(); ?>ProductDetails/LoginsetCart';
+        let url2 = '<?php echo base_url(); ?>';
+        $.post(url,{'Name':name,'Price':price,'ImageURL':image},
+        function(data, status) {
+        
+            window.location = `${url2}Login`  
+        })
+    });
+
+</script>
+<!--Footer-->
