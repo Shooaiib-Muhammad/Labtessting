@@ -142,7 +142,7 @@ if(isset($_SESSION['Products'])){
                               </div>
                              <br>
                               <a class="btn btn--small-wide checkout" href="<?php echo base_url(); ?>Test/checkout" style="margin-left: 25%;border-radius:10px;" >Proceed To Checkout</a>
-                              <div class="paymnet-img"><img src="<?php echo base_url(); ?>assets/images/payment-img.jpg" alt="Payment"></div>
+                              <div class="paymnet-img"></div>
                             
                             </div>
         

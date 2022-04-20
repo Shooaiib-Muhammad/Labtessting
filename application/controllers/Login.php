@@ -15,18 +15,24 @@ class Login extends CI_Controller {
 	}
 	
     public function create(){
+
+				
              $this->load->model('usermodel'); 
       
              // save user record to database
              $formArray=array();
+													$fullname=$this->input->post('fullname');
              $Email=$this->input->post('email');
              $Password=$this->input->post('password');
 			 $Suppliername=$this->input->post('supplier');
 			 $Country=$this->input->post('country');
 			 $City=$this->input->post('city');
 			 $PhoneNo=$this->input->post('phoneno');
+				$state=$this->input->post('state');
+				$requirement=$this->input->post('requirement');
+				$postal=$this->input->post('postal');
          
-             $this->model->create($Email,$Password,$Suppliername,$Country,$City,$PhoneNo);
+             $this->model->create($fullname,$Email,$Password,$Suppliername,$Country,$City,$PhoneNo,$state,$requirement,$postal);
 			       
          
     }

@@ -59,7 +59,7 @@
                                                 <i class="zmdi zmdi-account-o"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>10368</h2>
+                                                <h2><?php echo $totalRequests?$totalRequests[0]['Invoice_ID']:'0'; ?></h2>
                                                 <span><a style="color:#FFFFFF99" href="<?php echo base_url()?>CoolAdmin/totalrequests">Total Requests</a></span>
                                             </div>
                                         </div>
@@ -77,7 +77,7 @@
                                                 <i class="zmdi zmdi-shopping-cart"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>388,688</h2>
+                                                <h2><?php echo $pendingRequests?$pendingRequests[0]['Counter']:'0'; ?></h2>
                                                 <span> <a style="color:#FFFFFF99" href="<?php echo base_url()?>CoolAdmin/pendingRequests">Pending Requests</a></span>
                                             </div>
                                         </div>
@@ -95,7 +95,7 @@
                                                 <i class="zmdi zmdi-calendar-note"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>1,086</h2>
+                                                <h2><?php echo $approved?$approved[0]['Counter']:'0'; ?></h2>
                                                 <span><a style="color:#FFFFFF99" href="<?php echo base_url()?>CoolAdmin/approved">Approved</a></span>
                                             </div>
                                         </div>
@@ -113,7 +113,7 @@
                                                 <i class="zmdi zmdi-money"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>$1,060,386</h2>
+                                                <h2>$<?php echo $payedAmount?$payedAmount[0]['Amount']:'0'; ?></h2>
                                                 <span><a style="color:#FFFFFF99" href="<?php echo base_url()?>CoolAdmin/amountPayed">Amount Payed</a></span>
                                             </div>
                                         </div>
@@ -129,82 +129,28 @@
                             <div class="col-lg-12">
                                 <h2 class="title-1 m-b-25">Orders Detail</h2>
                                 <div class="table-responsive table--no-card m-b-40">
-                                    <table class="table table-borderless table-striped table-earning">
+                                    <table id="example" class="table table-borderless table-striped table-earning">
                                         <thead>
                                             <tr>
-                                                <th>date</th>
-                                                <th>order ID</th>
-                                                <th>name</th>
-                                                <th class="text-right">price</th>
-                                                <th class="text-right">quantity</th>
-                                                <th class="text-right">total</th>
+                                                <th>Invoice_ID</th>
+                                                <th>Request Date</th>
+                                                <th>Test Name</th>
+                                                <th class="text-right">Amount</th>
+                                                <th>Request_Status</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php foreach($tabular as $tab){?>
                                             <tr>
-                                                <td>2018-09-29 05:57</td>
-                                                <td>100398</td>
-                                                <td>iPhone X 64Gb Grey</td>
-                                                <td class="text-right">$999.00</td>
-                                                <td class="text-right">1</td>
-                                                <td class="text-right">$999.00</td>
+                                                <td><?php echo $tab['Invoice_ID'] ?></td>
+                                                <td><?php echo $tab['RequestDate'] ?></td>
+                                                <td><?php echo $tab['TestName'] ?></td>
+                                                <td>$<?php echo $tab['Amount'] ?></td>
+                                                <td><?php echo $tab['Request_Status'] ?></td>
+                                               
                                             </tr>
-                                            <tr>
-                                                <td>2018-09-28 01:22</td>
-                                                <td>100397</td>
-                                                <td>Samsung S8 Black</td>
-                                                <td class="text-right">$756.00</td>
-                                                <td class="text-right">1</td>
-                                                <td class="text-right">$756.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-27 02:12</td>
-                                                <td>100396</td>
-                                                <td>Game Console Controller</td>
-                                                <td class="text-right">$22.00</td>
-                                                <td class="text-right">2</td>
-                                                <td class="text-right">$44.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-26 23:06</td>
-                                                <td>100395</td>
-                                                <td>iPhone X 256Gb Black</td>
-                                                <td class="text-right">$1199.00</td>
-                                                <td class="text-right">1</td>
-                                                <td class="text-right">$1199.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-25 19:03</td>
-                                                <td>100393</td>
-                                                <td>USB 3.0 Cable</td>
-                                                <td class="text-right">$10.00</td>
-                                                <td class="text-right">3</td>
-                                                <td class="text-right">$30.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-29 05:57</td>
-                                                <td>100392</td>
-                                                <td>Smartwatch 4.0 LTE Wifi</td>
-                                                <td class="text-right">$199.00</td>
-                                                <td class="text-right">6</td>
-                                                <td class="text-right">$1494.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-24 19:10</td>
-                                                <td>100391</td>
-                                                <td>Camera C430W 4k</td>
-                                                <td class="text-right">$699.00</td>
-                                                <td class="text-right">1</td>
-                                                <td class="text-right">$699.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-22 00:43</td>
-                                                <td>100393</td>
-                                                <td>USB 3.0 Cable</td>
-                                                <td class="text-right">$10.00</td>
-                                                <td class="text-right">3</td>
-                                                <td class="text-right">$30.00</td>
-                                            </tr>
+                                           <?php }?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -226,7 +172,17 @@
     </div>
 
     <?php  $this->load->view('cool_admin/layouts/foot.php');?>
-
+    <script>
+ $(document).ready(function() {
+    var table = $('#example').DataTable( {
+        lengthChange: false,
+        buttons: [ 'copy', 'excel', 'pdf' ]
+    } );
+ 
+    table.buttons().container()
+        .appendTo( '#example_wrapper .col-md-6:eq(0)' );
+} );
+ </script>
 </body>
 
 </html>

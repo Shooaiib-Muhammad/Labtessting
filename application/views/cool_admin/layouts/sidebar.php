@@ -22,7 +22,7 @@
                                 <i class="far fa-check-square"></i>Tracking</a>
                         </li>
                         <li>
-                            <a href="calendar.html">
+                            <a href="<?php echo base_url() ?>Payment/verify">
                                 <i class="fas fa-calendar-alt"></i>Payment Verfication</a>
                         </li>
                       

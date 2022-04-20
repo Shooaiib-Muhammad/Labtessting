@@ -31,12 +31,29 @@ class Test extends CI_Controller
 
  public function checkout()
  {
-    $data['getData'] = $this->homeModal->getData();
+  $id=$this->session->userdata('user_id');
+  $data['getData'] = $this->homeModal->getData();
   
-    $data['getTop6'] = $this->homeModal->getTop6();
+  $data['getTop6'] = $this->homeModal->getTop6();
+  $data['customerInfo'] = $this->homeModal->customerInfo($id);
+
+  // print_r($data['customerInfo']);
+  // die;
   $this->load->view('checkout',$data);
 
  }
+
+ public function self(){
+  $id=$this->session->userdata('user_id');
+
+  $data['customerInfo'] = $this->homeModal->customerInfo($id);
+
+  
+ 
+ echo json_encode($data);
+ }
+
+
 
 
  

@@ -103,7 +103,7 @@ Public function RemoveCartItem(){
 
 Public function placeOrder(){
 
-    $data = $this->homeModal->orderPlacement();
+    $data = $this->homeModal->orderPlacement($_POST['namer'],$_POST['emailr'],$_POST['telr'],$_POST['faxr'],$_POST['requirements']);
  
     return $this->output
     ->set_content_type('application/json')

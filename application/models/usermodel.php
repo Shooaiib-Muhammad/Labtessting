@@ -11,13 +11,13 @@ class UserModel extends CI_Model
         $this->load->library('session');
         
 	}
-    function create($Email,$Password,$Suppliername,$Country,$City,$PhoneNo){
+    function create($fullname,$Email,$Password,$Suppliername,$Country,$City,$PhoneNo,$state,$requirement,$postal){
     
         $D=date('Y-m-d');
         $query = $this->db->query("INSERT INTO  dbo . tbl_Outward_Users 
-        ( Email ,Password,Supplier,Country,City,Contactno,Date,Status)
+        (fullname, Email ,Password,Supplier,Country,City,Contactno,state,postalcode,requirements,Date,Status)
     VALUES
-        ('$Email' ,'$Password','$Suppliername','$Country','$City','$PhoneNo','$D','1')");
+        ('$fullname','$Email' ,'$Password','$Suppliername','$Country','$City','$PhoneNo','$state','$requirement','$postal','$D','1')");
 if($query){
     $this->session->set_flashdata('info', 'Your Account Has Been Created!');
     redirect('Login');
