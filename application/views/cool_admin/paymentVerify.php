@@ -292,10 +292,10 @@
                                                                 <td><span class="badge badge-primary p-1"><?php echo $Key['Request_Status']; ?> </span></td>
                                                                 <td><?php echo $Key['EDate']; ?> </td>
                                                                 <td>
-                                                                    <a download href="<?php echo '/sports/assets/img/img/' . $Key['Result']; ?>">
-                                                                    <button class="btn btn-primary btn-sm">Download Result</button></a>
+                                                                    <a  target="_blank"  href="<?php echo '/sports/assets/img/img/' . $Key['Result']; ?>">
+                                                                    Result</a>
                                                                      </td>
-                                  <td>
+                                
                                                                 
                                                                
                                                             </tr>

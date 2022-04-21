@@ -856,6 +856,16 @@ table { margin-bottom:15px; width:100%; border-collapse:collapse; border-spacing
 .qtyField a { background-color:#eee; color:#000; }
 .qtyField a .fa { font-size:12px; line-height:21px; }
 .qtyField > a, .qtyField > span, .qtyField input { display:table-cell; line-height:normal; text-align:center; padding:3px 6px; border:1px solid #f5f5f5; }
+
+.wrapQtyBtn2 { float:left; }
+.qtyField2 { display:table; margin:0 auto; }
+.qtyField2 .qty2 { width:40px; }
+.qtyField2 .qtyBtn2, .qtyField2 .qty2 { padding:10px 6px; width:30px; height:42px; border-radius:0; float:left; }
+.qtyField2 a { background-color:#eee; color:#000; }
+.qtyField2 a .fa { font-size:12px; line-height:21px; }
+.qtyField2 > a, .qtyField2 > span, .qtyField2 input { display:table-cell; line-height:normal; text-align:center; padding:3px 6px; border:1px solid #f5f5f5; }
+
+
 .product-template__container .product-form__item--submit { width:auto; overflow:hidden; }
 .product-template__container .product-form__item--submit .btn { width:100%; padding:6px 15px; min-height:42px; }
 .product-template__container .shopify-payment-button .shopify-payment-button__button--unbranded { border-radius:0; -ms-transition:all 0.3s ease-in-out; -webkit-transition:all 0.3s ease-in-out; transition:all 0.3s ease-in-out; color:#fff; background-color:#e95144; float:right; }

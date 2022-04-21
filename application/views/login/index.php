@@ -528,9 +528,9 @@
 }
 </style>
 
-<body>
+<body >
   <div class="container">
-    <div class="container__forms">
+    <div class="container__forms" style="overflow:scroll">
       <div class="form">
         <form action="<?php echo base_url(); ?>Login/process_login" method="post" class="form__sign-in">
         <?php
@@ -558,8 +558,14 @@
 
         </form>
 
-        <form action="<?php echo base_url(); ?>Login/create" method="post" class="form__sign-up">
+        <form  action="<?php echo base_url(); ?>Login/create" method="post" class="form__sign-up">
           <h2 class="form__title">Sign Up</h2>
+          <div class="form__input-field ">
+
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <input type="text" placeholder="Full Name" name="fullname" id="fullname" required />
+
+          </div>
           <div class="form__input-field">
             <i class="fas fa-envelope"></i>
             <input type="text" placeholder="Email" name="email" id="email" required />
@@ -1087,7 +1093,26 @@
             <input type="text" placeholder="Contact" name="phoneno" id="phoneno" required />
 
           </div>
+          
+          <div class="form__input-field ">
 
+            <i class="fa fa-home" aria-hidden="true"></i>
+            <input type="text" placeholder="State" name="state" id="state" required />
+
+          </div>
+          <div class="form__input-field ">
+
+<i class="fa fa-code" aria-hidden="true"></i>
+<input type="text" placeholder="Postal Code" name="postal" id="postal" required />
+
+</div>
+
+<div class="form__input-field ">
+
+<i class="fa fa-area" aria-hidden="true"></i>
+<input type="text" placeholder="Additional requirement" name="requirement" id="requirement" required />
+
+</div>
 
 
           <input class="form__submit" type="submit" value="Next" />

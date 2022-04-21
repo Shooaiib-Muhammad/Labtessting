@@ -19,13 +19,13 @@ $TestID = $getPrddetails[0]['TestID'];
 // echo $Image;
 
 ?>
-   <input class="cart__qty-input" type="text" style="display: none;" id="TestId" name="updates[]" value="<?php echo $TestID ?>" pattern="[0-9]*">
-   <input class="cart__qty-input" type="text" style="display: none;" id="OriginalPrice" name="updates[]" value="<?php echo $StandardPrice; ?>" pattern="[0-9]*">
-     
-   <div id="page-content">
-<div class="collection-header">
+<input class="cart__qty-input" type="text" style="display: none;" id="TestId" name="updates[]" value="<?php echo $TestID ?>" pattern="[0-9]*">
+<input class="cart__qty-input" type="text" style="display: none;" id="OriginalPrice" name="updates[]" value="<?php echo $StandardPrice; ?>" pattern="[0-9]*">
+
+<div id="page-content">
+    <div class="collection-header">
         <div class="collection-hero">
-            <div class=" collection-hero__imageCustom"><img class="blur-up lazyload" data-src="<?php Echo base_url();?>assets/images/cat-women6.jpg" src="assets/images/cat-women2.jpg" height="150px" width="100%" style="background-size: fixed; background-repeat:no-repeat;" alt="Women" title="Women" /></div>
+            <div class=" collection-hero__imageCustom"><img class="blur-up lazyload" data-src="<?php echo base_url(); ?>assets/images/cat-women6.jpg" src="assets/images/cat-women2.jpg" height="150px" width="100%" style="background-size: fixed; background-repeat:no-repeat;" alt="Women" title="Women" /></div>
             <div class="collection-hero__title-wrapper">
                 <!-- <h1 class="collection-hero__title page-width"></h1> -->
             </div>
@@ -168,8 +168,8 @@ $TestID = $getPrddetails[0]['TestID'];
                             </div>
                             <form method="post" action="http://annimexweb.com/cart/add" id="product_form_10508262282" accept-charset="UTF-8" class="product-form product-form-product-template hidedropdown" enctype="multipart/form-data">
 
-                             
-     
+
+
 
                                 <!-- Product Action -->
                                 <div class="product-action clearfix">
@@ -183,21 +183,21 @@ $TestID = $getPrddetails[0]['TestID'];
                                         </div>
                                     </div>
                                     <?php
-                                                        if ($this->session->has_userdata('user_id')) {
-                                                        ?>
-                                                          <div class="product-form__item--submit">
-                                        <button type="button" name="add" class="btn product-form__cart-submit AddToCartButton" id='<?php echo $TestID; ?>'>
-                                            <span>Add to cart</span>
-                                        </button>
-                                    </div>
-                                                        <?php } else { ?>
-                                                            <div class="product-form__item--submit">
-                                        <button type="button" name="add" class="btn product-form__cart-submit LoginAddToCartButton" id='<?php echo $TestID; ?>'>
-                                            <span>Add to cart</span>
-                                        </button>
-                                    </div>
-                                                        <?php } ?>
-                                   
+                                    if ($this->session->has_userdata('user_id')) {
+                                    ?>
+                                        <div class="product-form__item--submit">
+                                            <button type="button" name="add" class="btn product-form__cart-submit AddToCartButton" id='<?php echo $TestID; ?>'>
+                                                <span>Add to cart</span>
+                                            </button>
+                                        </div>
+                                    <?php } else { ?>
+                                        <div class="product-form__item--submit">
+                                            <button type="button" name="add" class="btn product-form__cart-submit LoginAddToCartButton" id='<?php echo $TestID; ?>'>
+                                                <span>Add to cart</span>
+                                            </button>
+                                        </div>
+                                    <?php } ?>
+
                                 </div>
                                 <!-- End Product Action -->
                             </form>
@@ -254,7 +254,7 @@ $TestID = $getPrddetails[0]['TestID'];
                                 <!-- start product image -->
                                 <div class="product-image">
                                     <!-- start product image -->
-                                    <a href="#">
+                                    <a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>">
                                         <!-- image -->
                                         <img class="primary blur-up lazyload" data-src="/sports/assets/img/img/<?php echo  $image; ?>" src="/sports/assets/img/img/<?php echo  $image; ?>" alt="image" title="product">
                                         <!-- End image -->
@@ -411,14 +411,14 @@ $this->load->view('Footer');
         let Quantity = $(`#Quantity2`).val()
         // console.log("Data",Quantity)
         let image = $(`#Image${this.id}`).attr("src")
-    
+
         let url = '<?php echo base_url(); ?>ProductDetails/setCart';
         $.post(url, {
                 'Name': name,
                 'Price': price,
                 'ImageURL': image,
-                'Quantity':Quantity,
-                'TestId':this.id
+                'Quantity': Quantity,
+                'TestId': this.id
             },
             function(data, status) {
                 let htmlGet = data[1];
@@ -436,12 +436,15 @@ $this->load->view('Footer');
         let image = $(`#Image${this.id}`).attr("src")
         let url = '<?php echo base_url(); ?>ProductDetails/LoginsetCart';
         let url2 = '<?php echo base_url(); ?>';
-        $.post(url,{'Name':name,'Price':price,'ImageURL':image},
-        function(data, status) {
-        
-            window.location = `${url2}Login`  
-        })
-    });
+        $.post(url, {
+                'Name': name,
+                'Price': price,
+                'ImageURL': image
+            },
+            function(data, status) {
 
+                window.location = `${url2}Login`
+            })
+    });
 </script>
 <!--Footer-->
