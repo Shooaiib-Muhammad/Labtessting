@@ -10,7 +10,7 @@ $this->load->view('Header');
     <!--Collection Banner-->
     <div class="collection-header">
         <div class="collection-hero">
-            <div class=" collection-hero__imageCustom"><img class="blur-up lazyload" data-src="<?php Echo base_url();?>assets/images/cat-women6.jpg" src="assets/images/cat-women2.jpg" height="150px" width="100%" style="background-size: fixed; background-repeat:no-repeat;" alt="Women" title="Women" /></div>
+            <div class=" collection-hero__imageCustom"><img class="blur-up lazyload" data-src="<?php echo base_url(); ?>assets/images/cat-women6.jpg" src="assets/images/cat-women2.jpg" height="150px" width="100%" style="background-size: fixed; background-repeat:no-repeat;" alt="Women" title="Women" /></div>
             <div class="collection-hero__title-wrapper">
                 <!-- <h1 class="collection-hero__title page-width"></h1> -->
             </div>
@@ -284,8 +284,8 @@ $this->load->view('Header');
                                 $TestID = $keys['TestID'];
                                 //echo $image;
                             ?>
-                             <a style="display: none;" id='Name<?php echo $TestID; ?>'><?php echo $Name; ?></a>
-                                <span class="price" style="display: none;"  id='Price<?php echo $TestID; ?>'><?php echo $StandardPrice; ?></span>
+                                <a style="display: none;" id='Name<?php echo $TestID; ?>'><?php echo $Name; ?></a>
+                                <span class="price" style="display: none;" id='Price<?php echo $TestID; ?>'><?php echo $StandardPrice; ?></span>
                                 <div class="col-6 col-sm-6 col-md-4 col-lg-3 grid-view-item style2 item">
                                     <div class="grid-view_image">
 
@@ -330,23 +330,44 @@ $this->load->view('Header');
                                                 </a>
                                                 <!-- Start product button -->
                                                 <?php
-                                        if ($this->session->has_userdata('user_id')) {
-                                        ?>
-                                                <form class="variants add" action="#" method="post">
-                                            <button class="btn cartIcon btn-addto-cart Login AddToCartButtonPackage" id='<?php echo $TestID; ?>' type="button" tabindex="0"><i class="icon anm anm-bag-l"></i></button>
-                                        </form>
-                                        <?php } else { ?>
-                                            <form class="variants add" action="#" method="post">
-                                            <button class="btn cartIcon btn-addto-cart Login LoginAddToCartButtonPackage" id='<?php echo $TestID; ?>' type="button" tabindex="0"><i class="icon anm anm-bag-l"></i></button>
-                                        </form> 
-                                        <?php } ?>
+                                                if ($this->session->has_userdata('user_id')) {
+                                                ?>
+                                                    <form class="variants add" action="#" method="post">
+                                                        <button class="btn cartIcon btn-addto-cart Login AddToCartButtonPackage" id='<?php echo $TestID; ?>' type="button" tabindex="0"><i class="icon anm anm-bag-l"></i></button>
+                                                    </form>
+                                                <?php } else { ?>
+                                                    <form class="variants add" action="#" method="post">
+                                                        <button class="btn cartIcon btn-addto-cart Login LoginAddToCartButtonPackage" id='<?php echo $TestID; ?>' type="button" tabindex="0"><i class="icon anm anm-bag-l"></i></button>
+                                                    </form>
+                                                <?php } ?>
 
 
                                             </div>
+                                            
                                             <!-- end product button -->
                                         </div>
 
                                         <!-- End product details -->
+                                    </div>
+                                    <div class="product-details text-center">
+                                        <!-- product name -->
+                                        <div class="product-name">
+                                            <a id='Name<?php echo $TestID; ?>'><?php echo $Name ?></a>
+
+
+                                        </div>
+                                        <!-- End product name -->
+                                        <!-- product price -->
+                                        <div class="product-price">
+
+                                            <span>$</span> <span class="price" id='Price<?php echo $TestID; ?>'> <?php echo $StandardPrice ?></span>
+                                        </div>
+                                        <!-- End product price -->
+
+
+                                        <!-- Variant -->
+
+                                        <!-- End Variant -->
                                     </div>
                                 </div>
 
@@ -595,19 +616,18 @@ $this->load->view('Header');
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-        $('.AddToCartButtonPackage').click(function(e) {
+    $('.AddToCartButtonPackage').click(function(e) {
         let name = $(`#Name${this.id}`).text()
         let price = $(`#Price${this.id}`).text()
         let image = $(`#Image${this.id}`).attr("data-src")
         let TestId = $(`#Image${this.id}`).attr("data-src")
-        console.log("name", this.id)
         let url = '<?php echo base_url(); ?>ProductDetails/setCart';
         $.post(url, {
                 'Name': name,
                 'Price': price,
                 'ImageURL': image,
-                'Quantity':1,
-                'TestId':this.id
+                'Quantity': 1,
+                'TestId': this.id
             },
             function(data, status) {
                 let htmlGet = data[1];
@@ -625,11 +645,15 @@ $this->load->view('Header');
         let image = $(`#Image${this.id}`).attr("data-src")
         let url = '<?php echo base_url(); ?>ProductDetails/LoginsetCart';
         let url2 = '<?php echo base_url(); ?>';
-        $.post(url,{'Name':name,'Price':price,'ImageURL':image},
-        function(data, status) {
-        
-            window.location = `${url2}Login`  
-        })
+        $.post(url, {
+                'Name': name,
+                'Price': price,
+                'ImageURL': image
+            },
+            function(data, status) {
+
+                window.location = `${url2}Login`
+            })
     });
 </script>
 <!--End Quick View popup-->

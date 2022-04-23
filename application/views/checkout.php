@@ -336,7 +336,7 @@ if(isset($_SESSION['Products'])){
                            
                           
                             <div class="actionRow">
-                                    <div><input type="submit" class="btn btn-secondary btn--small" value="Place Order"></div>
+                                    <div><input type="submit" class="btn btn-secondary btn--small" value="Place Order" style="border-radius: 10px;"></div>
                                 </div>
                         </form>
                         
@@ -395,7 +395,6 @@ $.ajax({
     url: url,
     type: "POST",
     success: function(data) {
-        console.log("Data",data)
         document.getElementById("namer").value = data[0]['fullname'];
 document.getElementById("emailr").value = data[0]['Email'];
 document.getElementById("telr").value = data[0]['Contactno'];

@@ -140,7 +140,6 @@
         "sdate": sdate,
         "edate": edate
       }, function(data, status) {
-        console.log("Data: " + data);
         var table = '';
         table += `   <table id="example" class="table table-striped table-bordered" style="width:100%">
      

@@ -198,10 +198,8 @@ $this->load->view('Footer');
         $(`#Total${index}`).text(total)
         let grandTotal = 0;
         for(let i=0;i<ArraySize;i++){
-            console.log("Inner Total")
             grandTotal += parseInt($(`#Total${i}`).text())
         }
-        console.log("Total", grandTotal)
         $(`#grandTotal`).text("$ "+grandTotal)
         $(`#subTotal`).text("$ "+grandTotal)
    

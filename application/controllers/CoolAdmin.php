@@ -41,7 +41,25 @@ class CoolAdmin extends CI_Controller
  }
 
  public function tracking(){
-  $this->load->view('cool_admin/tracking');
+  $id=$this->session->userdata('user_id');
+  $data['invoices']=$this->CoolAdmin_model->trackRecord($id);
+  
+  $this->load->view('cool_admin/tracking',$data);
+ }
+
+
+ public function invoice(){
+  $id=$this->session->userdata('user_id');
+  $data['invoices']=$this->CoolAdmin_model->trackRecord($id);
+  
+  $this->load->view('cool_admin/InvoiceDashboard',$data);
+ }
+
+ public function CSRFilteration(){
+  $id=$this->session->userdata('user_id');
+  $data['invoices']=$this->CoolAdmin_model->trackRecord($id);
+  
+  $this->load->view('cool_admin/CSRFilteration',$data);
  }
 
  public function history(){
@@ -52,6 +70,7 @@ class CoolAdmin extends CI_Controller
         $Day = date('d');
         $CurrentDate = $Year . '-' . $Month . '-' . $Day;
   $data['tabular']=$this->CoolAdmin_model->historyTable($id,$CurrentDate,$CurrentDate);
+  
   foreach($data['tabular'] as $tab){
    $count=$count+$tab['Amount'];
   }
@@ -77,7 +96,7 @@ class CoolAdmin extends CI_Controller
   $id=$this->session->userdata('user_id');
   $count=0;
   $data['tableData']=$this->CoolAdmin_model->historyTable($id,$_POST['sdate'],$_POST['edate']);
-
+  
   foreach($data['tableData'] as $table){
   $count=$count+$table['Amount'];
   }
@@ -87,4 +106,15 @@ $data['count']=$count;
   ->set_status_header(200)
   ->set_output(json_encode($data));
  }
+
+ public function trackRecord(){
+  $data=$this->CoolAdmin_model->track($_POST['invoice']);
+  
+ 
+  return $this->output
+  ->set_content_type('application/json')
+  ->set_status_header(200)
+  ->set_output(json_encode($data));
+ }
+
 }

@@ -10,7 +10,7 @@
   <meta name="description" content="description">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Favicon -->
-  <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/Forward.png" />
+  <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/LabLogo.png" />
   <!-- Plugins CSS -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/plugins.css">
   <!-- Bootstap CSS -->
@@ -63,7 +63,7 @@
           <div class="col-10 col-sm-8 col-md-5 col-lg-4">
 
 
-            <p class="phone-no"><i class="anm anm-phone-s"></i> +052-3571801</p>
+            <p class="phone-no"><i class="anm anm-phone-s"></i> +92-523571801</p>
           </div>
           <div class="col-sm-4 col-md-4 col-lg-4 d-none d-lg-none d-md-block d-lg-block">
             <!-- <div class="text-center">
@@ -101,7 +101,7 @@
           <!--Desktop Logo-->
           <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
             <a href="<?php echo base_url(); ?>test">
-              <img src="<?php echo base_url(); ?>assets/images/Forward.png" width="100" alt="Forward Sports Pvt Ltd." title="Forward Sports Pvt Ltd." />
+              <img src="<?php echo base_url(); ?>assets/images/LabLogo.png" width="100" alt="Forward Sports Pvt Ltd." title="Forward Sports Pvt Ltd." />
             </a>
           </div>
           <!--End Desktop Logo-->
@@ -228,7 +228,7 @@
         <ul>
         <li class="lvl1 parent megamenu"><a href="#">TEST SERVICES <i class="anm anm-plus-l"></i></a>
           <ul>
-            <li><a href="cart-variant1.html" class="site-nav">BALLS <i class="anm anm-plus-l"></i></a>
+            <li><a href="#" class="site-nav">BALLS <i class="anm anm-plus-l"></i></a>
               <ul class="dropdown">
                 <?php
                 foreach ($getData as $keys) {
@@ -245,7 +245,7 @@
                 ?>
               </ul>
             </li>
-            <li><a href="compare-variant1.html" class="site-nav">BAGS <i class="anm anm-plus-l"></i></a>
+            <li><a href="#" class="site-nav">BAGS <i class="anm anm-plus-l"></i></a>
               <ul class="dropdown">
                 <?php
                 foreach ($getData as $keys) {
@@ -262,7 +262,7 @@
                 ?>
               </ul>
             </li>
-            <li><a href="compare-variant1.html" class="site-nav">RAW MATERIAL <i class="anm anm-plus-l"></i></a>
+            <li><a href="#" class="site-nav">RAW MATERIAL <i class="anm anm-plus-l"></i></a>
               <ul class="dropdown">
                 <?php
 
@@ -290,7 +290,7 @@
           <ul>
         <li class="lvl1 parent megamenu"><a href="#">OFFERED PACKAGES <i class="anm anm-plus-l"></i></a>
           <ul>
-            <li><a href="cart-variant1.html" class="site-nav">BALLS <i class="anm anm-plus-l"></i></a>
+            <li><a href="#" class="site-nav">BALLS <i class="anm anm-plus-l"></i></a>
               <ul class="dropdown">
                 <?php
                 foreach ($getData as $keys) {
@@ -307,7 +307,7 @@
                 ?>
               </ul>
             </li>
-            <li><a href="compare-variant1.html" class="site-nav">BAGS <i class="anm anm-plus-l"></i></a>
+            <li><a href="#" class="site-nav">BAGS <i class="anm anm-plus-l"></i></a>
               <ul class="dropdown">
                 <?php
                 foreach ($getData as $keys) {
@@ -324,7 +324,7 @@
                 ?>
               </ul>
             </li>
-            <li><a href="compare-variant1.html" class="site-nav">RAW MATERIAL <i class="anm anm-plus-l"></i></a>
+            <li><a href="#" class="site-nav">RAW MATERIAL <i class="anm anm-plus-l"></i></a>
               <ul class="dropdown">
                 <?php
 

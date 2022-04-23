@@ -139,7 +139,7 @@ $("#payment-button").click(function(e){
 
   alert("User Updated Successfully!")
   location.reload();
-    console.log(data)
+
   });
 });
 

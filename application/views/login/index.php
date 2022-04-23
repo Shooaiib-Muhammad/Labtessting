@@ -3,7 +3,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Forward Sports Pvt Ltd.</title>
-  <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/Forward.png" />
+  <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/LabLogo.png" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/1788c719dd.js" crossorigin="anonymous"></script>
@@ -1123,7 +1123,7 @@
     <div class="container__panels">
       <div class="panel panel__left">
         <div class="panel__content">
-        <img src="<?php echo base_url(); ?>assets/images/Forward.png" width="100" alt="Forward Sports Pvt Ltd." title="Forward Sports Pvt Ltd." />
+        <img src="<?php echo base_url(); ?>assets/images/LabLogo.png" width="100" alt="Forward Sports Pvt Ltd." title="Forward Sports Pvt Ltd." />
            
           <h3 class="panel__title">Are You New to our Site? Click here to Sign Up</h3> <br>
         
@@ -1135,7 +1135,7 @@
       </div>
       <div class="panel panel__right">
         <div class="panel__content">
-        <img src="<?php echo base_url(); ?>assets/images/Forward.png" width="100" alt="Forward Sports Pvt Ltd." title="Forward Sports Pvt Ltd." />
+        <img src="<?php echo base_url(); ?>assets/images/LabLogo.png" width="100" alt="Forward Sports Pvt Ltd." title="Forward Sports Pvt Ltd." />
            
           <h3 class="panel__title">Already have an account? Click here to Sign In</h3>
           <br>

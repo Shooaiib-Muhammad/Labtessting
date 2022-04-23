@@ -11,7 +11,7 @@ $this->load->view('Header');
         <div class="home-slideshow">
             <div class="slide">
                 <div class="blur-up lazyload bg-size">
-                    <img class="blur-up lazyload bg-img" data-src="assets/images/slideshow-banners/belle-banner1.jpg" src="<?php echo base_url(); ?>assets/images/slideshow-banners/bg4.jpg" alt="Looking Forward to Quality" title="Looking Forward to Quality" />
+                    <img class="blur-up lazyload bg-img" data-src="assets/images/slideshow-banners/belle-banner1.jpg" src="<?php echo base_url(); ?>assets/images/slideshow-banners/bg3.jpg" alt="Looking Forward to Quality" title="Looking Forward to Quality" />
                     <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                         <div class="slideshow__text-content bottom">
                             <div class="wrap-caption center">
@@ -25,7 +25,7 @@ $this->load->view('Header');
             </div>
             <div class="slide">
                 <div class="blur-up lazyload bg-size">
-                    <img class="blur-up lazyload bg-img" data-src="assets/images/slideshow-banners/belle-banner2.jpg" src="<?php echo base_url(); ?>assets/images/slideshow-banners/bg3.jpg" alt="Looking Forward to Quality" title="Looking Forward to Quality" />
+                    <img class="blur-up lazyload bg-img" data-src="assets/images/slideshow-banners/belle-banner2.jpg" src="<?php echo base_url(); ?>assets/images/slideshow-banners/bg4.jpg" alt="Looking Forward to Quality" title="Looking Forward to Quality" />
                     <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                         <div class="slideshow__text-content bottom">
                             <div class="wrap-caption center">
@@ -111,16 +111,7 @@ $this->load->view('Header');
                                             <button class="btn cartIcon btn-addto-cart Login LoginAddToCartButtonPackage" id='<?php echo $TestID; ?>' type="button" tabindex="0"><i class="icon anm anm-bag-l"></i></button>
                                         </form> 
                                         <?php } ?>
-                                        <div class="wishlist-btn">
-                                            <a class="wishlist add-to-wishlist" href="wishlist.html">
-                                                <i class="icon anm anm-heart-l"></i>
-                                            </a>
-                                        </div>
-                                        <div class="compare-btn">
-                                            <a class="compare add-to-compare" href="compare.html" title="Add to Compare">
-                                                <i class="icon anm anm-random-r"></i>
-                                            </a>
-                                        </div>
+                                        
                                     </div>
                                     <!-- end product button -->
                                 </div>
@@ -634,7 +625,7 @@ $this->load->view('Footer');
         let name = $(`#Name${this.id}`).text()
         let price = $(`#Price${this.id}`).text()
         let image = $(`#Image${this.id}`).attr("data-src")
-        console.log("name", this.id)
+     
         let url = '<?php echo base_url(); ?>ProductDetails/setCart';
         $.post(url, {
                 'Name': name,

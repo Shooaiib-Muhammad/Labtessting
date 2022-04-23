@@ -1,4 +1,6 @@
 <?php
+// print_r($getPrddetails);
+// die;
 $this->load->view('Header');
 ?>
 <!--End Header-->
@@ -11,16 +13,24 @@ $this->load->view('Header');
 <!--Body Content-->
 <?php
 $name = $getPrddetails[0]['Name'];
-$StandardPrice = $getPrddetails[0]['StandardPrice'];
-$Image = $getPrddetails[0]['Image'];
-$method = $getPrddetails[0]['Method'];
+$sPrice = $getPrddetails[0]['StandardPrice'];
 $StandardDesc = $getPrddetails[0]['StandardDesc'];
+$StandardDays = $getPrddetails[0]['SDays'];
+
+$premiumPrice = $getPrddetails[0]['PremimumPrice'];
+$premiumDesc = $getPrddetails[0]['PermimumDesc'];
+$premiumDays = $getPrddetails[0]['PDays'];
+$Image = $getPrddetails[0]['Image'];
+$Method = $getPrddetails[0]['Method'];
+$Sample_Quantity = $getPrddetails[0]['Sample_Quantity'];
 $TestID = $getPrddetails[0]['TestID'];
+
+
 // echo $Image;
 
 ?>
 <input class="cart__qty-input" type="text" style="display: none;" id="TestId" name="updates[]" value="<?php echo $TestID ?>" pattern="[0-9]*">
-<input class="cart__qty-input" type="text" style="display: none;" id="OriginalPrice" name="updates[]" value="<?php echo $StandardPrice; ?>" pattern="[0-9]*">
+<input class="cart__qty-input" type="text" style="display: none;" id="OriginalPrice" name="updates[]" value="<?php echo $sPrice; ?>" pattern="[0-9]*">
 
 <div id="page-content">
     <div class="collection-header">
@@ -51,7 +61,9 @@ $TestID = $getPrddetails[0]['TestID'];
                 // print_r($getPrddetails);
                 ?>
                 <div class="row">
+
                     <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+
                         <div class="product-details-img product-single__photos bottom">
                             <div class="zoompro-wrap product-zoom-right pl-20">
                                 <div class="zoompro-span">
@@ -87,6 +99,7 @@ $TestID = $getPrddetails[0]['TestID'];
                         </div>
                         <!--Product Feature-->
                         <div class="prFeatures">
+
                             <div class="row">
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 feature">
                                     <img src="<?php echo base_url(); ?>assets/images/credit-card.png" alt="Safe Payment" title="Safe Payment" />
@@ -113,20 +126,35 @@ $TestID = $getPrddetails[0]['TestID'];
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <input type="radio" id="html" class="form-check-input" name="fav_language" value="Standard" checked onclick="standardSet('<?php echo $TestID; ?>')">
+                                <label for="html" class="form-check-label">Standard</label><br>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="radio" id="css" name="fav_language" class="form-check-input" value="Urgent" class="ml-4" onclick="premiumSet('<?php echo $TestID; ?>')">
+                                <label for="css" class="form-check-label">Premium</label><br>
+                            </div>
+                        </div>
+                        <br>
                         <div class="product-single__meta">
                             <h1 class="product-single__title" id='Name<?php echo $TestID; ?>'><?php echo $name; ?></h1>
-                            <div class="product-nav clearfix">
+                            <!-- <div class="product-nav clearfix">
                                 <a href="#" class="next" title="Next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                            </div>
+                            </div> -->
 
                             <p class="product-single__price product-single__price-product-template">
 
                                 <span class="product-price__price product-price__price-product-template product-price__sale product-price__sale--single">
-                                    <span id="ProductPrice-product-template">$ <span class="money" id='Price<?php echo $TestID; ?>'> <?php echo $StandardPrice ?></span></span>
+                                    <span id="ProductPrice-product-template">Duration : <span class="money" id='Days<?php echo $TestID; ?>'> <?php echo $StandardDays ?></span></span> | <span style="color:black;font-weight:normal; font-size:15px;">Sample Quantity</span>
+                                    <span id="ProductPrice-product-template"> <span class="money" id='sample<?php echo $TestID; ?>' style="color:black;font-weight:normal;font-size:15px;"> <?php echo $Sample_Quantity; ?></span></span><br>
+                                    <span id="ProductPrice-product-template">$<span class="money" id='Price<?php echo $TestID; ?>'> <?php echo $sPrice ?></span></span>
                                 </span>
                             </p>
                             <div class="product-single__description rte">
-                                <p> <?php echo $StandardDesc ?></p>
+                                <p> Method: <?php echo $Method ?></p>
+                                <span>Description:</span>
+                                <p id='desc<?php echo $TestID; ?>'> <?php echo $StandardDesc ?></p>
 
                                 <?php
 
@@ -269,7 +297,7 @@ $TestID = $getPrddetails[0]['TestID'];
 
                                     <!-- Start product button -->
                                     <form class="variants add" action="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>">
-                                        <button class="btn btn-addto-cart" type="button" tabindex="0">Select Options</button>
+                                        <button class="btn btn-addto-cart" type="button" tabindex="0">Add To Card</button>
                                     </form>
                                     <div class="button-set">
                                         <a href="#" title="Quick View" class="quick-view" tabindex="0">
@@ -446,5 +474,21 @@ $this->load->view('Footer');
                 window.location = `${url2}Login`
             })
     });
+
+    function standardSet(id) {
+        let quantity2 = $(`#Quantity2`).val()
+        $(`#Days${id}`).text('<?php echo $StandardDays; ?>')
+        $(`#desc${id}`).text('<?php echo $StandardDesc; ?>')
+        $(`#OriginalPrice`).val(<?php echo $sPrice; ?>)
+        $(`#Price${id}`).text(<?php echo $sPrice ?> * quantity2)
+    }
+
+    function premiumSet(id) {
+        let quantity2 = $(`#Quantity2`).val()
+        $(`#Days${id}`).text('<?php echo $premiumDays; ?>')
+        $(`#desc${id}`).text(<?php echo $premiumDesc; ?>)
+        $(`#OriginalPrice`).val(<?php echo $premiumPrice; ?>)
+        $(`#Price${id}`).text(<?php echo $premiumPrice ?> * quantity2)
+    }
 </script>
 <!--Footer-->

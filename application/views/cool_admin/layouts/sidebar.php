@@ -22,6 +22,14 @@
                                 <i class="far fa-check-square"></i>Tracking</a>
                         </li>
                         <li>
+                            <a href="<?php echo base_url() ?>CoolAdmin/invoice">
+                            <i class="fa fa-files-o"></i>Invoice</a>
+                        </li>
+                        <li>
+                            <a href="<?php echo base_url() ?>CoolAdmin/CSRFilteration">
+                            <i class="fa fa-user"></i>CSR</a>
+                        </li>
+                        <li>
                             <a href="<?php echo base_url() ?>Payment/verify">
                                 <i class="fas fa-calendar-alt"></i>Payment Verfication</a>
                         </li>

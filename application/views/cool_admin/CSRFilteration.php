@@ -195,7 +195,7 @@ p {
             <div class="container">
          
     <article class="card">
-        <header class="card-header"> My Orders / Tracking </header>
+        <header class="card-header"> CSR Filteration </header>
         <div class="row mb-6">
   <div class="col-sm-3">
        <label class="ml-2" for="invoice">Select Invoice:</label>
@@ -214,7 +214,7 @@ p {
   </div>
 </div>
         <div class="card-body mt-4">
-            <h6>Invoice ID: <span id="invoiceId"> </span></h6>
+            <!-- <h6>Invoice ID: <span id="invoiceId"> </span></h6>
             <article class="card">
                 <div class="card-body row">
                     <div class="col"> <strong>Supplier Name:</strong> <br><div id="supplier"> </div> </div>
@@ -234,8 +234,8 @@ p {
             </div>
             <hr>
            
-            <!-- <hr> <a href="#" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to orders</a> -->
-        </div>
+             <hr> <a href="#" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to orders</a> -->
+        </div> 
     </article>
 </div>
             </div>
@@ -251,71 +251,8 @@ p {
     <script>
 
 function search(){
-    $("#track").html(' ')
     invoice=document.getElementById('invoice').value;
-    url="<?php echo base_url('CoolAdmin/trackRecord') ?>"
-    $.ajax({
-    url: url,
-    type: "POST",
-    data:{"invoice":invoice},
-    success: function(data) {
-
-        var track='';
-
-        if(data[0]['Request_Status']=='Result Uploaded'){
-        track+=`<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Request Generated</span> </div>
-                <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Evidence Uploaded</span> </div>
-                <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verify </span> </div>
-                <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Proceed</span> </div>
-                <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Result Uploaded</span> </div>`
-
-         $("#track").append(track);
-        } else if(data[0]['Request_Status']=='Evidence Uploaded') {
-
-            track+=`<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Request Generated</span> </div>
-                <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Evidence Uploaded</span> </div>
-                <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verify </span> </div>
-                <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Proceed</span> </div>
-                <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Result Uploaded</span> </div>`
-
-         $("#track").append(track);
-        }else if(data[0]['Request_Status']=='Payment Proceed'){
-            track+=`<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Request Generated</span> </div>
-                <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Evidence Uploaded</span> </div>
-                <div class="step active "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verify </span> </div>
-                <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Proceed</span> </div>
-                <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Result Uploaded</span> </div>`
-
-         $("#track").append(track);
-        }else if(data[0]['Request_Status']=='Proceed to Lab'){
-            track+=`<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Request Generated</span> </div>
-                <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Evidence Uploaded</span> </div>
-                <div class="step active "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verify </span> </div>
-                <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Proceed</span> </div>
-                <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Result Uploaded</span> </div>`
-
-         $("#track").append(track);
-        }else{
-            track+=`<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Request Generated</span> </div>
-                <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Evidence Uploaded</span> </div>
-                <div class="step  "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verify </span> </div>
-                <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Proceed</span> </div>
-                <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Result Uploaded</span> </div>`
-
-         $("#track").append(track);
-        }
-
-        document.getElementById('supplier').innerHTML=data[0]['Supplier']
-        document.getElementById('name').innerHTML=data[0]['Name_of_recipient']
-        document.getElementById('email').innerHTML=data[0]['REmail']
-        document.getElementById('status').innerHTML=data[0]['Request_Status']
-        document.getElementById('amount').innerHTML=data[0]['Amount']
-        document.getElementById('request_date').innerHTML=data[0]['RequestDate']
-        document.getElementById('invoiceId').innerHTML=data[0]['TID']
-        
-    }
-
-});
+    location.href = `<?php echo base_url(); ?>CSR/CSRFiltered/${invoice}`;
 }
 
     </script>

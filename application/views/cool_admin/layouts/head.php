@@ -11,7 +11,7 @@
 
     <!-- Title Page-->
     <title>Dashboard</title>
-
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/LabLogo.png" />
     <!-- Fontfaces CSS-->
     <link href="<?php echo base_url() ?>Assets/cool_admin/css/font-face.css" rel="stylesheet" media="all">
     <link href="<?php echo base_url() ?>Assets/cool_admin/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">

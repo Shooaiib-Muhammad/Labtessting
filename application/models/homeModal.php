@@ -100,16 +100,19 @@ if(count($testNames)>1){
  }else{
    $testQuantitiesConvert = $testQuantities[0];
  }
-
+if($totalPrice == 0){
+  return false;
+}else{
   $query = $this->db->query("INSERT INTO dbo.tbl_Outward_Transaction ( TestID ,TestName ,TAmount ,TQuantity ,Amount ,UserID  ,RequestDate,Name_of_recipient,REmail,RContact,RFax,requirements ) VALUES ( '$testIdsConvert' ,'$testNamesConvert' ,'$testAmountsConvert' ,'$testQuantitiesConvert' ,$totalPrice ,'$user_id' ,'$date','$namer','$emailr','$telr','$faxr','$requirement' )");
   if($query){
     $_SESSION['Products'] = [];
-    return ;
+    $Id = $this->db->insert_id();
+    return $Id;
   }
   else{
-    return;
+    return false;
   }
-  
+}
 }
 
 public function customerInfo($id){
@@ -119,6 +122,21 @@ public function customerInfo($id){
     return $query->result_array();
 }
 
+public function CSR($id){
+  $query = $this->db->query("                SELECT        TID, dbo.view_Fit_Customer_request.*
+  FROM            dbo.view_Fit_Customer_request
+  WHERE        (TID = '$id')
+  ");
+    return $query->result_array();
+}
+
+public function InvoiceData($id){
+  $query = $this->db->query("SELECT        dbo.view_request_invoice.*, TID
+  FROM            dbo.view_request_invoice
+  WHERE        (TID = '$id')
+  ");
+    return $query->result_array();
+}
 
 }
 

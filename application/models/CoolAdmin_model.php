@@ -5,12 +5,12 @@ class CoolAdmin_model extends CI_Model
 {
 
     public function __construct()
-	{
-		parent::__construct();
-		$this->load->database();
+  {
+    parent::__construct();
+    $this->load->database();
    $this->load->library('session');
         
-	}
+  }
 
  public function updateUser($id,$email,$supplier,$number,$city,$country){
   $query = $this->db->query("UPDATE tbl_Outward_Users
@@ -80,6 +80,31 @@ class CoolAdmin_model extends CI_Model
   $query = $this->db->query("SELECT        Invoice_ID, RequestDate, TestName, Amount, Request_Status
   FROM            dbo.view_Outward_transaction
   WHERE        (UserID = $id) AND (RequestDate BETWEEN '$newformat' AND '$newformat1')
+  
+  ");
+    return $query->result_array();
+ }
+
+ public function trackRecord($id){
+  $query = $this->db->query("SELECT        'FS-' + CAST(dbo.tbl_Outward_Transaction.UserID AS varchar(100)) + '-' + CAST(DAY(dbo.tbl_Outward_Transaction.RequestDate) AS varchar(50)) + + CAST(MONTH(dbo.tbl_Outward_Transaction.RequestDate) AS varchar(50)) + + CAST(RIGHT (YEAR(dbo.tbl_Outward_Transaction.RequestDate), 2) AS varchar(50)) + '-' + CAST(dbo.tbl_Outward_Transaction.TID AS varchar(100)) AS invoice_ID, TID
+  FROM            dbo.tbl_Outward_Transaction
+  WHERE        (UserID = $id)
+  
+  
+  ");
+    return $query->result_array();
+ }
+
+ public function track($invoice_id){
+  $query = $this->db->query("SELECT        dbo.tbl_Outward_Transaction.TID, dbo.tbl_Outward_Transaction.Amount, dbo.tbl_Outward_Transaction.CSSNo, dbo.tbl_Outward_Transaction.RequestDate, dbo.tbl_Outward_Transaction.Evidence_pic, 
+  dbo.tbl_Outward_Transaction.EDate, dbo.tbl_Outward_Transaction.AccountsStatus, dbo.tbl_Outward_Transaction.AccountsverfiyDate, dbo.tbl_Outward_Transaction.labStatus, dbo.tbl_Outward_Transaction.labProceedDate, 
+  dbo.tbl_Outward_Transaction.RDate, dbo.tbl_Outward_Transaction.Result, dbo.tbl_Outward_Transaction.Request_Status, dbo.tbl_Outward_Transaction.Name_of_recipient, dbo.tbl_Outward_Transaction.REmail, 
+  dbo.tbl_Outward_Users.Supplier, dbo.tbl_Outward_Users.Country, dbo.tbl_Outward_Users.Contactno
+FROM            dbo.tbl_Outward_Transaction INNER JOIN
+  dbo.tbl_Outward_Users ON dbo.tbl_Outward_Transaction.UserID = dbo.tbl_Outward_Users.UserID
+WHERE        (dbo.tbl_Outward_Transaction.TID = $invoice_id)
+
+  
   
   ");
     return $query->result_array();

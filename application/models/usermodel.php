@@ -40,6 +40,7 @@ public function loginn($username, $password)
         $result = $query->row();
         $session_data = array(
             'user_id' => $result->UserID,
+            'user_name' => $result->fullname,
             'user_email' => $result->Email,
             'userStus' => 1,
             'Status' => $result->Status,
