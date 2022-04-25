@@ -229,7 +229,7 @@
             </article>
             <div class="track" id="track">
                 <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Request Generated</span> </div>
-                <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Evidence Uploaded</span> </div>
+                <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Bank Recipient Uploaded</span> </div>
                 <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verify </span> </div>
                 <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Proceed</span> </div>
                 <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Result Uploaded</span> </div>

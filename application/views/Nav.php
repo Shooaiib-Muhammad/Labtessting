@@ -18,7 +18,7 @@
                         <ul class="subLinks">
 
                            <li class="lvl-2"><a href="<?php echo base_url(); ?>innovation" class="site-nav lvl-2">Innovations</a></li>
-               
+
 
                         </ul>
                      </li>
@@ -26,19 +26,19 @@
                      <li class="grid__item lvl-1 col-md-3 col-lg-3"><a href="#" class="site-nav lvl-1">Organizations Hierarchy </a>
                         <ul class="subLinks">
 
-                          
-                           <li class="lvl-2"><a href="#" class="site-nav lvl-2">Organizations Hierarchy</a></li>
 
-                         
+                           <li class="lvl-2"><a href="<?php echo base_url(); ?>Organisation" class="site-nav lvl-2">Organizations Hierarchy</a></li>
+
+
 
                         </ul>
                      </li>
                      <li class="grid__item lvl-1 col-md-3 col-lg-3"><a href="#" class="site-nav lvl-1">Lab Tour </a>
                         <ul class="subLinks">
 
-                        
 
-                           <li class="lvl-2"><a href="#" class="site-nav lvl-2">Lab Tour</a></li>
+
+                           <li class="lvl-2"><a href="<?php echo base_url(); ?>Labtour" class="site-nav lvl-2">Lab Tour</a></li>
 
                         </ul>
                      </li>

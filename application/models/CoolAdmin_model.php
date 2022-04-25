@@ -62,7 +62,7 @@ class CoolAdmin_model extends CI_Model
      return $query->result_array();
  }
  public function tabular($id){
-   $query = $this->db->query("SELECT        Invoice_ID, RequestDate, TestName, Amount, Request_Status
+   $query = $this->db->query("SELECT      dbo.view_Outward_transaction.*
    FROM            dbo.view_Outward_transaction
    WHERE        (UserID = $id)
    
@@ -77,7 +77,7 @@ class CoolAdmin_model extends CI_Model
   $time1 = strtotime($edate);
   $newformat = date('d/m/Y', $time);
   $newformat1 = date('d/m/Y', $time1);
-  $query = $this->db->query("SELECT        Invoice_ID, RequestDate, TestName, Amount, Request_Status
+  $query = $this->db->query("SELECT       dbo.view_Outward_transaction.*
   FROM            dbo.view_Outward_transaction
   WHERE        (UserID = $id) AND (RequestDate BETWEEN '$newformat' AND '$newformat1')
   

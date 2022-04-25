@@ -225,8 +225,8 @@
         <li class="lvl1 parent megamenu"><a href="#">EXPLORE <i class="anm anm-plus-l"></i></a>
           <ul>
             <li><a href="<?php echo base_url(); ?>innovation" class="site-nav">Innovations</a></li>
-            <li><a href="#" class="site-nav">Organization Hierarchy</a></li>
-            <li><a href="#" class="site-nav">Lab Tour </a></li>
+            <li><a href="<?php echo base_url(); ?>Organisation" class="site-nav">Organization Hierarchy</a></li>
+            <li><a href="<?php echo base_url(); ?>Labtour" class="site-nav">Lab Tour </a></li>
           </ul>
         </li>
         <ul>

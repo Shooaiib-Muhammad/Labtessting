@@ -238,9 +238,11 @@
                                 </div>
                             </article>
                             <div class="track" id="track">
-                                <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Request Generated</span> </div>
-                                <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Evidence Uploaded</span> </div>
-                                <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verify </span> </div>
+
+                                <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Bank Recipient Uploaded</span> </div>
+                                <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verfication Done </span> </div>
+                                <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Sample Received </span> </div>
+
                                 <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Proceed</span> </div>
                                 <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Result Uploaded</span> </div>
                             </div>
@@ -276,42 +278,51 @@
                     var track = '';
 
                     if (data[0]['Request_Status'] == 'Result Uploaded') {
-                        track += `<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Request Generated</span> </div>
-                <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Evidence Uploaded</span> </div>
-                <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verify </span> </div>
+                        track += `<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Bank Recipient Uploaded</span> </div>
+                <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verfication Done </span> </div>
+                 <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Sample Received </span> </div>
                 <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Proceed</span> </div>
                 <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Result Uploaded</span> </div>`
 
                         $("#track").append(track);
-                    } else if (data[0]['Request_Status'] == 'Evidence Uploaded') {
+                    } else if (data[0]['Request_Status'] == 'Bank Recipient Uploaded') {
 
-                        track += `<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Request Generated</span> </div>
-                <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Evidence Uploaded</span> </div>
-                <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verify </span> </div>
+                        track += `<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Bank Recipient Uploaded</span> </div>
+                <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verfication Done </span> </div>
+                   <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Sample Received </span> </div>
                 <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Proceed</span> </div>
                 <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Result Uploaded</span> </div>`
 
                         $("#track").append(track);
-                    } else if (data[0]['Request_Status'] == 'Payment Proceed') {
-                        track += `<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Request Generated</span> </div>
-                <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Evidence Uploaded</span> </div>
-                <div class="step active "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verify </span> </div>
+                    } else if (data[0]['Request_Status'] == 'Accounts Verfication Done') {
+                        track += `<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Bank Recipient Uploaded</span> </div>
+                <div class="step active "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verfication Done </span> </div>
+                   <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Sample Received </span> </div>
                 <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Proceed</span> </div>
                 <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Result Uploaded</span> </div>`
 
                         $("#track").append(track);
-                    } else if (data[0]['Request_Status'] == 'Proceed to Lab') {
-                        track += `<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Request Generated</span> </div>
-                <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Evidence Uploaded</span> </div>
-                <div class="step active "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verify </span> </div>
+
+                    } else if (data[0]['Request_Status'] == 'Sample Received') {
+                        track += `<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Bank Recipient Uploaded</span> </div>
+                <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verfication Done </span> </div>
+                   <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Sample Received </span> </div>
+                <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Proceed</span> </div>
+                <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Result Uploaded</span> </div>`
+
+                        $("#track").append(track);
+                    } else if (data[0]['Request_Status'] == 'Proceed to lab') {
+                        track += `<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Bank Recipient Uploaded</span> </div>
+                <div class="step active "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verfication Done </span> </div>
+                   <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Sample Received </span> </div>
                 <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Proceed</span> </div>
                 <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Result Uploaded</span> </div>`
 
                         $("#track").append(track);
                     } else {
-                        track += `<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Request Generated</span> </div>
-                <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Evidence Uploaded</span> </div>
-                <div class="step  "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verify </span> </div>
+                        track += `<div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Bank Recipient Uploaded</span> </div>
+                <div class="step  "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Accounts Verfication Done </span> </div>
+                   <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Sample Received </span> </div>
                 <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Proceed</span> </div>
                 <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Result Uploaded</span> </div>`
 

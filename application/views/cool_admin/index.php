@@ -1,8 +1,8 @@
-
- <?php  $this->load->view('cool_admin/layouts/head.php');?>
+<?php $this->load->view('cool_admin/layouts/head.php'); ?>
 <style>
-    
+
 </style>
+
 <body class="animsition">
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
@@ -21,21 +21,21 @@
                     </div>
                 </div>
             </div>
-            
-            <?php  $this->load->view('cool_admin/layouts/nav.php');?>
+
+            <?php $this->load->view('cool_admin/layouts/nav.php'); ?>
         </header>
         <!-- END HEADER MOBILE-->
 
         <!-- MENU SIDEBAR-->
-        
 
-        <?php  $this->load->view('cool_admin/layouts/sidebar.php');?>
+
+        <?php $this->load->view('cool_admin/layouts/sidebar.php'); ?>
         <!-- END MENU SIDEBAR-->
 
         <!-- PAGE CONTAINER-->
         <div class="page-container">
             <!-- HEADER DESKTOP-->
-            <?php  $this->load->view('cool_admin/layouts/header.php');?>
+            <?php $this->load->view('cool_admin/layouts/header.php'); ?>
             <!-- HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
@@ -46,7 +46,7 @@
                             <div class="col-md-12">
                                 <div class="overview-wrap">
                                     <h2 class="title-1">overview</h2>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -59,8 +59,8 @@
                                                 <i class="zmdi zmdi-account-o"></i>
                                             </div>
                                             <div class="text">
-                                                <h2><?php echo $totalRequests?$totalRequests[0]['Invoice_ID']:'0'; ?></h2>
-                                                <span><a style="color:#FFFFFF99" href="<?php echo base_url()?>CoolAdmin/totalrequests">Total Requests</a></span>
+                                                <h2><?php echo $totalRequests ? $totalRequests[0]['Invoice_ID'] : '0'; ?></h2>
+                                                <span><a style="color:#FFFFFF99" href="<?php echo base_url() ?>CoolAdmin/totalrequests">Total Requests</a></span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -77,8 +77,8 @@
                                                 <i class="zmdi zmdi-shopping-cart"></i>
                                             </div>
                                             <div class="text">
-                                                <h2><?php echo $pendingRequests?$pendingRequests[0]['Counter']:'0'; ?></h2>
-                                                <span> <a style="color:#FFFFFF99" href="<?php echo base_url()?>CoolAdmin/pendingRequests">Pending Requests</a></span>
+                                                <h2><?php echo $pendingRequests ? $pendingRequests[0]['Counter'] : '0'; ?></h2>
+                                                <span> <a style="color:#FFFFFF99" href="<?php echo base_url() ?>CoolAdmin/pendingRequests">Pending Requests</a></span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -95,8 +95,8 @@
                                                 <i class="zmdi zmdi-calendar-note"></i>
                                             </div>
                                             <div class="text">
-                                                <h2><?php echo $approved?$approved[0]['Counter']:'0'; ?></h2>
-                                                <span><a style="color:#FFFFFF99" href="<?php echo base_url()?>CoolAdmin/approved">Approved</a></span>
+                                                <h2><?php echo $approved ? $approved[0]['Counter'] : '0'; ?></h2>
+                                                <span><a style="color:#FFFFFF99" href="<?php echo base_url() ?>CoolAdmin/approved">Approved</a></span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -113,8 +113,8 @@
                                                 <i class="zmdi zmdi-money"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>$<?php echo $payedAmount?$payedAmount[0]['Amount']:'0'; ?></h2>
-                                                <span><a style="color:#FFFFFF99" href="<?php echo base_url()?>CoolAdmin/amountPayed">Amount Payed</a></span>
+                                                <h2>$<?php echo $payedAmount ? $payedAmount[0]['Amount'] : '0'; ?></h2>
+                                                <span><a style="color:#FFFFFF99" href="<?php echo base_url() ?>CoolAdmin/amountPayed">Amount Payed</a></span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -124,7 +124,7 @@
                                 </div>
                             </div>
                         </div>
-                      
+
                         <div class="row">
                             <div class="col-lg-12">
                                 <h2 class="title-1 m-b-25">Orders Detail</h2>
@@ -137,31 +137,34 @@
                                                 <th>Test Name</th>
                                                 <th class="text-right">Amount</th>
                                                 <th>Request_Status</th>
-                                                
+
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php foreach($tabular as $tab){?>
-                                            <tr>
-                                                <td><?php echo $tab['Invoice_ID'] ?></td>
-                                                <td><?php echo $tab['RequestDate'] ?></td>
-                                                <td><?php echo $tab['TestName'] ?></td>
-                                                <td>$<?php echo $tab['Amount'] ?></td>
-                                                <td><?php echo $tab['Request_Status'] ?></td>
-                                               
-                                            </tr>
-                                           <?php }?>
+                                            <?php foreach ($tabular as $tab) {
+
+                                                $TID = $tab['TID'];
+                                            ?>
+                                                <tr>
+                                                    <td><a href="<?php base_url(); ?>CSR/CSRFiltered/<?php echo $TID; ?>"><?php echo $tab['Invoice_ID'] ?></a> </td>
+                                                    <td><?php echo $tab['RequestDate'] ?></td>
+                                                    <td><?php echo $tab['TestName'] ?></td>
+                                                    <td>$<?php echo $tab['Amount'] ?></td>
+                                                    <td><?php echo $tab['Request_Status'] ?></td>
+
+                                                </tr>
+                                            <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                             <div class="col-lg-3">
-                            <div id="calendarContainer"></div>
-<div id="organizerContainer"></div>
+                                <div id="calendarContainer"></div>
+                                <div id="organizerContainer"></div>
                             </div>
                         </div>
-                      
-                        <?php  $this->load->view('cool_admin/layouts/copyright.php');?>
+
+                        <?php $this->load->view('cool_admin/layouts/copyright.php'); ?>
                     </div>
                 </div>
             </div>
@@ -171,18 +174,18 @@
 
     </div>
 
-    <?php  $this->load->view('cool_admin/layouts/foot.php');?>
+    <?php $this->load->view('cool_admin/layouts/foot.php'); ?>
     <script>
- $(document).ready(function() {
-    var table = $('#example').DataTable( {
-        lengthChange: false,
-        buttons: [ 'copy', 'excel', 'pdf' ]
-    } );
- 
-    table.buttons().container()
-        .appendTo( '#example_wrapper .col-md-6:eq(0)' );
-} );
- </script>
+        $(document).ready(function() {
+            var table = $('#example').DataTable({
+                lengthChange: false,
+                buttons: ['copy', 'excel', 'pdf']
+            });
+
+            table.buttons().container()
+                .appendTo('#example_wrapper .col-md-6:eq(0)');
+        });
+    </script>
 </body>
 
 </html>

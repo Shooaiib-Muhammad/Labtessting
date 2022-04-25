@@ -203,7 +203,7 @@
                                                             <th>Test Name</th>
                                                             <th>Amount</th>
                                                             <th>Evidence Status</th>
-                                                            <th>Evidence Uploaded Date</th>
+                                                            <th>Bank Recipient Uploaded Date</th>
 
 
                                                         </tr>
@@ -258,7 +258,7 @@
                                                             <th>Test Name</th>
                                                             <th>Amount</th>
                                                             <th>Evidence Status</th>
-                                                            <th>Evidence Uploaded Date</th>
+                                                            <th>Bank Recipient Uploaded Date</th>
                                                             <th>View Result</th>
                                                         </tr>
                                                     </thead>

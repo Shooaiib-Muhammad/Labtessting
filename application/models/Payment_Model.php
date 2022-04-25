@@ -50,7 +50,7 @@ public function paymentverfication($pictureFresh,$InvoiceID){
   // $query = $this->db->query("update Set CSSNo='$CssNo' , LabStatus=1,ProceedDate='$Date' Where Id= '$ID'");
   
   $query = $this->db->query("update  dbo . tbl_Outward_Transaction
-    Set  Evidence_pic='$pictureFresh',EDate='$Date',Request_Status='Evidence Uploaded' Where TID= '$InvoiceID'");
+    Set  Evidence_pic='$pictureFresh',EDate='$Date',Request_Status='Bank Recipient Uploaded' Where TID= '$InvoiceID'");
  // return  $query->result_array();
 
   if($query){
