@@ -236,7 +236,7 @@ $quantities = explode(",", $Invoice[0]['TQuantity']);
           <div class="email"><a href="mailto:<?php echo $this->session->userdata('user_email'); ?>"><?php echo $this->session->userdata('user_email'); ?></a></div>
         </div>
         <div id="invoice">
-          <h1><?php echo $Invoice[0]['Invoice_ID'] ?></h1>
+          <h6><?php echo $Invoice[0]['Invoice_ID'] ?></h6>
           <div class="date">Date of Invoice: <?php echo $Invoice[0]['RequestDate'] ?></div>
           <!-- <div class="date">Due Date: 30/06/2014</div> -->
         </div>
@@ -261,9 +261,9 @@ $quantities = explode(",", $Invoice[0]['TQuantity']);
               <td class="desc">
                 <h3><?php echo  $test; ?></h3>
               </td>
-              <td class="unit"><?php echo  $quantities[$j] ?></td>
-              <td class="qty">$ <?php echo  $prices[$j]; ?></td>
-              <td class="total">$ <?php echo ($quantities[$j] * $prices[$j]); ?></td>
+              <td class="unit text-center"><?php echo  $quantities[$j] ?></td>
+              <td class="qty  text-center">$ <?php echo  $prices[$j]; ?></td>
+              <td class="total  text-center">$ <?php echo ($quantities[$j] * $prices[$j]); ?></td>
             </tr>
           <?php
             ++$j;
