@@ -31,8 +31,9 @@ class Login extends CI_Controller {
 				$state=$this->input->post('state');
 				$requirement=$this->input->post('requirement');
 				$postal=$this->input->post('postal');
-         
-             $this->model->create($fullname,$Email,$Password,$Suppliername,$Country,$City,$PhoneNo,$state,$requirement,$postal);
+		$Address = $this->input->post('Address');
+
+             $this->model->create($fullname,$Email,$Password,$Suppliername,$Country,$City,$PhoneNo,$state,$requirement,$postal, $Address);
 			       
          
     }

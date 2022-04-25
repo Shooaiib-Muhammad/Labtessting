@@ -30,12 +30,16 @@
       box-shadow: 0 0 7px rgb(0 0 0 / 20%);
       -webkit-box-shadow: 0 0 7px rgb(0 0 0 / 20%);
     }
-    @media only screen and (max-width: 480px){
-.container-fluid, .home15-funiture-top .container-fluid, .home15-funiture-header .container-fluid {
-    padding: 0 20px;
-    background-color: black;
-    color: white;
-}
+
+    @media only screen and (max-width: 480px) {
+
+      .container-fluid,
+      .home15-funiture-top .container-fluid,
+      .home15-funiture-header .container-fluid {
+        padding: 0 20px;
+        background-color: black;
+        color: white;
+      }
     }
   </style>
 </head>
@@ -81,7 +85,7 @@
               <?php
               } else {
               ?>
-                <li><a href="<?php echo base_url(); ?>CoolAdmin"><i class="fa fa-user-circle" aria-hidden="true" style="font-size:medium;"></i> My Account</a></li>
+                <li><a href="<?php echo base_url(); ?>Dashboard"><i class="fa fa-user-circle" aria-hidden="true" style="font-size:medium;"></i> My Account</a></li>
                 <li><a href="<?php echo base_url(); ?>Login/logout">Logout</a></li>
               <?php
               }
@@ -107,7 +111,7 @@
           <!--End Desktop Logo-->
           <div class="col-2 col-sm-3 col-md-3 col-lg-8">
             <div class="d-block d-lg-none">
-              <button type="button" class="btn--link site-header__menu js-mobile-nav-toggle mobile-nav--open" >
+              <button type="button" class="btn--link site-header__menu js-mobile-nav-toggle mobile-nav--open">
                 <i class="icon anm anm-times-l" style="color: white;"></i>
                 <i class="anm anm-bars-r" style="color: white;"></i>
               </button>
@@ -128,7 +132,7 @@
           </div>
           <div class="col-2 col-sm-6 col-md-6 col-lg-2 d-block d-lg-none mobile-logo ml-0">
             <div class="logo">
-              
+
             </div>
           </div>
           <!--Mobile Logo-->
@@ -161,7 +165,7 @@
                       echo '<div class="product-details">';
                       echo '  <a href="' . base_url() . '/ProductDetails/RemoveCartItem?id=' . $index . '" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>
                <a class="pName" href="#">' . $products[0] . '</a>
-               <div class="wrapQtyBtn"><div class="qtyField"><span class="label" style="color:black">Qty:</span><a class="qtyBtn minus" data-src="'.$index.'" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a><input type="text" id="Quantity" name="quantity" value="'.$products[3].'" class="product-form__input qty" disabled><a class="qtyBtn plus" data-src="'.$index.'" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a></div></div>
+               <div class="wrapQtyBtn"><div class="qtyField"><span class="label" style="color:black">Qty:</span><a class="qtyBtn minus" data-src="' . $index . '" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a><input type="text" id="Quantity" name="quantity" value="' . $products[3] . '" class="product-form__input qty" disabled><a class="qtyBtn plus" data-src="' . $index . '" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a></div></div>
              
                <div class="priceRow">
                 <div class="product-price">
@@ -226,133 +230,133 @@
           </ul>
         </li>
         <ul>
-        <li class="lvl1 parent megamenu"><a href="#">TEST SERVICES <i class="anm anm-plus-l"></i></a>
-          <ul>
-            <li><a href="#" class="site-nav">BALLS <i class="anm anm-plus-l"></i></a>
-              <ul class="dropdown">
-                <?php
-                foreach ($getData as $keys) {
-                  if ($keys['TestType'] == 'Test') {
-                    if ($keys['Type'] == 'Balls') {
-                      $Name = $keys['Name'];
-                      $TestID = $keys['TestID'];
-                ?>
-                      <li><a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="site-nav"><?php echo $Name; ?></a></li>
-                <?php
+          <li class="lvl1 parent megamenu"><a href="#">TEST SERVICES <i class="anm anm-plus-l"></i></a>
+            <ul>
+              <li><a href="#" class="site-nav">BALLS <i class="anm anm-plus-l"></i></a>
+                <ul class="dropdown">
+                  <?php
+                  foreach ($getData as $keys) {
+                    if ($keys['TestType'] == 'Test') {
+                      if ($keys['Type'] == 'Balls') {
+                        $Name = $keys['Name'];
+                        $TestID = $keys['TestID'];
+                  ?>
+                        <li><a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="site-nav"><?php echo $Name; ?></a></li>
+                  <?php
+                      }
                     }
                   }
-                }
-                ?>
-              </ul>
-            </li>
-            <li><a href="#" class="site-nav">BAGS <i class="anm anm-plus-l"></i></a>
-              <ul class="dropdown">
-                <?php
-                foreach ($getData as $keys) {
-                  if ($keys['TestType'] == 'Test') {
-                    if ($keys['Type'] == 'Bags') {
-                      $Name = $keys['Name'];
-                      $TestID = $keys['TestID'];
-                ?>
-                      <li><a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="site-nav"><?php echo $Name; ?></a></li>
-                <?php
+                  ?>
+                </ul>
+              </li>
+              <li><a href="#" class="site-nav">BAGS <i class="anm anm-plus-l"></i></a>
+                <ul class="dropdown">
+                  <?php
+                  foreach ($getData as $keys) {
+                    if ($keys['TestType'] == 'Test') {
+                      if ($keys['Type'] == 'Bags') {
+                        $Name = $keys['Name'];
+                        $TestID = $keys['TestID'];
+                  ?>
+                        <li><a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="site-nav"><?php echo $Name; ?></a></li>
+                  <?php
+                      }
                     }
                   }
-                }
-                ?>
-              </ul>
-            </li>
-            <li><a href="#" class="site-nav">RAW MATERIAL <i class="anm anm-plus-l"></i></a>
-              <ul class="dropdown">
-                <?php
+                  ?>
+                </ul>
+              </li>
+              <li><a href="#" class="site-nav">RAW MATERIAL <i class="anm anm-plus-l"></i></a>
+                <ul class="dropdown">
+                  <?php
 
 
-                foreach ($getData as $keys) {
-                  if ($keys['TestType'] == 'Test') {
-                    if ($keys['Type'] == 'Raw Material') {
-                      $Name = $keys['Name'];
-                      $TestID = $keys['TestID'];
-                ?>
-                      <li><a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="site-nav"><?php echo $Name; ?></a></li>
-                <?php
+                  foreach ($getData as $keys) {
+                    if ($keys['TestType'] == 'Test') {
+                      if ($keys['Type'] == 'Raw Material') {
+                        $Name = $keys['Name'];
+                        $TestID = $keys['TestID'];
+                  ?>
+                        <li><a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="site-nav"><?php echo $Name; ?></a></li>
+                  <?php
+                      }
                     }
                   }
-                }
-                ?>
+                  ?>
 
-              </ul>
-            </li>
-          </ul>
+                </ul>
+              </li>
+            </ul>
 
-        </li>
+          </li>
         </ul>
-        
-          <ul>
-        <li class="lvl1 parent megamenu"><a href="#">OFFERED PACKAGES <i class="anm anm-plus-l"></i></a>
-          <ul>
-            <li><a href="#" class="site-nav">BALLS <i class="anm anm-plus-l"></i></a>
-              <ul class="dropdown">
-                <?php
-                foreach ($getData as $keys) {
-                  if ($keys['TestType'] == 'Package') {
-                    if ($keys['Type'] == 'Balls') {
-                      $Name = $keys['Name'];
-                      $TestID = $keys['TestID'];
-                ?>
-                      <li><a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="site-nav"><?php echo $Name; ?></a></li>
-                <?php
-                    }
-                  }
-                }
-                ?>
-              </ul>
-            </li>
-            <li><a href="#" class="site-nav">BAGS <i class="anm anm-plus-l"></i></a>
-              <ul class="dropdown">
-                <?php
-                foreach ($getData as $keys) {
-                  if ($keys['TestType'] == 'Package') {
-                    if ($keys['Type'] == 'Bags') {
-                      $Name = $keys['Name'];
-                      $TestID = $keys['TestID'];
-                ?>
-                      <li><a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="site-nav"><?php echo $Name; ?></a></li>
-                <?php
-                    }
-                  }
-                }
-                ?>
-              </ul>
-            </li>
-            <li><a href="#" class="site-nav">RAW MATERIAL <i class="anm anm-plus-l"></i></a>
-              <ul class="dropdown">
-                <?php
 
-                foreach ($getData as $keys) {
-                  if ($keys['TestType'] == 'Package') {
-                    if ($keys['Type'] == 'Raw Material') {
-                      $Name = $keys['Name'];
-                      $TestID = $keys['TestID'];
-                ?>
-                      <li><a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="site-nav"><?php echo $Name; ?></a></li>
-                <?php
+        <ul>
+          <li class="lvl1 parent megamenu"><a href="#">OFFERED PACKAGES <i class="anm anm-plus-l"></i></a>
+            <ul>
+              <li><a href="#" class="site-nav">BALLS <i class="anm anm-plus-l"></i></a>
+                <ul class="dropdown">
+                  <?php
+                  foreach ($getData as $keys) {
+                    if ($keys['TestType'] == 'Package') {
+                      if ($keys['Type'] == 'Balls') {
+                        $Name = $keys['Name'];
+                        $TestID = $keys['TestID'];
+                  ?>
+                        <li><a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="site-nav"><?php echo $Name; ?></a></li>
+                  <?php
+                      }
                     }
                   }
-                }
-                ?>
+                  ?>
+                </ul>
+              </li>
+              <li><a href="#" class="site-nav">BAGS <i class="anm anm-plus-l"></i></a>
+                <ul class="dropdown">
+                  <?php
+                  foreach ($getData as $keys) {
+                    if ($keys['TestType'] == 'Package') {
+                      if ($keys['Type'] == 'Bags') {
+                        $Name = $keys['Name'];
+                        $TestID = $keys['TestID'];
+                  ?>
+                        <li><a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="site-nav"><?php echo $Name; ?></a></li>
+                  <?php
+                      }
+                    }
+                  }
+                  ?>
+                </ul>
+              </li>
+              <li><a href="#" class="site-nav">RAW MATERIAL <i class="anm anm-plus-l"></i></a>
+                <ul class="dropdown">
+                  <?php
 
-              </ul>
-            </li>
-          
-          </ul>
-        </li>
+                  foreach ($getData as $keys) {
+                    if ($keys['TestType'] == 'Package') {
+                      if ($keys['Type'] == 'Raw Material') {
+                        $Name = $keys['Name'];
+                        $TestID = $keys['TestID'];
+                  ?>
+                        <li><a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="site-nav"><?php echo $Name; ?></a></li>
+                  <?php
+                      }
+                    }
+                  }
+                  ?>
+
+                </ul>
+              </li>
+
+            </ul>
+          </li>
         </ul>
         <!-- <li><a href="<?php echo base_url(); ?>AlltestPackage" class="site-nav">Coming soon<span class="lbl nm_label1">New</span></a></li> -->
         <li class="lvl1"><a href="<?php echo base_url(); ?>AlltestPackage"><b>BOOK NOW !</b></a>
       </ul>
       </li>
 
-      
+
       </li>
       </ul>
     </div>

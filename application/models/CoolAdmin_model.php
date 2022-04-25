@@ -12,9 +12,9 @@ class CoolAdmin_model extends CI_Model
         
   }
 
- public function updateUser($id,$email,$supplier,$number,$city,$country){
+ public function updateUser($id,$email,$supplier,$number,$city,$country,$state,$postal,$requiments,$Address){
   $query = $this->db->query("UPDATE tbl_Outward_Users
-  SET Email = '$email', Supplier= '$supplier',Country='$country',Contactno='$number',City='$city'
+  SET Email = '$email', Supplier= '$supplier',Country='$country',Contactno='$number',City='$city',state='$state',postalcode='$postal',requirements='$requiments',Adress='$Address'
   WHERE UserID = $id");
     return $query;
  }

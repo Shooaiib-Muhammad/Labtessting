@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="account-dropdown__body">
                                     <div class="account-dropdown__item">
-                                        <a href="<?php echo base_url() ?>CoolAdmin/account">
+                                        <a href="<?php echo base_url() ?>Dashboard/account">
                                             <i class="zmdi zmdi-account"></i>Account</a>
                                     </div>
 

@@ -11,7 +11,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src="<?php echo base_url() ?>Assets/cool_admin/images/icon/logo.png" alt="CoolAdmin" />
+                            <img src="<?php echo base_url() ?>Assets/cool_admin/images/icon/logo.png" alt="Dashboard" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
