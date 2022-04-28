@@ -60,7 +60,8 @@
                                             </div>
                                             <div class="text">
                                                 <h2><?php echo $totalRequests ? $totalRequests[0]['Invoice_ID'] : '0'; ?></h2>
-                                                <span><a style="color:#FFFFFF99" href="<?php echo base_url() ?>CoolAdmin/totalrequests">Total Requests</a></span>
+                                                <span><a style="color:#FFFFFF99" href="#">Total Requests</a></span>
+                                                <!-- <span><a style="color:#FFFFFF99" href="<?php echo base_url() ?>CoolAdmin/totalrequests">Total Requests</a></span> -->
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -78,7 +79,8 @@
                                             </div>
                                             <div class="text">
                                                 <h2><?php echo $pendingRequests ? $pendingRequests[0]['Counter'] : '0'; ?></h2>
-                                                <span> <a style="color:#FFFFFF99" href="<?php echo base_url() ?>CoolAdmin/pendingRequests">Pending Requests</a></span>
+                                                <span> <a style="color:#FFFFFF99" href="#">Pending Requests</a></span>
+                                                <!-- <span> <a style="color:#FFFFFF99" href="<?php echo base_url() ?>CoolAdmin/pendingRequests">Pending Requests</a></span> -->
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -96,7 +98,8 @@
                                             </div>
                                             <div class="text">
                                                 <h2><?php echo $approved ? $approved[0]['Counter'] : '0'; ?></h2>
-                                                <span><a style="color:#FFFFFF99" href="<?php echo base_url() ?>CoolAdmin/approved">Approved</a></span>
+                                                <!-- <span><a style="color:#FFFFFF99" href="<?php echo base_url() ?>CoolAdmin/approved">Approved</a></span> -->
+                                                <span><a style="color:#FFFFFF99" href="#">Approved</a></span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -114,7 +117,8 @@
                                             </div>
                                             <div class="text">
                                                 <h2>$<?php echo $payedAmount ? $payedAmount[0]['Amount'] : '0'; ?></h2>
-                                                <span><a style="color:#FFFFFF99" href="<?php echo base_url() ?>CoolAdmin/amountPayed">Amount Payed</a></span>
+                                                <span><a style="color:#FFFFFF99" href="#">Amount Payable</a></span>
+                                                <!-- <span><a style="color:#FFFFFF99" href="<?php echo base_url() ?>CoolAdmin/amountPayed">Amount Payed</a></span> -->
                                             </div>
                                         </div>
                                         <div class="overview-chart">

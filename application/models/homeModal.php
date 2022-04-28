@@ -138,6 +138,28 @@ public function InvoiceData($id){
     return $query->result_array();
 }
 
+public function verifyOTP($userId,$otp){
+  $query = $this->db->query("SELECT * 
+  FROM           dbo . tbl_Outward_Users 
+  WHERE        (UserID = '$userId')");
+  $resultGet = $query->result_array();
+  if(count($resultGet)>0){
+
+    if($resultGet[0]['VerficationCode'] == $otp){
+      $this->db->query("UPDATE dbo . tbl_Outward_Users SET Status=1 
+      WHERE        (UserID = '$userId')");
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+  else{
+    return false;
+  }
+  die;
+}
+
 }
 
 

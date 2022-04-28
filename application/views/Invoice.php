@@ -133,9 +133,9 @@ $quantities = explode(",", $Invoice[0]['TQuantity']);
     }
 
     table .no {
-      color: #FFFFFF;
+      color: black;
       font-size: 1.0em;
-      background: #57B223;
+      background: white;
     }
 
     table .desc {
@@ -149,8 +149,8 @@ $quantities = explode(",", $Invoice[0]['TQuantity']);
     table .qty {}
 
     table .total {
-      background: #57B223;
-      color: #FFFFFF;
+      background: white;
+      color: black;
     }
 
     table td.unit,
@@ -258,7 +258,7 @@ $quantities = explode(",", $Invoice[0]['TQuantity']);
           <tr>
             <td class="no"><?php echo ++$i; ?></td>
             <td class="desc">
-              <h3><?php echo  $test; ?></h3>
+              <h3 style="color:black" class="text-left"><?php echo  $test; ?></h3>
             </td>
             <td class="unit text-center"><?php echo  $quantities[$j] ?></td>
             <td class="qty  text-center">$ <?php echo  $prices[$j]; ?></td>
@@ -279,10 +279,10 @@ $quantities = explode(",", $Invoice[0]['TQuantity']);
             <td colspan="2">TAX 25%</td>
             <td>$1,300.00</td>
           </tr> -->
-        <tr>
+        <tr style="color:black;">
           <td colspan="2"></td>
-          <td colspan="2">GRAND TOTAL</td>
-          <td>$ <?php echo $Invoice[0]['Amount'] ?></td>
+          <td style="color:black;" colspan="2">GRAND TOTAL</td>
+          <td style="color:black;">$ <?php echo $Invoice[0]['Amount'] ?></td>
         </tr>
       </tfoot>
     </table>

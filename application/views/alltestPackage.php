@@ -622,6 +622,9 @@ $this->load->view('Header');
                 $('#CartCount').html('');
                 $('#header-cart').html(htmlGetModified);
                 $('#CartCount').html(data[2]);
+                toastr.success(`Item has been added to cart. Kindly check it at top-right corner!`,`Cart Count: ${data[2]}`);
+        toastr.options.progressBar = true;
+        toastr.options.timeOut = 3000;
             })
     });
 

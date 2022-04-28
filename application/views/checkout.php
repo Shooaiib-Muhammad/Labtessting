@@ -115,9 +115,9 @@ if (isset($_SESSION['Products'])) {
                                     ?>
                                                 <tr>
                                                     <td class="text-left"><?php echo $products[0]; ?></td>
-                                                    <td>$ <?php echo $products[1]; ?></td>
+                                                    <td>$ <?php echo Round($products[1], 0); ?></td>
                                                     <td><?php echo $products[3]; ?></td>
-                                                    <td style="font-weight: bolder;"><?php echo $individualPrice; ?></td>
+                                                    <td style="font-weight: bolder;">$ <?php echo $individualPrice; ?></td>
                                                 </tr>
                                             <?php
                                                 $index += 1;
@@ -150,7 +150,7 @@ if (isset($_SESSION['Products'])) {
                     </div>
 
                     <hr />
-                    <h2 class="login-title mb-3">Payment Detail</h2>
+                    <h2 class="login-title mb-3"> Payment Detail * <i class="fa fa-exclamation" style="color:red;"></i></h2>
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
@@ -221,7 +221,7 @@ if (isset($_SESSION['Products'])) {
                             </div>
                             <fieldset>
                                 <div class="row">
-                                    <div class="form-group col-md-12 col-lg-12 col-xl-12">
+                                    <div class="form-group col-md-12 col-lg-12 col-xl-12" hidden>
                                         <label for="input-company">Additional Requirements <span class="required-f"></span></label>
                                         <textarea value="<?php echo $customerInfo[0]['requirements'] ?>" name="requirements" class="form-control resize-both" rows="3"><?php echo $customerInfo[0]['requirements'] ?></textarea>
                                     </div>

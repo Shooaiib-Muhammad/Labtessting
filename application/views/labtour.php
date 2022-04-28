@@ -6,30 +6,42 @@ $this->load->view('Header');
 <!--Body Content-->
 <div id="page-content">
  <!--Page Title-->
- <div class="page section-header text-center">
-  <div class="page-title">
-   <div class="wrapper">
-    <!-- <h1 class="page-width">Innovation</h1> -->
-   </div>
-  </div>
- </div>
+ <!-- <div class="collection-header">
+        <div class="collection-hero">
+            <div class=" collection-hero__imageCustom"><img class="blur-up lazyload" data-src="<?php echo base_url(); ?>assets/images/cat-women6.jpg" src="assets/images/cat-women2.jpg" height="150px" width="100%" style="background-size: fixed; background-repeat:no-repeat;" alt="Women" title="Women" /></div>
+            <div class="collection-hero__title-wrapper">
+            </div>
+        </div>
+    </div> -->
+    
+   <!-- <h2 class="text-center">Lab Tour</h2> -->
+   <video autoplay loop id="myVideo"  >
+  <source src="Assets/video/forward.mp4" type="video/mp4">
+  
+</video>
+
  <br>
  <br>
  <br>
  <br>
  <!--End Page Title-->
+ <?php
 
- <div class="container">
-  <div class="row">
-
-  <h2>Lab Tour</h2>
-
-
- </div>
-
-</div>
-<!--End Body Content-->
-<?php
-
-$this->load->view('Footer');
+$this->load->view('FooterVideo');
 ?>
+
+<script>
+$(document).ready(function(){
+  var video = document.getElementById("myVideo");
+  video.play();
+});
+// function myFunction() {
+//     var video = document.getElementById("myVideo");
+//   if (video.paused) {
+//     video.play();
+//   } else {
+//     video.pause();
+//   }
+// }
+</script>
+<!--End Body Content-->

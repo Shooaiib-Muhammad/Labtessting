@@ -24,7 +24,7 @@ $Image = $getPrddetails[0]['Image'];
 $Method = $getPrddetails[0]['Method'];
 $Sample_Quantity = $getPrddetails[0]['Sample_Quantity'];
 $TestID = $getPrddetails[0]['TestID'];
-
+$Purpose = $getPrddetails[0]['Purpose'];
 
 // echo $Image;
 
@@ -153,8 +153,8 @@ $TestID = $getPrddetails[0]['TestID'];
                             </p>
                             <div class="product-single__description rte">
                                 <p> Method: <?php echo $Method ?></p>
-                                <span>Description:</span>
-                                <p id='desc<?php echo $TestID; ?>'> <?php echo $StandardDesc ?></p>
+                                <span>Purpose:</span>
+                                <p id='desc<?php echo $TestID; ?>'> <?php echo $Purpose ?></p>
 
                                 <?php
 
@@ -229,12 +229,12 @@ $TestID = $getPrddetails[0]['TestID'];
                                 </div>
                                 <!-- End Product Action -->
                             </form>
-                            <div class="display-table shareRow">
-                                <!-- <div class="display-table-cell medium-up--one-third">
+                            <!-- <div class="display-table shareRow">
+                                <div class="display-table-cell medium-up--one-third">
                                         <div class="wishlist-btn">
                                             <a class="wishlist add-to-wishlist" href="#" title="Add to Wishlist"><i class="icon anm anm-heart-l" aria-hidden="true"></i> <span>Add to Wishlist</span></a>
                                         </div>
-                                    </div> -->
+                                    </div> 
                                 <div class="display-table-cell text-right">
                                     <div class="social-sharing">
                                         <a target="_blank" href="#" class="btn btn--small btn--secondary btn--share share-facebook" title="Share on Facebook">
@@ -254,7 +254,7 @@ $TestID = $getPrddetails[0]['TestID'];
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <!--Product Tabs-->
 
@@ -287,7 +287,7 @@ $TestID = $getPrddetails[0]['TestID'];
                                         <img class="primary blur-up lazyload" data-src="/sports/assets/img/img/<?php echo  $image; ?>" src="/sports/assets/img/img/<?php echo  $image; ?>" alt="image" title="product">
                                         <!-- End image -->
                                         <!-- Hover image -->
-                                        <img class="hover blur-up lazyload" data-src="/sports/assets/img/img/<?php echo  $image; ?>" src="/sports/assets/img/img/<?php echo  $image; ?>" alt="image" title="product">
+                                        <img class="hover blur-up lazyload" id='ImageCustom<?php echo $TestID; ?>' data-src="/sports/assets/img/img/<?php echo  $image; ?>" src="/sports/assets/img/img/<?php echo  $image; ?>" alt="image" title="product">
                                         <!-- End hover image -->
                                         <!-- product label -->
 
@@ -296,9 +296,17 @@ $TestID = $getPrddetails[0]['TestID'];
                                     <!-- end product image -->
 
                                     <!-- Start product button -->
-                                    <form class="variants add" action="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>">
-                                        <button class="btn btn-addto-cart" type="button" tabindex="0">Add To Card</button>
-                                    </form>
+                                    <?php
+                                                        if ($this->session->has_userdata('user_id')) {
+                                                        ?>
+                                                            <form class="variants add" action="#" method="post">
+                                                                <button class="btn btn-addto-cart AddToCartButtonCustom" type="button" tabindex="0" id='<?php echo $TestID; ?>'>Add To Cart</button>
+                                                            </form>
+                                                        <?php } else { ?>
+                                                            <form class="variants add" action="#" method="post">
+                                                                <button class="btn btn-addto-cart LoginAddToCartButtonCustom" type="button" tabindex="0" id='<?php echo $TestID; ?>'>Add To Cart</button>
+                                                            </form>
+                                                        <?php } ?>
                                     <div class="button-set">
                                         <a href="#" title="Quick View" class="quick-view" tabindex="0">
                                             <i class="icon anm anm-search-plus-r"></i>
@@ -316,14 +324,14 @@ $TestID = $getPrddetails[0]['TestID'];
                                 <div class="product-details text-center">
                                     <!-- product name -->
                                     <div class="product-name">
-                                        <a href="#"><?php echo $Name ?></a>
+                                        <a href="#" id='NameCustom<?php echo $TestID; ?>'><?php echo $Name ?></a>
                                     </div>
                                     <!-- End product name -->
                                     <!-- product price -->
                                     <div class="product-price">
-                                        <!-- <span class="old-price">$500.00</span> -->
-                                        <span class="price">$ <?php echo $StandardPrice ?></span>
-                                    </div>
+
+<span>$</span> <span class="price" id='PriceCustom<?php echo $TestID; ?>'> <?php echo $StandardPrice ?></span>
+</div>
                                     <!-- End product price -->
 
                                     <!-- <div class="product-review">
@@ -455,6 +463,9 @@ $this->load->view('Footer');
                 $('#CartCount').html('');
                 $('#header-cart').html(htmlGetModified);
                 $('#CartCount').html(data[2]);
+                toastr.success(`Item has been added to cart. Kindly check it at top-right corner!`, `Cart Count: ${data[2]}`);
+                toastr.options.progressBar = true;
+                toastr.options.timeOut = 3000;
             })
     });
 
@@ -462,6 +473,49 @@ $this->load->view('Footer');
         let name = $(`#Name${this.id}`).text()
         let price = $(`#Price${this.id}`).text()
         let image = $(`#Image${this.id}`).attr("src")
+        let url = '<?php echo base_url(); ?>ProductDetails/LoginsetCart';
+        let url2 = '<?php echo base_url(); ?>';
+        $.post(url, {
+                'Name': name,
+                'Price': price,
+                'ImageURL': image
+            },
+            function(data, status) {
+
+                window.location = `${url2}Login`
+            })
+    });
+
+    $('.AddToCartButtonCustom').click(function(e) {
+        let name = $(`#NameCustom${this.id}`).text()
+        let price = $(`#PriceCustom${this.id}`).text()
+        let image = $(`#ImageCustom${this.id}`).attr("data-src")
+        let url = '<?php echo base_url(); ?>ProductDetails/setCart';
+        $.post(url, {
+                'Name': name,
+                'Price': price,
+                'ImageURL': image,
+                'Quantity': 1,
+                'TestId': this.id
+            },
+            function(data, status) {
+                
+                let htmlGet = data[1];
+                let htmlGetModified = htmlGet.replace(/\\/g, '');
+                $('#header-cart').html('');
+                $('#CartCount').html('');
+                $('#header-cart').html(htmlGetModified);
+                $('#CartCount').html(data[2]);
+                toastr.success(`Item has been added to cart. Kindly check it at top-right corner!`,`Cart Count: ${data[2]}`);
+        toastr.options.progressBar = true;
+        toastr.options.timeOut = 3000;
+            })
+    });
+
+    $('.LoginAddToCartButtonCustom').click(function(e) {
+        let name = $(`#NameCustom${this.id}`).text()
+        let price = $(`#PriceCustom${this.id}`).text()
+        let image = $(`#ImageCustom${this.id}`).attr("src")
         let url = '<?php echo base_url(); ?>ProductDetails/LoginsetCart';
         let url2 = '<?php echo base_url(); ?>';
         $.post(url, {

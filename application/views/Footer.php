@@ -70,6 +70,7 @@
 <!-- Including Jquery -->
 
 <script src="<?php echo base_url(); ?>assets/js/vendor/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/vendor/modernizr-3.6.0.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/vendor/jquery.cookie.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/vendor/wow.min.js"></script>
@@ -98,10 +99,12 @@
       jQuery('#modalOverly').hide();
       jQuery('#popup-container').hide();
     } else {
-      var pageHeight = jQuery(document).height();
-      jQuery('<div id="modalOverly"></div>').insertBefore('body');
-      jQuery('#modalOverly').css("height", pageHeight);
-      jQuery('#popup-container').show();
+      // var pageHeight = jQuery(document).height();
+      // jQuery('<div id="modalOverly"></div>').insertBefore('body');
+      // jQuery('#modalOverly').css("height", pageHeight);
+      // jQuery('#popup-container').show();
+      jQuery('#modalOverly').hide();
+      jQuery('#popup-container').hide();
     }
     if (jQuery.cookie('noShowWelcome')) {
       jQuery('#popup-container').hide();

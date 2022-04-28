@@ -208,13 +208,13 @@ if ($CSR[0]['UserID'] == $this->session->userdata('user_id')) {
                             <div class="col-md-2">
                                 <input type="text" value="<?php echo $CSR[0]['City']; ?>" disabled />
                             </div>
-                            <div class="col-md-1">
+                            <!-- <div class="col-md-1">
                                 <span><b>State/<br>Province</b></span>
                             </div>
                             <div class="col-md-2">
                                 <input type="text" value="<?php echo $CSR[0]['state']; ?>" disabled />
 
-                            </div>
+                            </div> -->
                             <div class="col-md-1">
                                 <span><b>Postal Code</b></span>
                             </div>
@@ -256,7 +256,7 @@ if ($CSR[0]['UserID'] == $this->session->userdata('user_id')) {
                     </div>
                 </div>
 
-                <div class="row mt-3 p-3 h-25 border border-dark">
+                <!-- <div class="row mt-3 p-3 h-25 border border-dark">
                     <div class="col-md-6">
                         <span><b>Requirements :</b></span>
                     </div>
@@ -264,7 +264,7 @@ if ($CSR[0]['UserID'] == $this->session->userdata('user_id')) {
                         <span><?php echo $CSR[0]['requirements']; ?></span>
 
                     </div>
-                </div>
+                </div> -->
 
 
                 <!-- <div class="row mt-3 p-3 h-25 border border-dark">

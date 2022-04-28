@@ -66,7 +66,7 @@ if (isset($_SESSION['Products'])) {
 
                                             </td>
                                             <td class="cart__price-wrapper cart-flex-item" style="text-align:center">
-                                                <span class="money" id="Price<?php echo $index; ?>">$<?php echo $products[1]; ?></span>
+                                                $<span class="money" id="Price<?php echo $index; ?>"> <?php echo Round($products[1], 0); ?></span>
                                             </td>
                                             <td class="cart__update-wrapper cart-flex-item text-right">
                                                 <div class="cart__qty ">
@@ -81,9 +81,9 @@ if (isset($_SESSION['Products'])) {
                                                 </div>
                                             </td>
                                             <td class="text-right small--hide cart-price">
-                                                <div><span class="money text-center" id="Total<?php echo $index; ?>"><?php echo $individualPrice; ?></span></div>
+                                                <div>$ <span class="money text-center" id="Total<?php echo $index; ?>"><?php echo $individualPrice; ?></span></div>
                                             </td>
-                                            <td class="text-center small--hide"><a href="<?php echo base_url(); ?>ProductDetails/RemoveCartItem?id=<?php echo $index; ?>" class="btn btn--secondary cart__remove" title="Remove tem"><i class="icon icon anm anm-times-l"></i></a></td>
+                                            <td class="text-center small--hide"> <a href="<?php echo base_url(); ?>ProductDetails/RemoveCartItem?id=<?php echo $index; ?>" class="btn btn--secondary cart__remove" title="Remove tem"><i class="icon icon anm anm-times-l"></i></a></td>
                                         </tr>
                                     <?php
                                         $index += 1;

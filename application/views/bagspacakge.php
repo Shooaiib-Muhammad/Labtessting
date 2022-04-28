@@ -338,26 +338,7 @@ $this->load->view('Header');
 
 
                                             </div>
-                                            <div class="product-details text-center">
-                                                <!-- product name -->
-                                                <div class="product-name">
-                                                    <a id='Name<?php echo $TestID; ?>'><?php echo $Name ?></a>
-
-
-                                                </div>
-                                                <!-- End product name -->
-                                                <!-- product price -->
-                                                <div class="product-price">
-
-                                                    <span>$</span> <span class="price" id='Price<?php echo $TestID; ?>'> <?php echo $StandardPrice ?></span>
-                                                </div>
-                                                <!-- End product price -->
-
-
-                                                <!-- Variant -->
-
-                                                <!-- End Variant -->
-                                            </div>
+                                         
                                             <!-- end product button -->
                                         </div>
 

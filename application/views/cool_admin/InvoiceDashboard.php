@@ -231,7 +231,7 @@
                 <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Request Generated</span> </div>
                 <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Bank Recipient Uploaded</span> </div>
                 <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verify </span> </div>
-                <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Proceed</span> </div>
+                <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Proceed to lab</span> </div>
                 <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Result Uploaded</span> </div>
             </div>
             <hr>

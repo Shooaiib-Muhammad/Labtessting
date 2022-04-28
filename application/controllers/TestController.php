@@ -12,20 +12,20 @@ class TestController extends CI_Controller
   $this->load->model('homeModal');
  }
  public function index(){
-  
+    $data['getData'] = $this->homeModal->getData();
    $data['getTop4'] = $this->homeModal->getTop4();
    $data['getballs'] = $this->TestPackageModel->getballsT();
      $this->load->view('ballstest',$data);
  }
  public function balltest(){
-  
+    $data['getData'] = $this->homeModal->getData();
    $data['getTop4'] = $this->homeModal->getTop4();
    $data['getballs'] = $this->TestPackageModel->getballsT();
      $this->load->view('ballstest',$data);
  }
  public function bagtest(){
-   //$data['getbags'] = $this->TestPackageModel->getbagsT();
-     
+    //$data['getbags'] = $this->TestPackageModel->getbagsT();
+    $data['getData'] = $this->homeModal->getData();
    $data['getTop4'] = $this->homeModal->getTop4();
    $data['getbagsT'] = $this->TestPackageModel->getbagsT();
    // print_r($data['getbagsT']);
@@ -33,6 +33,7 @@ class TestController extends CI_Controller
     $this->load->view('bagstest',$data);
   }
  public function rawtest(){
+    $data['getData'] = $this->homeModal->getData();
    $data['getTop4'] = $this->homeModal->getTop4();
    $data['getrawmaterial'] = $this->TestPackageModel->getrawmaterialT();
     $this->load->view('rawtest',$data);

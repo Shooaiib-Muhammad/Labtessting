@@ -200,7 +200,7 @@ if ($CSR[0]['UserID'] == $this->session->userdata('user_id')) {
                     <article class="card">
                         <header class="card-header"> My Orders / Tracking </header>
                         <?php
-                         $Request_Status = $CSR[0]['Request_Status'];
+                        $Request_Status = $CSR[0]['Request_Status'];
                         $Invoice_ID = $CSR[0]['Invoice_ID'];
                         ?>
                         <div class="card-body mt-4">
@@ -212,51 +212,51 @@ if ($CSR[0]['UserID'] == $this->session->userdata('user_id')) {
                                     <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Bank Recipient Uploaded</span> </div>
                                     <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verfication Done </span> </div>
                                     <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Sample Received </span> </div>
-                                    <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Proceed</span> </div>
-                                    <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Result Uploaded</span> </div>
+                                    <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Proceed to lab</span> </div>
+                                    <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Report Uploaded</span> </div>
 
                                 <?php } else if ($Request_Status == 'Bank Recipient Uploaded') { ?>
 
                                     <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Bank Recipient Uploaded</span> </div>
                                     <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verfication Done </span> </div>
                                     <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Sample Received </span> </div>
-                                    <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Proceed</span> </div>
-                                    <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Result Uploaded</span> </div>`
+                                    <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Proceed to lab</span> </div>
+                                    <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Report Uploaded</span> </div>`
 
                                 <?php } else  if ($Request_Status == 'Accounts Verfication Done') {  ?>
                                     <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Bank Recipient Uploaded</span> </div>
                                     <div class="step active "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verfication Done </span> </div>
                                     <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Sample Received </span> </div>
-                                    <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Proceed</span> </div>
-                                    <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Result Uploaded</span> </div>
+                                    <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Proceed to lab</span> </div>
+                                    <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Report Uploaded</span> </div>
 
                                 <?php } else if ($Request_Status == 'Sample Received') {  ?>
                                     <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Bank Recipient Uploaded</span> </div>
                                     <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verfication Done </span> </div>
                                     <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Sample Received </span> </div>
-                                    <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Proceed</span> </div>
-                                    <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Result Uploaded</span> </div>
+                                    <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Proceed to lab</span> </div>
+                                    <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Report Uploaded</span> </div>
 
                                 <?php } else  if ($Request_Status == 'Proceed to lab') {  ?>
                                     <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Bank Recipient Uploaded</span> </div>
                                     <div class="step active "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verfication Done </span> </div>
                                     <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Sample Received </span> </div>
-                                    <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Proceed</span> </div>
-                                    <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Result Uploaded</span> </div>
+                                    <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Proceed to lab</span> </div>
+                                    <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Report Uploaded</span> </div>
 
                                 <?php
                                 } else {  ?>
                                     <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Bank Recipient Uploaded</span> </div>
                                     <div class="step  "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Accounts Verfication Done </span> </div>
                                     <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Sample Received </span> </div>
-                                    <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Proceed</span> </div>
-                                    <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Result Uploaded</span> </div>
+                                    <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Proceed to lab</span> </div>
+                                    <div class="step "> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Report Uploaded</span> </div>
                                 <?php } ?>
                                 <!-- <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Bank Recipient Uploaded</span> </div>
                                 <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Accounts Verfication Done </span> </div>
                                 <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Sample Received </span> </div>
 
-                                <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Lab Proceed</span> </div>
+                                <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Proceed to lab</span> </div>
                                 <div class="step"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Result Uploaded</span> </div> -->
                             </div>
                             <hr>
@@ -438,13 +438,13 @@ if ($CSR[0]['UserID'] == $this->session->userdata('user_id')) {
                             <div class="col-md-2">
                                 <input type="text" value="<?php echo $CSR[0]['City']; ?>" disabled />
                             </div>
-                            <div class="col-md-1">
+                            <!-- <div class="col-md-1">
                                 <span><b>State/<br>Province</b></span>
                             </div>
                             <div class="col-md-2">
                                 <input type="text" value="<?php echo $CSR[0]['state']; ?>" disabled />
 
-                            </div>
+                            </div> -->
                             <div class="col-md-1">
                                 <span><b>Postal Code</b></span>
                             </div>
@@ -486,7 +486,7 @@ if ($CSR[0]['UserID'] == $this->session->userdata('user_id')) {
                     </div>
                 </div>
 
-                <div class="row mt-3 p-3 h-25 border border-dark">
+                <!-- <div class="row mt-3 p-3 h-25 border border-dark">
                     <div class="col-md-6">
                         <span><b>Requirements :</b></span>
                     </div>
@@ -494,7 +494,7 @@ if ($CSR[0]['UserID'] == $this->session->userdata('user_id')) {
                         <span><?php echo $CSR[0]['requirements']; ?></span>
 
                     </div>
-                </div>
+                </div> -->
 
 
                 <!-- <div class="row mt-3 p-3 h-25 border border-dark">

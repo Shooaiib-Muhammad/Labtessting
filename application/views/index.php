@@ -42,133 +42,133 @@ $this->load->view('Header');
     <!--End Home slider-->
     <!--Collection Tab slider-->
     <div class="product-rows section">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="section-header text-center">
-                    <h2 class="h2">Featured packages</h2>
-                    <p>Our most popular packages</p>
-                </div>
-            </div>
-        </div>
-        <div class="grid-products">
+        <div class="container">
             <div class="row">
-                <?php
-                //print_r($getTop6);
-                foreach ($getTop6 as $keys) {
-                    if ($keys['TestType'] == 'Package') {
-                        $image = $keys['Image'];
-                        $Name = $keys['Name'];
-                        $StandardPrice = $keys['StandardPrice'];
-                        $TestID = $keys['TestID'];
-                ?>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="section-header text-center">
+                        <h2 class="h2">Featured packages</h2>
+                        <p>Our most popular packages</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-products">
+                <div class="row">
+                    <?php
+                    //print_r($getTop6);
+                    foreach ($getTop6 as $keys) {
+                        if ($keys['TestType'] == 'Package') {
+                            $image = $keys['Image'];
+                            $Name = $keys['Name'];
+                            $StandardPrice = $keys['StandardPrice'];
+                            $TestID = $keys['TestID'];
+                    ?>
                             <a style="display: none;" id='Name<?php echo $TestID; ?>'><?php echo $Name; ?></a>
-                                <span class="price" style="display: none;"  id='Price<?php echo $TestID; ?>'><?php echo $StandardPrice; ?></span>
-                        <div class="col-6 col-sm-6 col-md-4 col-lg-3 item grid-view-item style2">
-                            <div class="grid-view_image">
-                                <!-- start product image -->
-                    
-                                <a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="grid-view-item__link">
-                                    <!-- image -->
-                                    <img class="grid-view-item__image primary blur-up lazyload" height="280px" width="392px" data-src="/sports/assets/img/img/<?php echo  $image; ?>" src="/sports/assets/img/img/<?php echo  $image; ?>" alt="image" title="product">
-                                    <!-- End image -->
-                                    <!-- Hover image -->
-                                    <img class="grid-view-item__image hover blur-up lazyload" height="280px" width="392px" id='Image<?php echo $TestID; ?>' data-src="/sports/assets/img/img/<?php echo  $image; ?>" src="/sports/assets/img/img/<?php echo  $image; ?>" alt="image" title="product">
-                                    <!-- End hover image -->
-                                    <!-- product label -->
+                            <span class="price" style="display: none;" id='Price<?php echo $TestID; ?>'><?php echo $StandardPrice; ?></span>
+                            <div class="col-6 col-sm-6 col-md-4 col-lg-3 item grid-view-item style2">
+                                <div class="grid-view_image">
+                                    <!-- start product image -->
 
-                                    <!-- End product label -->
-                                </a>
-                                <!-- end product image -->
-                                <!--start product details -->
-                                <div class="product-details hoverDetails text-center mobile">
-                                    <!-- product name -->
-                                    <div class="product-name">
-                                        <a><?php echo $Name; ?></a>
-                                    </div>
-                                    <!-- End product name -->
-                                    <!-- product price -->
-                                    <div class="product-price">
+                                    <a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" class="grid-view-item__link">
+                                        <!-- image -->
+                                        <img class="grid-view-item__image primary blur-up lazyload" height="280px" width="392px" data-src="/sports/assets/img/img/<?php echo  $image; ?>" src="/sports/assets/img/img/<?php echo  $image; ?>" alt="image" title="product">
+                                        <!-- End image -->
+                                        <!-- Hover image -->
+                                        <img class="grid-view-item__image hover blur-up lazyload" height="280px" width="392px" id='Image<?php echo $TestID; ?>' data-src="/sports/assets/img/img/<?php echo  $image; ?>" src="/sports/assets/img/img/<?php echo  $image; ?>" alt="image" title="product">
+                                        <!-- End hover image -->
+                                        <!-- product label -->
 
-                                    <span>$</span><span class="price"> <?php echo $StandardPrice; ?></span>
-                                    </div>
-                                    <!-- End product price -->
+                                        <!-- End product label -->
+                                    </a>
+                                    <!-- end product image -->
+                                    <!--start product details -->
+                                    <div class="product-details hoverDetails text-center mobile">
+                                        <!-- product name -->
+                                        <div class="product-name">
+                                            <a><?php echo $Name; ?></a>
+                                        </div>
+                                        <!-- End product name -->
+                                        <!-- product price -->
+                                        <div class="product-price">
 
-                                    <!-- product button -->
-                                    <div class="button-set">
-                                        <a href="javascript:void(0)" title="Quick View" class="quick-view-popup quick-view" data-toggle="modal" data-target="#content_quickview">
-                                            <i class="icon anm anm-search-plus-r"></i>
-                                        </a>
-                                        <!-- Start product button -->
-                                        <?php
-                                        if ($this->session->has_userdata('user_id')) {
-                                        ?>
+                                            <span>$</span><span class="price"> <?php echo $StandardPrice; ?></span>
+                                        </div>
+                                        <!-- End product price -->
+
+                                        <!-- product button -->
+                                        <div class="button-set">
+                                            <a href="javascript:void(0)" title="Quick View" class="quick-view-popup quick-view" data-toggle="modal" data-target="#content_quickview">
+                                                <i class="icon anm anm-search-plus-r"></i>
+                                            </a>
+                                            <!-- Start product button -->
+                                            <?php
+                                            if ($this->session->has_userdata('user_id')) {
+                                            ?>
                                                 <form class="variants add" action="#" method="post">
-                                            <button class="btn cartIcon btn-addto-cart Login AddToCartButtonPackage" id='<?php echo $TestID; ?>' type="button" tabindex="0"><i class="icon anm anm-bag-l"></i></button>
-                                        </form>
-                                        <?php } else { ?>
-                                            <form class="variants add" action="#" method="post">
-                                            <button class="btn cartIcon btn-addto-cart Login LoginAddToCartButtonPackage" id='<?php echo $TestID; ?>' type="button" tabindex="0"><i class="icon anm anm-bag-l"></i></button>
-                                        </form> 
-                                        <?php } ?>
-                                        
+                                                    <button class="btn cartIcon btn-addto-cart Login AddToCartButtonPackage" id='<?php echo $TestID; ?>' type="button" tabindex="0"><i class="icon anm anm-bag-l"></i></button>
+                                                </form>
+                                            <?php } else { ?>
+                                                <form class="variants add" action="#" method="post">
+                                                    <button class="btn cartIcon btn-addto-cart Login LoginAddToCartButtonPackage" id='<?php echo $TestID; ?>' type="button" tabindex="0"><i class="icon anm anm-bag-l"></i></button>
+                                                </form>
+                                            <?php } ?>
+
+                                        </div>
+                                        <!-- end product button -->
                                     </div>
-                                    <!-- end product button -->
+                                    <!-- Variant -->
+
+                                    <!-- End Variant -->
+                                    <!-- End product details -->
                                 </div>
-                                <!-- Variant -->
-
-                                <!-- End Variant -->
-                                <!-- End product details -->
                             </div>
-                        </div>
-                <?php
+                    <?php
 
+                        }
                     }
-                }
-                ?>
+                    ?>
 
 
 
 
 
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="section logo-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="logo-bar">
-                    <div class="logo-bar__item">
-                        <img src="assets/images/logo/logo8.jpg" alt="" title="" />
-                    </div>
-                    <div class="logo-bar__item">
-                        <img src="assets/images/logo/logo1.jpg" alt="" title="" />
-                    </div>
-                    <div class="logo-bar__item">
-                        <img src="assets/images/logo/logo2.jpg" alt="" title="" />
-                    </div>
-                    <div class="logo-bar__item">
-                        <img src="assets/images/logo/logo3.jpg" alt="" title="" />
-                    </div>
-                    <div class="logo-bar__item">
-                        <img src="assets/images/logo/logo4.jpg" alt="" title="" />
-                    </div>
-                    <div class="logo-bar__item">
-                        <img src="assets/images/logo/logo5.jpg" alt="" title="" />
-                    </div>
-                    <div class="logo-bar__item">
-                        <img src="assets/images/logo/logo6.jpg" alt="" title="" />
-                    </div>
-                    <div class="logo-bar__item">
-                        <img src="assets/images/logo/logo7.jpg" alt="" title="" />
+    <div class="section logo-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="logo-bar">
+                        <div class="logo-bar__item">
+                            <img src="assets/images/logo/logo8.jpg" alt="" title="" />
+                        </div>
+                        <div class="logo-bar__item">
+                            <img src="assets/images/logo/logo1.jpg" alt="" title="" />
+                        </div>
+                        <div class="logo-bar__item">
+                            <img src="assets/images/logo/logo2.jpg" alt="" title="" />
+                        </div>
+                        <div class="logo-bar__item">
+                            <img src="assets/images/logo/logo3.jpg" alt="" title="" />
+                        </div>
+                        <div class="logo-bar__item">
+                            <img src="assets/images/logo/logo4.jpg" alt="" title="" />
+                        </div>
+                        <div class="logo-bar__item">
+                            <img src="assets/images/logo/logo5.jpg" alt="" title="" />
+                        </div>
+                        <div class="logo-bar__item">
+                            <img src="assets/images/logo/logo6.jpg" alt="" title="" />
+                        </div>
+                        <div class="logo-bar__item">
+                            <img src="assets/images/logo/logo7.jpg" alt="" title="" />
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
     <div class="tab-slider-product section">
         <div class="container">
             <div class="row">
@@ -205,7 +205,7 @@ $this->load->view('Header');
                                                     <div class="product-image">
                                                         <!-- start product image -->
                                                         <a href="<?php echo base_url(); ?>ProductDetails/test/<?php echo $TestID; ?>" tabindex="0">
-                                                        
+
                                                             <!-- image -->
                                                             <img class="primary blur-up lazyload" data-src="/sports/assets/img/img/<?php echo  $image; ?>" src="../sports/assets/img/img/<?php echo  $image; ?>" alt="image" title="product">
                                                             <!-- End image -->
@@ -257,7 +257,7 @@ $this->load->view('Header');
                                                         <!-- product price -->
                                                         <div class="product-price">
 
-                                                          <span>$</span>  <span class="price" id='Price<?php echo $TestID; ?>'> <?php echo $StandardPrice ?></span>
+                                                            <span>$</span> <span class="price" id='Price<?php echo $TestID; ?>'> <?php echo $StandardPrice ?></span>
                                                         </div>
                                                         <!-- End product price -->
 
@@ -351,7 +351,7 @@ $this->load->view('Header');
                                                         <!-- product price -->
                                                         <div class="product-price">
 
-                                                        <span>$</span>   <span id='Price<?php echo $TestID; ?>' class="price">$ <?php echo $StandardPrice ?></span>
+                                                            <span>$</span> <span id='Price<?php echo $TestID; ?>' class="price">$ <?php echo $StandardPrice ?></span>
                                                         </div>
                                                         <!-- End product price -->
 
@@ -462,7 +462,7 @@ $this->load->view('Header');
                                                         <!-- product price -->
                                                         <div class="product-price">
 
-                                                        <span>$</span>       <span id='Price<?php echo $TestID; ?>' class="price"><?php echo $StandardPrice ?></span>
+                                                            <span>$</span> <span id='Price<?php echo $TestID; ?>' class="price"><?php echo $StandardPrice ?></span>
                                                         </div>
                                                         <!-- End product price -->
 
@@ -516,22 +516,25 @@ $this->load->view('Footer');
         let name = $(`#Name${this.id}`).text()
         let price = $(`#Price${this.id}`).text()
         let image = $(`#Image${this.id}`).attr("data-src")
-
         let url = '<?php echo base_url(); ?>ProductDetails/setCart';
         $.post(url, {
                 'Name': name,
                 'Price': price,
                 'ImageURL': image,
-                'Quantity':1,
-                'TestId':this.id
+                'Quantity': 1,
+                'TestId': this.id
             },
             function(data, status) {
+                
                 let htmlGet = data[1];
                 let htmlGetModified = htmlGet.replace(/\\/g, '');
                 $('#header-cart').html('');
                 $('#CartCount').html('');
                 $('#header-cart').html(htmlGetModified);
                 $('#CartCount').html(data[2]);
+                toastr.success(`Item has been added to cart. Kindly check it at top-right corner!`,`Cart Count: ${data[2]}`);
+        toastr.options.progressBar = true;
+        toastr.options.timeOut = 3000;
             })
     });
 
@@ -541,11 +544,17 @@ $this->load->view('Footer');
         let image = $(`#Image${this.id}`).attr("data-src")
         let url = '<?php echo base_url(); ?>ProductDetails/LoginsetCart';
         let url2 = '<?php echo base_url(); ?>';
-        $.post(url,{'Name':name,'Price':price,'ImageURL':image, 'Quantity':1,'TestId':this.id},
-        function(data, status) {
-        
-            window.location = `${url2}Login`  
-        })
+        $.post(url, {
+                'Name': name,
+                'Price': price,
+                'ImageURL': image,
+                'Quantity': 1,
+                'TestId': this.id
+            },
+            function(data, status) {
+
+                window.location = `${url2}Login`
+            })
     });
 
     $('.AddToCartButtonBags').click(function(e) {
@@ -558,8 +567,8 @@ $this->load->view('Footer');
                 'Name': name,
                 'Price': price,
                 'ImageURL': image,
-                'Quantity':1,
-                'TestId':this.id
+                'Quantity': 1,
+                'TestId': this.id
             },
             function(data, status) {
                 let htmlGet = data[1];
@@ -568,6 +577,9 @@ $this->load->view('Footer');
                 $('#CartCount').html('');
                 $('#header-cart').html(htmlGetModified);
                 $('#CartCount').html(data[2]);
+                toastr.success(`Item has been added to cart. Kindly check it at top-right corner!`,`Cart Count: ${data[2]}`);
+        toastr.options.progressBar = true;
+        toastr.options.timeOut = 3000;
             })
     });
 
@@ -577,11 +589,17 @@ $this->load->view('Footer');
         let image = $(`#Image${this.id}`).attr("data-src")
         let url = '<?php echo base_url(); ?>ProductDetails/LoginsetCart';
         let url2 = '<?php echo base_url(); ?>';
-        $.post(url,{'Name':name,'Price':price,'ImageURL':image, 'Quantity':1,'TestId':this.id},
-        function(data, status) {
-        
-            window.location = `${url2}Login`  
-        })
+        $.post(url, {
+                'Name': name,
+                'Price': price,
+                'ImageURL': image,
+                'Quantity': 1,
+                'TestId': this.id
+            },
+            function(data, status) {
+
+                window.location = `${url2}Login`
+            })
     });
 
     $('.AddToCartButtonMaterial').click(function(e) {
@@ -594,8 +612,8 @@ $this->load->view('Footer');
                 'Name': name,
                 'Price': price,
                 'ImageURL': image,
-                'Quantity':1,
-                'TestId':this.id
+                'Quantity': 1,
+                'TestId': this.id
             },
             function(data, status) {
                 let htmlGet = data[1];
@@ -604,35 +622,44 @@ $this->load->view('Footer');
                 $('#CartCount').html('');
                 $('#header-cart').html(htmlGetModified);
                 $('#CartCount').html(data[2]);
+                toastr.success(`Item has been added to cart. Kindly check it at top-right corner!`,`Cart Count: ${data[2]}`);
+        toastr.options.progressBar = true;
+        toastr.options.timeOut = 3000;
             })
     });
 
-    
+
     $('.LoginAddToCartButtonMaterial').click(function(e) {
         let name = $(`#Name${this.id}`).text()
         let price = $(`#Price${this.id}`).text()
         let image = $(`#Image${this.id}`).attr("data-src")
         let url = '<?php echo base_url(); ?>ProductDetails/LoginsetCart';
         let url2 = '<?php echo base_url(); ?>';
-        $.post(url,{'Name':name,'Price':price,'ImageURL':image, 'Quantity':1,'TestId':this.id},
-        function(data, status) {
-        
-            window.location = `${url2}Login`  
-        })
+        $.post(url, {
+                'Name': name,
+                'Price': price,
+                'ImageURL': image,
+                'Quantity': 1,
+                'TestId': this.id
+            },
+            function(data, status) {
+
+                window.location = `${url2}Login`
+            })
     });
 
     $('.AddToCartButtonPackage').click(function(e) {
         let name = $(`#Name${this.id}`).text()
         let price = $(`#Price${this.id}`).text()
         let image = $(`#Image${this.id}`).attr("data-src")
-     
+
         let url = '<?php echo base_url(); ?>ProductDetails/setCart';
         $.post(url, {
                 'Name': name,
                 'Price': price,
                 'ImageURL': image,
-                'Quantity':1,
-                'TestId':this.id
+                'Quantity': 1,
+                'TestId': this.id
             },
             function(data, status) {
                 let htmlGet = data[1];
@@ -641,6 +668,9 @@ $this->load->view('Footer');
                 $('#CartCount').html('');
                 $('#header-cart').html(htmlGetModified);
                 $('#CartCount').html(data[2]);
+                toastr.success(`Item has been added to cart. Kindly check it at top-right corner!`,`Cart Count: ${data[2]}`);
+        toastr.options.progressBar = true;
+        toastr.options.timeOut = 3000;
             })
     });
 
@@ -650,13 +680,19 @@ $this->load->view('Footer');
         let image = $(`#Image${this.id}`).attr("data-src")
         let url = '<?php echo base_url(); ?>ProductDetails/LoginsetCart';
         let url2 = '<?php echo base_url(); ?>';
-        $.post(url,{'Name':name,'Price':price,'ImageURL':image, 'Quantity':1,'TestId':this.id},
-        function(data, status) {
-        
-            window.location = `${url2}Login`  
-        })
-    });
+        $.post(url, {
+                'Name': name,
+                'Price': price,
+                'ImageURL': image,
+                'Quantity': 1,
+                'TestId': this.id
+            },
+            function(data, status) {
 
+                window.location = `${url2}Login`
+            })
+    });
+ 
 </script>
 <!--End Featured Product-->
 

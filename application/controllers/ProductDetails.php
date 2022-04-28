@@ -141,6 +141,11 @@ class ProductDetails extends CI_Controller
                 // $mail->addAddress("itdev@forward.pk"); 
 
                 $mail->addAddress("$Email");
+              
+
+
+
+
 
 
                 $mail->Subject = "Your Order has been Placed Successfully!";
@@ -151,8 +156,9 @@ class ProductDetails extends CI_Controller
         </head>
         <body>
         <h5>Thank You Mr/Mrs $fullname for Placing an Order!</h5>
-          <p style='color:white;background color:black'>Your Order has been Placed Successfully! Please visit  given link  to See Your Order Detail Print your Invoice Thanku!<br><a href='" . base_url() . "CSR/index/$id'>See Your Order Detail</a></p>
-                       
+          <p style='color:white;background color:black'>Your Order has been Placed Successfully! Please click on the given link below to track your order and print invoice. Thank You !<br><a href='" . base_url() . "CSR/index/$id'>See Your Order Detail</a></p>
+          <br>
+                       <p>****** Message sent from Forward Innovation Testing LAB ******</p>
         </body>
         </html>
         ";
