@@ -194,8 +194,45 @@
 
             </ul>
       </li>
-      <li class="lvl1 parent megamenu"><a href="<?php echo base_url(); ?>AlltestPackage" style="background-color:black;color:white;padding:5px;border-radius:10px">BOOK NOW !<i class="anm anm-angle-down-l"></i></a>
+      
+     <li class="lvl1 parent megamenu"><a href="#" style="background-color:black;color:white;padding:5px;border-radius:10px">All Tests <i class="anm anm-angle-down-l"></i>
+         </a>
+         <div class="megamenu style4">
+            <ul class="grid grid--uniform mmWrapper">
+               <li class="grid__item lvl-1 col-md-3 col-lg-3"><a href="#" class="site-nav lvl-1">Accredited</a>
+                  <ul class="subLinks">
+                     
+                    <li class="lvl-2"><a href="<?php echo base_url(); ?>Accredited" class="site-nav lvl-2">Accredited</a></li>
+                     
+                  </ul>
+               </li>
+               <li class="grid__item lvl-1 col-md-3 col-lg-3"><a href="#" class="site-nav lvl-1">Non-Accredited</a>
+                  <ul class="subLinks">
+                    
+                    <li class="lvl-2"><a href="<?php echo base_url(); ?>NonAccredited" class="site-nav lvl-2">Non-Accredited</a></li>
+                     
+                  </ul>
+               </li>
+
+
+            
+            </ul>
+      </li>
+      <li class="lvl1 parent megamenu"><a href="<?php echo base_url(); ?>ContactUs"
+      style="background-color:black;color:white;padding:5px;border-radius:10px">Contact Us<i class="anm anm-angle-down-l"></i></a>
+
+     </li>
+      <li class="lvl1 parent megamenu"><a href="<?php echo base_url(); ?>AlltestPackage"
+       style="background-color:black;color:white;padding:5px;border-radius:10px">BOOK NOW !<i class="anm anm-angle-down-l"></i></a>
 
       </li>
+      <li class="lvl1 parent megamenu"><a href="<?php echo base_url(); ?>HowBook"
+       style="background-color:black;color:white;padding:5px;border-radius:10px">How To Book ? <i class="anm anm-angle-down-l"></i></a>
+
+     </li>
+     
+
+
+      
    </ul>
 </nav>
