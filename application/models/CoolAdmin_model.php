@@ -62,8 +62,8 @@ class CoolAdmin_model extends CI_Model
      return $query->result_array();
  }
  public function tabular($id){
-   $query = $this->db->query("SELECT      dbo.view_Outward_transaction.*
-   FROM            dbo.view_Outward_transaction
+   $query = $this->db->query("SELECT      dbo.view_Outward_transaction_D.*
+   FROM            dbo.view_Outward_transaction_D
    WHERE        (UserID = $id)
    
    ");
@@ -77,8 +77,8 @@ class CoolAdmin_model extends CI_Model
   $time1 = strtotime($edate);
   $newformat = date('d/m/Y', $time);
   $newformat1 = date('d/m/Y', $time1);
-  $query = $this->db->query("SELECT       dbo.view_Outward_transaction.*
-  FROM            dbo.view_Outward_transaction
+  $query = $this->db->query("SELECT       dbo.view_Outward_transaction_D.*
+  FROM            dbo.view_Outward_transaction_D
   WHERE        (UserID = $id) AND (RequestDate BETWEEN '$newformat' AND '$newformat1')
   
   ");
@@ -86,23 +86,27 @@ class CoolAdmin_model extends CI_Model
  }
 
  public function trackRecord($id){
-  $query = $this->db->query("SELECT        'FS-' + CAST(dbo.tbl_Outward_Transaction.UserID AS varchar(100)) + '-' + CAST(DAY(dbo.tbl_Outward_Transaction.RequestDate) AS varchar(50)) + + CAST(MONTH(dbo.tbl_Outward_Transaction.RequestDate) AS varchar(50)) + + CAST(RIGHT (YEAR(dbo.tbl_Outward_Transaction.RequestDate), 2) AS varchar(50)) + '-' + CAST(dbo.tbl_Outward_Transaction.TID AS varchar(100)) AS invoice_ID, TID
-  FROM            dbo.tbl_Outward_Transaction
-  WHERE        (UserID = $id)
-  
+    $query = $this->db->query("SELECT        'FS-' + CAST(UserID AS varchar(100)) + '-' + CAST(DAY(RequestDate) AS varchar(50)) + + CAST(MONTH(RequestDate) AS varchar(50)) + + CAST(RIGHT(YEAR(RequestDate), 2) AS varchar(50)) + '-' + CAST(TID AS varchar(100)) 
+                         AS invoice_ID, TID
+FROM            dbo.tbl_Outward_Transaction_D
+WHERE        (UserID = $id)
+GROUP BY 'FS-' + CAST(UserID AS varchar(100)) + '-' + CAST(DAY(RequestDate) AS varchar(50)) + + CAST(MONTH(RequestDate) AS varchar(50)) + + CAST(RIGHT(YEAR(RequestDate), 2) AS varchar(50)) + '-' + CAST(TID AS varchar(100)), TID
   
   ");
     return $query->result_array();
  }
 
  public function track($invoice_id){
-  $query = $this->db->query("SELECT        dbo.tbl_Outward_Transaction.TID, dbo.tbl_Outward_Transaction.Amount, dbo.tbl_Outward_Transaction.CSSNo, dbo.tbl_Outward_Transaction.RequestDate, dbo.tbl_Outward_Transaction.Evidence_pic, 
-  dbo.tbl_Outward_Transaction.EDate, dbo.tbl_Outward_Transaction.AccountsStatus, dbo.tbl_Outward_Transaction.AccountsverfiyDate, dbo.tbl_Outward_Transaction.labStatus, dbo.tbl_Outward_Transaction.labProceedDate, 
-  dbo.tbl_Outward_Transaction.RDate, dbo.tbl_Outward_Transaction.Result, dbo.tbl_Outward_Transaction.Request_Status, dbo.tbl_Outward_Transaction.Name_of_recipient, dbo.tbl_Outward_Transaction.REmail, 
-  dbo.tbl_Outward_Users.Supplier, dbo.tbl_Outward_Users.Country, dbo.tbl_Outward_Users.Contactno
+  $query = $this->db->query("SELECT        dbo.tbl_Outward_Transaction_D.TID, dbo.tbl_Outward_Transaction_D.Amount, dbo.tbl_Outward_Transaction_D.CSSNo, dbo.tbl_Outward_Transaction_D.RequestDate, dbo.tbl_Outward_Transaction_D.Evidence_pic, 
+                         dbo.tbl_Outward_Transaction_D.EDate, dbo.tbl_Outward_Transaction_D.AccountsStatus, dbo.tbl_Outward_Transaction_D.AccountsverfiyDate, dbo.tbl_Outward_Transaction_D.labStatus, 
+                         dbo.tbl_Outward_Transaction_D.labProceedDate, dbo.tbl_Outward_Transaction_D.RDate, dbo.tbl_Outward_Transaction_D.Result, dbo.tbl_Outward_Transaction_D.Request_Status, 
+                         dbo.tbl_Outward_Transaction.Name_of_recipient, dbo.tbl_Outward_Transaction.REmail, dbo.tbl_Outward_Users.Supplier, dbo.tbl_Outward_Users.Country, dbo.tbl_Outward_Users.Contactno, 
+                         dbo.Tbl_Fit_Lab_Capability.Name
 FROM            dbo.tbl_Outward_Transaction INNER JOIN
-  dbo.tbl_Outward_Users ON dbo.tbl_Outward_Transaction.UserID = dbo.tbl_Outward_Users.UserID
-WHERE        (dbo.tbl_Outward_Transaction.TID = $invoice_id)
+                         dbo.tbl_Outward_Users ON dbo.tbl_Outward_Transaction.UserID = dbo.tbl_Outward_Users.UserID INNER JOIN
+                         dbo.tbl_Outward_Transaction_D ON dbo.tbl_Outward_Transaction.TID = dbo.tbl_Outward_Transaction_D.TID INNER JOIN
+                         dbo.Tbl_Fit_Lab_Capability ON dbo.tbl_Outward_Transaction_D.testID = dbo.Tbl_Fit_Lab_Capability.TestID
+WHERE        (dbo.tbl_Outward_Transaction_D.TID = $invoice_id)
 
   
   

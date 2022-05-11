@@ -354,7 +354,7 @@ video{
               <?php
               } else {
               ?>
-                <li><a href="<?php echo base_url(); ?>CoolAdmin"><i class="fa fa-user-circle" aria-hidden="true" style="font-size:medium;"></i> My Account</a></li>
+                <li><a href="<?php echo base_url(); ?>Dashboard"><i class="fa fa-user-circle" aria-hidden="true" style="font-size:medium;"></i> My Account</a></li>
                 <li><a href="<?php echo base_url(); ?>Login/logout">Logout</a></li>
               <?php
               }

@@ -177,7 +177,8 @@
                                                                     <td>$ <?php echo $Key['Amount']; ?> </td>
                                                                     <td><span class="badge badge-primary p-1"><?php echo $Key['Request_Status']; ?> </span></td>
 
-                                                                    <td> <input type="file" name="file" style="display: inline-block;" class="btn btn-info btn-xs " id="btn.<?php echo  $TID ?>"></input> </td>
+                                                                    <td> <input type="file" name="file" 
+                                                                    style="display: inline-block;" class="btn btn-info btn-xs " id="btn.<?php echo  $TID ?>"></input> </td>
                                                                     <td> <button type="submit" style="display: inline-block;" class="btn btn-info btn-xs updatebtn1">Update</button> </td>
                                                                 </form>
 

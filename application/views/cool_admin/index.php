@@ -152,7 +152,7 @@
                                                 <tr>
                                                     <td><a href="<?php base_url(); ?>CSR/CSRFiltered/<?php echo $TID; ?>"><?php echo $tab['Invoice_ID'] ?></a> </td>
                                                     <td><?php echo $tab['RequestDate'] ?></td>
-                                                    <td><?php echo $tab['TestName'] ?></td>
+                                                    <td><?php echo $tab['Name'] ?></td>
                                                     <td>$<?php echo $tab['Amount'] ?></td>
                                                     <td><?php echo $tab['Request_Status'] ?></td>
 

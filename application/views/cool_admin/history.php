@@ -99,7 +99,7 @@
                     <tr>
                       <td><?php echo $tab['Invoice_ID'] ?></td>
                       <td><?php echo $tab['RequestDate'] ?></td>
-                      <td><?php echo $tab['TestName'] ?></td>
+                      <td><?php echo $tab['Name'] ?></td>
                       <td class="text-right">$<?php echo $tab['Amount'] ?></td>
                       <td class="text-right"><?php echo $tab['Request_Status'] ?></td>
 
@@ -158,7 +158,7 @@
           table += `<tr>
                                                 <td>${element.Invoice_ID}</td>
                                                 <td>${element.RequestDate}</td>
-                                                <td>${element.TestName}</td>
+                                                <td>${element.Name}</td>
                                                 <td class="text-right">$${element.Amount}</td>
                                                 <td class="text-right">${element.Request_Status}</td>
                                                
