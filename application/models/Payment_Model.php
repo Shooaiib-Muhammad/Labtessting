@@ -51,8 +51,9 @@ public function paymentverfication($pictureFresh,$InvoiceID){
   
   $query = $this->db->query("update  dbo . tbl_Outward_Transaction
     Set  Evidence_pic='$pictureFresh',EDate='$Date',Request_Status='Bank Recipient Uploaded' Where TID= '$InvoiceID'");
- // return  $query->result_array();
-
+    // return  $query->result_array();s
+    $query = $this->db->query("update  dbo . tbl_Outward_Transaction_D
+    Set  Evidence_pic='$pictureFresh',EDate='$Date',Request_Status='Bank Recipient Uploaded' Where TID= '$InvoiceID'");
   if($query){
       redirect('payment/verify');
   }

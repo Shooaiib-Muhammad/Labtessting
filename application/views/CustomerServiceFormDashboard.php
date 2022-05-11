@@ -266,6 +266,11 @@ if ($CSR[0]['UserID'] == $this->session->userdata('user_id')) {
                     </article>
                 </div>
             </div>
+          
+            <!--End Page Title-->
+
+
+
             <div class="container w-50 h-50">
                 <div class="row">
                     <div class="col-md-12">
@@ -340,7 +345,6 @@ if ($CSR[0]['UserID'] == $this->session->userdata('user_id')) {
                 </div>
             </div>
 
-
             <div class="container w-50 h-50 mt-5">
 
 
@@ -355,22 +359,94 @@ if ($CSR[0]['UserID'] == $this->session->userdata('user_id')) {
                     <div class="col-md-12">
                         <div class="row border border-dark">
                             <div class="col-md-6">
-                                <span>Service Request For</span>
+                                <h5>Service Request For :</h5>
+                                <!-- <input type="text" value="<?php echo $CSR[0]['Supplier']; ?>" disabled /> -->
                             </div>
                             <div class="col-md-6 border border-dark">
+
+
+
                                 <ul class="p-2">
                                     <?php
-                                    $testNames = explode(",", $CSR[0]['TestName']);
-                                    foreach ($testNames as $test) {
+                                    // $testNames = explode(",", $CSR[0]['TestType']);
+                                    foreach ($CSR as $testtype) {
                                     ?>
-                                        <li><?php echo $test; ?></li>
+                                        <li><?php echo $testtype['TestType']; ?></li>
                                     <?php
                                     }
                                     ?>
                                 </ul>
                             </div>
                         </div>
+                        <div class="row border border-dark">
+                            <div class="col-md-6">
+                                <h5>Raw Material Testing:</h5>
+                                <!-- <input type="text" value="<?php echo $CSR[0]['Supplier']; ?>" disabled /> -->
+                            </div>
+                            <div class="col-md-6 border border-dark">
 
+
+
+                                <ul class="p-2">
+                                    <?php
+                                    // $testNames = explode(",", $CSR[0]['TestName']);
+                                    foreach ($CSR as $testtype) {
+                                        if ($testtype['TestType'] == 'Raw Material') {
+
+
+                                    ?>
+                                            <li><?php echo $testtype['Name']; ?></li>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row border border-dark">
+                            <div class="col-md-6">
+                                <h5>Football Testing :</h5>
+                                <!-- <input type="text" value="<?php echo $CSR[0]['Supplier']; ?>" disabled /> -->
+                            </div>
+                            <div class="col-md-6 border border-dark">
+
+
+
+                                <ul class="p-2">
+                                    <?php
+                                    // print_r($CSR);
+                                    foreach ($CSR as $testtype) {
+                                        if ($testtype['TestType'] == 'Balls') {
+
+
+                                    ?>
+                                            <li><?php echo $testtype['Name']; ?></li>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row border border-dark">
+                            <div class="col-md-6">
+                                <h5>Bags Testing :</h5>
+                                <!-- <input type="text" value="<?php echo $CSR[0]['Supplier']; ?>" disabled /> -->
+                            </div>
+                            <div class="col-md-6 border border-dark">
+                                <ul class="p-2">
+                                    <?php
+                                    foreach ($CSR as $testtype) {
+                                        if ($testtype['TestType'] == 'Bags') {
+                                    ?>
+                                            <li><?php echo $testtype['Name']; ?></li>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
 
@@ -486,15 +562,75 @@ if ($CSR[0]['UserID'] == $this->session->userdata('user_id')) {
                     </div>
                 </div>
 
-                <!-- <div class="row mt-3 p-3 h-25 border border-dark">
-                    <div class="col-md-6">
-                        <span><b>Requirements :</b></span>
-                    </div>
+                <div class="row mt-3 p-3 h-25 border border-dark">
                     <div class="col-md-12">
-                        <span><?php echo $CSR[0]['requirements']; ?></span>
+                        <?php
+                        foreach ($CSR as $testtype) {
+                            if ($testtype['TestType'] == 'Raw Material') {
+                        ?>
+                                <span><b>Raw Material Details (<?php echo $testtype['Name']; ?>)</b></span> :</b></span>
+                                <div class="col-md-12">
+                                    <span> <b>Brand Name:</b><?php echo $testtype['BrandName']; ?></span>
+                                    <span><b> Item Type:</b><?php echo $testtype['ItemType']; ?></span>
+                                    <span><b> Coating:</b><?php echo $testtype['Coating_Non_Coating']; ?></span>
+                                    <span><b> Color:</b><?php echo $testtype['Color']; ?></span>
+                                    <span> <b>Description:</b><?php echo $testtype['Description']; ?></span>
+                                </div>
+                        <?php
+                            }
+                        }
+                        ?>
+
+
+                        <?php
+                        foreach ($CSR as $testtype) {
+                            if ($testtype['TestType'] == 'Balls') {
+                        ?>
+                                <span><b>Footbal Details (<?php echo $testtype['Name']; ?>) </b></span> :</b></span>
+                                <div class="col-md-12">
+                                    <span> <b>Brand Name:</b><?php echo $testtype['BrandName']; ?></span>
+                                    <span><b> Model Name:</b><?php echo $testtype['Model']; ?></span>
+                                    <span><b> Article Name:</b><?php echo $testtype['Article']; ?></span>
+                                    <span><b> Size:</b><?php echo $testtype['Size']; ?></span>
+                                    <span><b> Matrial Type:</b><?php echo $testtype['materialType']; ?></span>
+                                    <span> <b>Ball Type:</b><?php echo $testtype['BalllType']; ?></span>
+                                    <span> <b>Description:</b><?php echo $testtype['Description']; ?></span>
+                                </div>
+                        <?php
+                            }
+                        }
+                        ?>
+
+
+                        <?php
+                        foreach ($CSR as $testtype) {
+                            if ($testtype['TestType'] == 'Bags') {
+                        ?>
+                                <span><b>Bags Details (<?php echo $testtype['Name']; ?>)</b></span> :</b></span>
+                                <div class="col-md-12">
+
+                                    <span> <b>Item Type:</b> <?php echo $testtype['ItemType']; ?></span>
+                                    <span> <b> Brand Name:</b><?php echo $testtype['BrandName']; ?></span>
+                                    <span> <b> Model Name:</b><?php echo $testtype['Model']; ?></span>
+                                    <span> <b>Article Name:</b><?php echo $testtype['Article']; ?></span>
+                                    <span> <b>Matrial Type:</b><?php echo $testtype['materialType']; ?></span>
+                                    <span> <b>Coating:</b><?php echo $testtype['Coating_Non_Coating']; ?></span>
+                                    <span> <b> Color:</b><?php echo $testtype['Color']; ?></span>
+                                    <span> <b>Bag Type:</b><?php echo $testtype['BagType']; ?></span>
+                                    <span> <b>Description:</b><?php echo $testtype['Description']; ?></span>
+                                </div>
+                        <?php
+                            }
+                        }
+                        ?>
+
 
                     </div>
-                </div> -->
+                    <!-- <div class="col-md-12">
+                        <span><?php echo $CSR[0]['requirements']; ?></span>
+
+                    </div> -->
+                </div>
 
 
                 <!-- <div class="row mt-3 p-3 h-25 border border-dark">
@@ -683,6 +819,7 @@ if ($CSR[0]['UserID'] == $this->session->userdata('user_id')) {
             <div class="row">
                 <div class="col text-center">
                     <button type="button" class="btn btn-primary" onclick="printDiv('printCard')" data-dismiss="modal" style="border-radius: 10px;">Print CSR</button>
+                   
                     <button class="btn btn-dark" id="backToHome" style="border-radius: 10px;text-transform:initial">Back</button>
                 </div>
             </div>
