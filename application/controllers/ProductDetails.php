@@ -66,6 +66,156 @@ class ProductDetails extends CI_Controller
             ->set_output(json_encode($resultArray));
     }
 
+    public function setCartBall()
+    {
+
+        $valuesArray = [$_POST['Name'], $_POST['Price'], $_POST['ImageURL'], $_POST['Quantity'], $_POST['Price'], $_POST['TestId'],$_POST['TestType'], $_POST['brand'], $_POST['modalBall'], $_POST['articleBall'], $_POST['sizeBall'], $_POST['materialTypeBall'], $_POST['ballTypeBall'], $_POST['descriptionBall']];
+        array_push($_SESSION['Products'], $valuesArray);
+        $totalPrice = 0;
+        $index = 0;
+        $cartCount = count($_SESSION['Products']);
+        $cartHTML = '<ul class="mini-products-list">';
+        $resultArray = [];
+        foreach ($_SESSION['Products'] as $products) {
+            $Price = intval($products[4]) * intval($products[3]);
+            $totalPrice +=  $Price;
+            $cartHTML .= '<li class="item"><a class="product-image" href="#"><img src="' . $products[2] . '" alt="' . $products[0] . '" title="" /></a> <div class="product-details"> <a href="' . base_url() . '/ProductDetails/RemoveCartItem?id=' . $index . '" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a><a class="pName" href="cart.html">' . $products[0] . '</a><div class="wrapQtyBtn"><div class="qtyField"><span class="label" style="color:black">Qty:</span><a class="qtyBtn minus" data-src="' . $index . '" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a><input type="text" id="Quantity" name="quantity" value="' . $products[3] . '" class="product-form__input qty" disabled><a class="qtyBtn plus" data-src="' . $index . '" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a></div></div><div class="priceRow"><div class="product-price"><span class="money"> $ ' . $Price . '</span></div></div></div></li>';
+            $index += 1;
+        }
+        $cartHTML .= '</ul><div class="total"><div class="total-in"><span class="label">Cart Subtotal:</span> <span class="product-price"><span class="money">$ ' . $totalPrice . '</span></span></div><div class="buttonSet text-center"><a href="' . base_url() . 'Test/Cart" class="btn btn-secondary btn--small" style="border-radius:10px;padding:10px">View Cart</a><a href="' . base_url() . 'Test/checkout" class="btn btn-secondary btn--small" style="border-radius:10px;padding:10px">Checkout</a></div></div>';
+
+        array_push($resultArray, $totalPrice, $cartHTML, $cartCount);
+        return $this->output
+            ->set_content_type('application/json')
+            ->set_status_header(200)
+            ->set_output(json_encode($resultArray));
+    }
+
+    public function setCartBags()
+    {
+
+        $valuesArray = [$_POST['Name'], $_POST['Price'], $_POST['ImageURL'], $_POST['Quantity'], $_POST['Price'], $_POST['TestId'],$_POST['TestType'], $_POST['brand'], $_POST['modalBag'], $_POST['articleBag'], $_POST['itemTypeBag'], $_POST['CottingBag'], $_POST['colorBag'], $_POST['descriptionBag'], $_POST['bagTypeBag']];
+        array_push($_SESSION['Products'], $valuesArray);
+        $totalPrice = 0;
+        $index = 0;
+        $cartCount = count($_SESSION['Products']);
+        $cartHTML = '<ul class="mini-products-list">';
+        $resultArray = [];
+        foreach ($_SESSION['Products'] as $products) {
+            $Price = intval($products[4]) * intval($products[3]);
+            $totalPrice +=  $Price;
+            $cartHTML .= '<li class="item"><a class="product-image" href="#"><img src="' . $products[2] . '" alt="' . $products[0] . '" title="" /></a> <div class="product-details"> <a href="' . base_url() . '/ProductDetails/RemoveCartItem?id=' . $index . '" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a><a class="pName" href="cart.html">' . $products[0] . '</a><div class="wrapQtyBtn"><div class="qtyField"><span class="label" style="color:black">Qty:</span><a class="qtyBtn minus" data-src="' . $index . '" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a><input type="text" id="Quantity" name="quantity" value="' . $products[3] . '" class="product-form__input qty" disabled><a class="qtyBtn plus" data-src="' . $index . '" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a></div></div><div class="priceRow"><div class="product-price"><span class="money"> $ ' . $Price . '</span></div></div></div></li>';
+            $index += 1;
+        }
+        $cartHTML .= '</ul><div class="total"><div class="total-in"><span class="label">Cart Subtotal:</span> <span class="product-price"><span class="money">$ ' . $totalPrice . '</span></span></div><div class="buttonSet text-center"><a href="' . base_url() . 'Test/Cart" class="btn btn-secondary btn--small" style="border-radius:10px;padding:10px">View Cart</a><a href="' . base_url() . 'Test/checkout" class="btn btn-secondary btn--small" style="border-radius:10px;padding:10px">Checkout</a></div></div>';
+
+        array_push($resultArray, $totalPrice, $cartHTML, $cartCount);
+        return $this->output
+            ->set_content_type('application/json')
+            ->set_status_header(200)
+            ->set_output(json_encode($resultArray));
+    }
+
+    public function setCartMaterial()
+    {
+
+        $valuesArray = [$_POST['Name'], $_POST['Price'], $_POST['ImageURL'], $_POST['Quantity'], $_POST['Price'], $_POST['TestId'], $_POST['TestType'],$_POST['brandMaterial'], $_POST['itemTypeMaterial'], $_POST['CottingMaterial'], $_POST['colorMaterial'], $_POST['descriptionMaterial']];
+        array_push($_SESSION['Products'], $valuesArray);
+        $totalPrice = 0;
+        $index = 0;
+        $cartCount = count($_SESSION['Products']);
+        $cartHTML = '<ul class="mini-products-list">';
+        $resultArray = [];
+        foreach ($_SESSION['Products'] as $products) {
+            $Price = intval($products[4]) * intval($products[3]);
+            $totalPrice +=  $Price;
+            $cartHTML .= '<li class="item"><a class="product-image" href="#"><img src="' . $products[2] . '" alt="' . $products[0] . '" title="" /></a> <div class="product-details"> <a href="' . base_url() . '/ProductDetails/RemoveCartItem?id=' . $index . '" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a><a class="pName" href="cart.html">' . $products[0] . '</a><div class="wrapQtyBtn"><div class="qtyField"><span class="label" style="color:black">Qty:</span><a class="qtyBtn minus" data-src="' . $index . '" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a><input type="text" id="Quantity" name="quantity" value="' . $products[3] . '" class="product-form__input qty" disabled><a class="qtyBtn plus" data-src="' . $index . '" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a></div></div><div class="priceRow"><div class="product-price"><span class="money"> $ ' . $Price . '</span></div></div></div></li>';
+            $index += 1;
+        }
+        $cartHTML .= '</ul><div class="total"><div class="total-in"><span class="label">Cart Subtotal:</span> <span class="product-price"><span class="money">$ ' . $totalPrice . '</span></span></div><div class="buttonSet text-center"><a href="' . base_url() . 'Test/Cart" class="btn btn-secondary btn--small" style="border-radius:10px;padding:10px">View Cart</a><a href="' . base_url() . 'Test/checkout" class="btn btn-secondary btn--small" style="border-radius:10px;padding:10px">Checkout</a></div></div>';
+
+        array_push($resultArray, $totalPrice, $cartHTML, $cartCount);
+        return $this->output
+            ->set_content_type('application/json')
+            ->set_status_header(200)
+            ->set_output(json_encode($resultArray));
+    }
+
+    public function setCartBallIndividual()
+    {
+
+        $valuesArray = [$_POST['Name'], $_POST['Price'], $_POST['ImageURL'], $_POST['Quantity'], $_POST['OriginalPrice'], $_POST['TestId'], $_POST['TestType'],$_POST['brand'], $_POST['modalBall'], $_POST['articleBall'], $_POST['sizeBall'], $_POST['materialTypeBall'], $_POST['ballTypeBall'], $_POST['descriptionBall']];
+        array_push($_SESSION['Products'], $valuesArray);
+        $totalPrice = 0;
+        $index = 0;
+        $cartCount = count($_SESSION['Products']);
+        $cartHTML = '<ul class="mini-products-list">';
+        $resultArray = [];
+        foreach ($_SESSION['Products'] as $products) {
+            $Price = intval($products[4]) * intval($products[3]);
+            $totalPrice +=  $Price;
+            $cartHTML .= '<li class="item"><a class="product-image" href="#"><img src="' . $products[2] . '" alt="' . $products[0] . '" title="" /></a> <div class="product-details"> <a href="' . base_url() . '/ProductDetails/RemoveCartItem?id=' . $index . '" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a><a class="pName" href="cart.html">' . $products[0] . '</a><div class="wrapQtyBtn"><div class="qtyField"><span class="label" style="color:black">Qty:</span><a class="qtyBtn minus" data-src="' . $index . '" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a><input type="text" id="Quantity" name="quantity" value="' . $products[3] . '" class="product-form__input qty" disabled><a class="qtyBtn plus" data-src="' . $index . '" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a></div></div><div class="priceRow"><div class="product-price"><span class="money"> $ ' . $Price . '</span></div></div></div></li>';
+            $index += 1;
+        }
+        $cartHTML .= '</ul><div class="total"><div class="total-in"><span class="label">Cart Subtotal:</span> <span class="product-price"><span class="money">$ ' . $totalPrice . '</span></span></div><div class="buttonSet text-center"><a href="' . base_url() . 'Test/Cart" class="btn btn-secondary btn--small" style="border-radius:10px;padding:10px">View Cart</a><a href="' . base_url() . 'Test/checkout" class="btn btn-secondary btn--small" style="border-radius:10px;padding:10px">Checkout</a></div></div>';
+
+        array_push($resultArray, $totalPrice, $cartHTML, $cartCount);
+        return $this->output
+            ->set_content_type('application/json')
+            ->set_status_header(200)
+            ->set_output(json_encode($resultArray));
+    }
+
+    public function setCartBagsIndividual()
+    {
+
+        $valuesArray = [$_POST['Name'], $_POST['Price'], $_POST['ImageURL'], $_POST['Quantity'], $_POST['OriginalPrice'], $_POST['TestId'],$_POST['TestType'], $_POST['brand'], $_POST['modalBag'], $_POST['articleBag'], $_POST['itemTypeBag'], $_POST['CottingBag'], $_POST['colorBag'], $_POST['descriptionBag'], $_POST['bagTypeBag']];
+        array_push($_SESSION['Products'], $valuesArray);
+        $totalPrice = 0;
+        $index = 0;
+        $cartCount = count($_SESSION['Products']);
+        $cartHTML = '<ul class="mini-products-list">';
+        $resultArray = [];
+        foreach ($_SESSION['Products'] as $products) {
+            $Price = intval($products[4]) * intval($products[3]);
+            $totalPrice +=  $Price;
+            $cartHTML .= '<li class="item"><a class="product-image" href="#"><img src="' . $products[2] . '" alt="' . $products[0] . '" title="" /></a> <div class="product-details"> <a href="' . base_url() . '/ProductDetails/RemoveCartItem?id=' . $index . '" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a><a class="pName" href="cart.html">' . $products[0] . '</a><div class="wrapQtyBtn"><div class="qtyField"><span class="label" style="color:black">Qty:</span><a class="qtyBtn minus" data-src="' . $index . '" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a><input type="text" id="Quantity" name="quantity" value="' . $products[3] . '" class="product-form__input qty" disabled><a class="qtyBtn plus" data-src="' . $index . '" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a></div></div><div class="priceRow"><div class="product-price"><span class="money"> $ ' . $Price . '</span></div></div></div></li>';
+            $index += 1;
+        }
+        $cartHTML .= '</ul><div class="total"><div class="total-in"><span class="label">Cart Subtotal:</span> <span class="product-price"><span class="money">$ ' . $totalPrice . '</span></span></div><div class="buttonSet text-center"><a href="' . base_url() . 'Test/Cart" class="btn btn-secondary btn--small" style="border-radius:10px;padding:10px">View Cart</a><a href="' . base_url() . 'Test/checkout" class="btn btn-secondary btn--small" style="border-radius:10px;padding:10px">Checkout</a></div></div>';
+
+        array_push($resultArray, $totalPrice, $cartHTML, $cartCount);
+        return $this->output
+            ->set_content_type('application/json')
+            ->set_status_header(200)
+            ->set_output(json_encode($resultArray));
+    }
+
+    public function setCartMaterialIndividual()
+    {
+
+        $valuesArray = [$_POST['Name'], $_POST['Price'], $_POST['ImageURL'], $_POST['Quantity'], $_POST['OriginalPrice'], $_POST['TestId'], $_POST['TestType'],$_POST['brandMaterial'], $_POST['itemTypeMaterial'], $_POST['CottingMaterial'], $_POST['colorMaterial'], $_POST['descriptionMaterial']];
+        array_push($_SESSION['Products'], $valuesArray);
+        $totalPrice = 0;
+        $index = 0;
+        $cartCount = count($_SESSION['Products']);
+        $cartHTML = '<ul class="mini-products-list">';
+        $resultArray = [];
+        foreach ($_SESSION['Products'] as $products) {
+            $Price = intval($products[4]) * intval($products[3]);
+            $totalPrice +=  $Price;
+            $cartHTML .= '<li class="item"><a class="product-image" href="#"><img src="' . $products[2] . '" alt="' . $products[0] . '" title="" /></a> <div class="product-details"> <a href="' . base_url() . '/ProductDetails/RemoveCartItem?id=' . $index . '" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a><a class="pName" href="cart.html">' . $products[0] . '</a><div class="wrapQtyBtn"><div class="qtyField"><span class="label" style="color:black">Qty:</span><a class="qtyBtn minus" data-src="' . $index . '" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a><input type="text" id="Quantity" name="quantity" value="' . $products[3] . '" class="product-form__input qty" disabled><a class="qtyBtn plus" data-src="' . $index . '" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a></div></div><div class="priceRow"><div class="product-price"><span class="money"> $ ' . $Price . '</span></div></div></div></li>';
+            $index += 1;
+        }
+        $cartHTML .= '</ul><div class="total"><div class="total-in"><span class="label">Cart Subtotal:</span> <span class="product-price"><span class="money">$ ' . $totalPrice . '</span></span></div><div class="buttonSet text-center"><a href="' . base_url() . 'Test/Cart" class="btn btn-secondary btn--small" style="border-radius:10px;padding:10px">View Cart</a><a href="' . base_url() . 'Test/checkout" class="btn btn-secondary btn--small" style="border-radius:10px;padding:10px">Checkout</a></div></div>';
+
+        array_push($resultArray, $totalPrice, $cartHTML, $cartCount);
+        return $this->output
+            ->set_content_type('application/json')
+            ->set_status_header(200)
+            ->set_output(json_encode($resultArray));
+    }
+
     public function updateCart()
     {
         $index = $_POST['index'];
@@ -85,7 +235,7 @@ class ProductDetails extends CI_Controller
             $cartHTML .= '<li class="item"><a class="product-image" href="#"><img src="' . $products[2] . '" alt="' . $products[0] . '" title="" /></a> <div class="product-details"> <a href="' . base_url() . '/ProductDetails/RemoveCartItem?id=' . $index . '" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a><a class="pName" href="cart.html">' . $products[0] . '</a><div class="wrapQtyBtn"><div class="qtyField"><span class="label" style="color:black">Qty:</span><a class="qtyBtn minus" data-src="' . $index . '" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a><input type="text" id="Quantity" name="quantity" value="' . $products[3] . '" class="product-form__input qty" disabled><a class="qtyBtn plus" data-src="' . $index . '" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a></div></div><div class="priceRow"><div class="product-price"><span class="money"> $ ' . $products[1] . '</span></div></div></div></li>';
             $index += 1;
         }
-        $cartHTML .= '</ul><div class="total"><div class="total-in"><span class="label">Cart Subtotal:</span> <span class="product-price"><span class="money">$ ' . $totalPrice . '</span></span></div><div class="buttonSet text-center"><a href="' . base_url() . 'Test/Cart" class="btn btn-secondary btn--small" style="border-radius:10px;padding:10px">View Cart</a><a href="checkout.html" class="btn btn-secondary btn--small" style="border-radius:10px;padding:10px">Checkout</a></div></div>';
+        $cartHTML .= '</ul><div class="total"><div class="total-in"><span class="label">Cart Subtotal:</span> <span class="product-price"><span class="money">$ ' . $totalPrice . '</span></span></div><div class="buttonSet text-center"><a href="' . base_url() . 'Test/Cart" class="btn btn-secondary btn--small" style="border-radius:10px;padding:10px">View Cart</a><a href="' . base_url() . 'Test/checkout" class="btn btn-secondary btn--small" style="border-radius:10px;padding:10px">Checkout</a></div></div>';
 
         array_push($resultArray, $totalPrice, $cartHTML, $cartCount);
         return $this->output
@@ -100,7 +250,43 @@ class ProductDetails extends CI_Controller
         $valuesArray = [$_POST['Name'], $_POST['Price'], $_POST['ImageURL'], 1, $_POST['Price'], $_POST['TestId']];
         array_push($_SESSION['Products'], $valuesArray);
     }
+    public function LoginsetCartBall()
+    {
+        $_SESSION['Products'] = [];
+        $valuesArray = [$_POST['Name'], $_POST['Price'], $_POST['ImageURL'], $_POST['Quantity'], $_POST['Price'], $_POST['TestId'],$_POST['TestType'], $_POST['brand'], $_POST['modalBall'], $_POST['articleBall'], $_POST['sizeBall'], $_POST['materialTypeBall'], $_POST['ballTypeBall'], $_POST['descriptionBall']];
+        array_push($_SESSION['Products'], $valuesArray);
+    }
+    public function LoginsetCartBags()
+    {
+        $_SESSION['Products'] = [];
+        $valuesArray = [$_POST['Name'], $_POST['Price'], $_POST['ImageURL'], $_POST['Quantity'], $_POST['Price'], $_POST['TestId'],$_POST['TestType'], $_POST['brand'], $_POST['modalBag'], $_POST['articleBag'], $_POST['itemTypeBag'], $_POST['CottingBag'], $_POST['colorBag'], $_POST['descriptionBag'], $_POST['bagTypeBag']];
+        array_push($_SESSION['Products'], $valuesArray);
+    }
+    public function LoginsetCartMaterial()
+    {
+        $_SESSION['Products'] = [];
+        $valuesArray = [$_POST['Name'], $_POST['Price'], $_POST['ImageURL'], $_POST['Quantity'], $_POST['Price'], $_POST['TestId'],$_POST['TestType'], $_POST['brandMaterial'], $_POST['itemTypeMaterial'], $_POST['CottingMaterial'], $_POST['colorMaterial'], $_POST['descriptionMaterial']];
+        array_push($_SESSION['Products'], $valuesArray);
+    }
 
+    public function LoginsetCartBallIndividual()
+    {
+        $_SESSION['Products'] = [];
+        $valuesArray = [$_POST['Name'], $_POST['Price'], $_POST['ImageURL'], $_POST['Quantity'], $_POST['OriginalPrice'], $_POST['TestId'],$_POST['TestType'], $_POST['brand'], $_POST['modalBall'], $_POST['articleBall'], $_POST['sizeBall'], $_POST['materialTypeBall'], $_POST['ballTypeBall'], $_POST['descriptionBall']];
+        array_push($_SESSION['Products'], $valuesArray);
+    }
+    public function LoginsetCartBagsIndividual()
+    {
+        $_SESSION['Products'] = [];
+        $valuesArray = [$_POST['Name'], $_POST['Price'], $_POST['ImageURL'], $_POST['Quantity'], $_POST['OriginalPrice'], $_POST['TestId'], $_POST['TestType'], $_POST['brand'], $_POST['modalBag'], $_POST['articleBag'], $_POST['itemTypeBag'], $_POST['CottingBag'], $_POST['colorBag'], $_POST['descriptionBag'], $_POST['bagTypeBag']];
+        array_push($_SESSION['Products'], $valuesArray);
+    }
+    public function LoginsetCartMaterialIndividual()
+    {
+        $_SESSION['Products'] = [];
+        $valuesArray = [$_POST['Name'], $_POST['Price'], $_POST['ImageURL'], $_POST['Quantity'], $_POST['OriginalPrice'], $_POST['TestId'], $_POST['TestType'],$_POST['brandMaterial'], $_POST['itemTypeMaterial'], $_POST['CottingMaterial'], $_POST['colorMaterial'], $_POST['descriptionMaterial']];
+        array_push($_SESSION['Products'], $valuesArray);
+    }
     public function RemoveCartItem()
     {
 

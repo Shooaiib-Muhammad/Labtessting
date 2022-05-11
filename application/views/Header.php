@@ -123,7 +123,201 @@ video{
     <img src="<?php echo base_url(); ?>assets/images/loader4.gif" alt="Loading..." />
   </div>
   <div class="pageWrapper">
+  <div class="modal fade" id="ballModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ball Modal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Brand</label>
+                            <input type="text" class="form-control" id="brandBall" placeholder="Enter Brand">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Modal</label>
+                            <input type="text" class="form-control" id="modalBall" placeholder="Enter Modal">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Article No.</label>
+                            <input type="text" class="form-control" id="articleBall" placeholder="Enter Article Number">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Size</label>
+                            <input type="text" class="form-control" id="sizeBall" placeholder="Enter Size">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Material Type</label>
+                            <input type="text" class="form-control" id="materialTypeBall" placeholder="Enter Material Type">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Ball Type</label>
+                            <input type="text" class="form-control" id="ballTypeBall" placeholder="Enter Ball Type">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Description</label>
+                            <input type="text" class="form-control" id="descriptionBall" placeholder="Enter Description">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="border-radius: 10px;background-color:rgba(255,0,0,0.8)">Close</button>
+                <button type="button" class="btn btn-primary" id='ballCartButton' style="border-radius: 10px;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="bagModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Bag Modal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Brand</label>
+                            <input type="text" class="form-control" id="brandBag" placeholder="Enter Brand">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Modal</label>
+                            <input type="text" class="form-control" id="modalBag" placeholder="Enter Modal">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Article No.</label>
+                            <input type="text" class="form-control" id="articleBag" placeholder="Enter Article Number">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Item Type</label>
+                            <input type="text" class="form-control" id="itemTypeBag" placeholder="Enter Item Type">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Cotting / Non-Coating</label>
+                            <select class="form-control" id="CottingBag" >
+                        <option value="Coating">Coating</option>
+                        <option value="Non-Coating">Non-Coating</option>    
+                        </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Color</label>
+                            <input type="text" class="form-control" id="colorBag" placeholder="Enter Color">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Bag Type</label>
+                            <input type="text" class="form-control" id="bagTypeBag" placeholder="Enter Bag Type">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Description</label>
+                            <input type="text" class="form-control" id="descriptionBag" placeholder="Enter Description">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="border-radius: 10px;background-color:rgba(255,0,0,0.8)">Close</button>
+                <button type="button" class="btn btn-primary" id='bagCartButton' style="border-radius: 10px;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="materialModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Material Modal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Brand</label>
+                            <input type="text" class="form-control" id="brandMaterial" placeholder="Enter Brand">
+                        </div>
+                    </div>
     
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Item Type</label>
+                            <input type="text" class="form-control" id="itemTypeMaterial" placeholder="Enter Item Type">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Cotting / Non-Coating</label>
+                            <select class="form-control" id="CottingMaterial" >
+                        <option value="Coating">Coating</option>
+                        <option value="Non-Coating">Non-Coating</option>    
+                        </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Color</label>
+                            <input type="text" class="form-control" id="colorMaterial" placeholder="Enter Color">
+                        </div>
+                    </div>
+                
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Description</label>
+                            <input type="text" class="form-control" id="descriptionMaterial" placeholder="Enter Description">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="border-radius: 10px;background-color:rgba(255,0,0,0.8)">Close</button>
+                <button type="button" class="btn btn-primary" id='materialCartButton' style="border-radius: 10px;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
     <!--Search Form Drawer-->
     <div class="search">
       <div class="search__form">
@@ -426,8 +620,31 @@ video{
           </ul>
         </li>
         </ul>
+        <ul>
+        <li class="lvl1 parent megamenu"><a href="#">All Tests  <i class="anm anm-plus-l"></i></a>
+          <ul>
+            <li><a href="#" class="site-nav">Accredited <i class="anm anm-plus-l"></i></a>
+              <ul class="dropdown">
+               
+                      <li><a href="<?php echo base_url(); ?>Accredited" class="site-nav">Accredited</a></li>
+              
+              </ul>
+            </li>
+            <li><a href="#" class="site-nav">Non-Accredited <i class="anm anm-plus-l"></i></a>
+              <ul class="dropdown">
+               
+                      <li><a href="<?php echo base_url(); ?>NonAccredited" class="site-nav">Non-Accredited</a></li>
+               
+              </ul>
+            </li>
+          </ul>
+
+        </li>
+        </ul>
         <!-- <li><a href="<?php echo base_url(); ?>AlltestPackage" class="site-nav">Coming soon<span class="lbl nm_label1">New</span></a></li> -->
+        <li class="lvl1"><a href="<?php echo base_url(); ?>ContactUs"><b>Contact Us</b></a>
         <li class="lvl1"><a href="<?php echo base_url(); ?>AlltestPackage"><b>BOOK NOW !</b></a>
+        <li class="lvl1"><a href="<?php echo base_url(); ?>HowBook"><b>How To Book ? </b></a>
       </ul>
       </li>
 

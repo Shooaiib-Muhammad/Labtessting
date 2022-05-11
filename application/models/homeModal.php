@@ -61,6 +61,7 @@ WHERE        (TestID = $id) and (Status = 1)");
 public function orderPlacement($namer,$emailr,$telr,$faxr,$requirement){
   date_default_timezone_set('Asia/Karachi');
   $date = date("Y-m-d H:i:s");
+  $dateGet = date("Y-m-d");
   $user_id = $this->session->userdata('user_id');
 $totalPrice = 0;
 $testIds = [];
@@ -105,8 +106,118 @@ if($totalPrice == 0){
 }else{
   $query = $this->db->query("INSERT INTO dbo.tbl_Outward_Transaction ( TestID ,TestName ,TAmount ,TQuantity ,Amount ,UserID  ,RequestDate,Name_of_recipient,REmail,RContact,RFax,requirements ) VALUES ( '$testIdsConvert' ,'$testNamesConvert' ,'$testAmountsConvert' ,'$testQuantitiesConvert' ,$totalPrice ,'$user_id' ,'$date','$namer','$emailr','$telr','$faxr','$requirement' )");
   if($query){
-    $_SESSION['Products'] = [];
     $Id = $this->db->insert_id();
+    foreach ($_SESSION['Products'] as $products) {
+      if($products[6]=='Balls'){
+        $query = $this->db->query("INSERT INTO dbo.tbl_Outward_Transaction_D
+                   (TID
+                   ,testID
+                   ,Amount
+                   ,Quantity
+                   ,UserID
+                   ,BrandName
+                   ,TestType
+                   ,Description
+                   ,Model
+                   ,Article
+                   ,Size
+                   ,materialType
+                   ,BalllType
+                   ,RequestDate
+                 )
+             VALUES
+                   ('$Id' 
+                   ,'$products[5]' 
+                   ,'$products[1]' 
+                   ,'$products[3]' 
+                   ,'$user_id'
+                   ,'$products[7]'
+                   ,'$products[6]' 
+                   ,'$products[13]'
+                   ,'$products[8]' 
+                   ,'$products[9]'
+                   ,'$products[10]'
+                   ,'$products[11]'
+                   ,'$products[12]'
+                   ,'$dateGet'
+                
+                )");
+      }
+      else if($products[6]=='Bags'){
+        $query = $this->db->query("INSERT INTO dbo.tbl_Outward_Transaction_D
+                   (TID
+                   ,testID
+                   ,Amount
+                   ,Quantity
+                   ,UserID
+                   ,BrandName
+                   ,TestType
+                   ,ItemType
+                   ,Coating_Non_Coating
+                   ,Color
+                   ,Description
+                   ,Model
+                   ,Article
+                   ,BagType
+                   ,RequestDate
+                  )
+             VALUES
+                   ('$Id' 
+                   ,'$products[5]' 
+                   ,'$products[1]' 
+                   ,'$products[3]' 
+                   ,'$user_id'
+                   ,'$products[7]'
+                   ,'$products[6]' 
+                   ,'$products[10]' 
+                   ,'$products[11]' 
+                   ,'$products[12]' 
+                   ,'$products[13]' 
+                   ,'$products[8]' 
+                   ,'$products[9]' 
+                   ,'$products[14]' 
+                   ,'$dateGet'
+                
+                )
+        
+        
+        ");
+      }
+      else{
+        $query = $this->db->query("INSERT INTO dbo.tbl_Outward_Transaction_D
+                   (TID
+                   ,testID
+                   ,Amount
+                   ,Quantity
+                   ,UserID
+                   ,BrandName
+                   ,TestType
+                   ,ItemType
+                   ,Coating_Non_Coating
+                   ,Color
+                   ,Description
+                   ,RequestDate
+                  )
+             VALUES
+                   ('$Id' 
+                   ,'$products[5]' 
+                   ,'$products[1]' 
+                   ,'$products[3]' 
+                   ,'$user_id'
+                   ,'$products[7]'
+                   ,'$products[6]' 
+                   ,'$products[8]'
+                   ,'$products[9]'
+                   ,'$products[10]'
+                   ,'$products[11]'
+                   ,'$dateGet' 
+                )
+        
+        
+        ");
+      }
+    }
+    $_SESSION['Products'] = [];
     return $Id;
   }
   else{
