@@ -228,9 +228,9 @@
                                     <div class="col"> <strong>Email:</strong> <br>
                                         <div id="email"> </div>
                                     </div>
-                                    <div class="col"> <strong>Current Status:</strong> <br>
+                                    <!-- <div class="col"> <strong>Current Status:</strong> <br>
                                         <div id="status"> </div>
-                                    </div>
+                                    </div> -->
                                     <div class="col"> <strong>Amount#:</strong> <br> $ <span id="amount"></span></div>
                                     <div class="col"> <strong>Request Date:</strong> <br>
                                         <div id="request_date"> </div>
@@ -339,7 +339,7 @@
                     document.getElementById('supplier').innerHTML = data[0]['Supplier']
                     document.getElementById('name').innerHTML = data[0]['Name_of_recipient']
                     document.getElementById('email').innerHTML = data[0]['REmail']
-                    document.getElementById('status').innerHTML = data[0]['Request_Status']
+                    // document.getElementById('status').innerHTML = data[0]['Request_Status']
                     document.getElementById('amount').innerHTML = data[0]['Amount']
                     document.getElementById('request_date').innerHTML = data[0]['RequestDate']
                     document.getElementById('invoiceId').innerHTML = data[0]['TID']

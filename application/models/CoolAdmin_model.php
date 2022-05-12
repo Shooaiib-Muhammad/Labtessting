@@ -97,9 +97,9 @@ GROUP BY 'FS-' + CAST(UserID AS varchar(100)) + '-' + CAST(DAY(RequestDate) AS v
  }
 
  public function track($invoice_id){
-  $query = $this->db->query("SELECT        dbo.tbl_Outward_Transaction_D.TID, dbo.tbl_Outward_Transaction_D.Amount, dbo.tbl_Outward_Transaction_D.CSSNo, dbo.tbl_Outward_Transaction_D.RequestDate, dbo.tbl_Outward_Transaction_D.Evidence_pic, 
-                         dbo.tbl_Outward_Transaction_D.EDate, dbo.tbl_Outward_Transaction_D.AccountsStatus, dbo.tbl_Outward_Transaction_D.AccountsverfiyDate, dbo.tbl_Outward_Transaction_D.labStatus, 
-                         dbo.tbl_Outward_Transaction_D.labProceedDate, dbo.tbl_Outward_Transaction_D.RDate, dbo.tbl_Outward_Transaction_D.Result, dbo.tbl_Outward_Transaction_D.Request_Status, 
+  $query = $this->db->query("SELECT        dbo.tbl_Outward_Transaction_D.TID, dbo.tbl_Outward_Transaction_D.Amount, dbo.tbl_Outward_Transaction_D.CSSNo, CONVERT(varchar, dbo.tbl_Outward_Transaction_D.RequestDate, 103) AS RequestDate, 
+                         dbo.tbl_Outward_Transaction_D.Evidence_pic, dbo.tbl_Outward_Transaction_D.EDate, dbo.tbl_Outward_Transaction_D.AccountsStatus, dbo.tbl_Outward_Transaction_D.AccountsverfiyDate, 
+                         dbo.tbl_Outward_Transaction_D.labStatus, dbo.tbl_Outward_Transaction_D.labProceedDate, dbo.tbl_Outward_Transaction_D.RDate, dbo.tbl_Outward_Transaction_D.Result, dbo.tbl_Outward_Transaction_D.Request_Status, 
                          dbo.tbl_Outward_Transaction.Name_of_recipient, dbo.tbl_Outward_Transaction.REmail, dbo.tbl_Outward_Users.Supplier, dbo.tbl_Outward_Users.Country, dbo.tbl_Outward_Users.Contactno, 
                          dbo.Tbl_Fit_Lab_Capability.Name
 FROM            dbo.tbl_Outward_Transaction INNER JOIN

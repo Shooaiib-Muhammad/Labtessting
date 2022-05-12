@@ -14,8 +14,8 @@ class Payment_Model extends CI_Model
  public function getpendingPayment()
     {
       $id=$this->session->userdata('user_id');
-        $query = $this->db->query("SELECT        view_Outward_transaction.*
-        FROM            dbo.view_Outward_transaction
+        $query = $this->db->query("SELECT        view_Outward_transaction_D.*
+        FROM            dbo.view_Outward_transaction_D
         WHERE        (Evidence_pic IS NULL) and (UserID=$id)");
       return  $query->result_array();
     }
@@ -24,24 +24,24 @@ class Payment_Model extends CI_Model
     public function getDone()
     {
       $id=$this->session->userdata('user_id');
-        $query = $this->db->query("SELECT        view_Outward_transaction.*
-        FROM            dbo.view_Outward_transaction
+        $query = $this->db->query("SELECT        view_Outward_transaction_D.*
+        FROM            dbo.view_Outward_transaction_D
         WHERE         (Evidence_pic IS NOT NULL) and (UserID=$id)");
       return  $query->result_array();
     }
 public function getresult(){
   
   $id=$this->session->userdata('user_id');
-        $query = $this->db->query("SELECT        view_Outward_transaction.*
-        FROM            dbo.view_Outward_transaction
+        $query = $this->db->query("SELECT        view_Outward_transaction_D.*
+        FROM            dbo.view_Outward_transaction_D
         WHERE         (Evidence_pic IS NOT NULL) and (UserID=$id) and Request_Status='Result Uploaded'");
       return  $query->result_array();
 }
     public function getimage($TID)
 {
 
-  $query = $this->db->query("SELECT        view_Outward_transaction.*
-  FROM            dbo.view_Outward_transaction
+  $query = $this->db->query("SELECT        view_Outward_transaction_D.*
+  FROM            dbo.view_Outward_transaction_D
   WHERE         dbo.view_Outward_transaction.TID= $TID");
   return  $query->result_array();
 }

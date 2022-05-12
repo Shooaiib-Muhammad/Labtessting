@@ -583,7 +583,7 @@ if ($CSR[0]['UserID'] == $this->session->userdata('user_id')) {
                                 <div class="col-md-12">
                                     <span> <b>Brand Name:</b><?php echo $testtype['BrandName']; ?></span>
                                     <span><b> Item Type:</b><?php echo $testtype['ItemType']; ?></span>
-                                    <span><b> Coating:</b><?php echo $testtype['Coating_Non_Coating']; ?></span>
+                                   
                                     <span><b> Color:</b><?php echo $testtype['Color']; ?></span>
                                     <span> <b>Description:</b><?php echo $testtype['Description']; ?></span>
                                 </div>
@@ -625,7 +625,7 @@ if ($CSR[0]['UserID'] == $this->session->userdata('user_id')) {
                                     <span> <b> Model Name:</b><?php echo $testtype['Model']; ?></span>
                                     <span> <b>Article Name:</b><?php echo $testtype['Article']; ?></span>
                                     <span> <b>Matrial Type:</b><?php echo $testtype['materialType']; ?></span>
-                                    <span> <b>Coating:</b><?php echo $testtype['Coating_Non_Coating']; ?></span>
+                              
                                     <span> <b> Color:</b><?php echo $testtype['Color']; ?></span>
                                     <span> <b>Bag Type:</b><?php echo $testtype['BagType']; ?></span>
                                     <span> <b>Description:</b><?php echo $testtype['Description']; ?></span>

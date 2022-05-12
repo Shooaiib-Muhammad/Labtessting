@@ -177,8 +177,7 @@
                                                                     <td>$ <?php echo $Key['Amount']; ?> </td>
                                                                     <td><span class="badge badge-primary p-1"><?php echo $Key['Request_Status']; ?> </span></td>
 
-                                                                    <td> <input type="file" name="file" 
-                                                                    style="display: inline-block;" class="btn btn-info btn-xs " id="btn.<?php echo  $TID ?>"></input> </td>
+                                                                    <td> <input type="file" name="file" style="display: inline-block;" class="btn btn-info btn-xs " id="btn.<?php echo  $TID ?>"></input> </td>
                                                                     <td> <button type="submit" style="display: inline-block;" class="btn btn-info btn-xs updatebtn1">Update</button> </td>
                                                                 </form>
 
@@ -279,13 +278,8 @@
                                                                         <input type="text" value="<?php echo $TID; ?>" name="InvoiceID" hidden>
                                                                     </td>
                                                                     <td><?php echo $Key['RequestDate']; ?> </td>
-                                                                    <td>
-                                                                        <?php foreach ($testNames as $test) {
-                                                                        ?>
-
-                                                                            <span class="badge badge-info p-1"><?php echo $test; ?></span>
-                                                                        <?php  } ?>
-                                                                    </td>
+                                                                    <td><?php echo $Key['Name']; ?> </td>
+                                                                    
                                                                     <td>$ <?php echo $Key['Amount']; ?> </td>
                                                                     <td><span class="badge badge-primary p-1"><?php echo $Key['Request_Status']; ?> </span></td>
                                                                     <td><?php echo $Key['EDate']; ?> </td>

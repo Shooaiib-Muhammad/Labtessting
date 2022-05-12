@@ -5,6 +5,15 @@ $this->load->view('Header');
 
 <!--Body Content-->
 <div id="page-content">
+<div class="collection-header">
+        <div class="collection-hero">
+            <div class=" collection-hero__imageCustom"><img class="blur-up lazyload" data-src="<?php echo base_url(); ?>assets/images/cat-women6.jpg" src="assets/images/cat-women2.jpg" height="150px" width="100%" style="background-size: fixed; background-repeat:no-repeat;" alt="Women" title="Women" /></div>
+            <div class="collection-hero__title-wrapper">
+                <!-- <h1 class="collection-hero__title page-width"></h1> -->
+            </div>
+        </div>
+    </div>
+ 
     <!--Page Title-->
     <div class="page section-header text-center">
         <div class="page-title">
@@ -13,10 +22,7 @@ $this->load->view('Header');
             </div>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
+ 
     <!--End Page Title-->
 
 
@@ -328,11 +334,11 @@ $this->load->view('Header');
                                                 if ($this->session->has_userdata('user_id')) {
                                                 ?>
                                                     <form class="variants add" action="#" method="post">
-                                                        <button class="btn cartIcon btn-addto-cart Login AddToCartButtonPackage" id='<?php echo $TestID; ?>' type="button" tabindex="0"><i class="icon anm anm-bag-l"></i></button>
+                                                        <button class="btn cartIcon btn-addto-cart Login AddToCartButton" id='<?php echo $TestID; ?>' type="button" tabindex="0" data-src="<?php echo $keys['Type']; ?>"><i class="icon anm anm-bag-l"></i></button>
                                                     </form>
                                                 <?php } else { ?>
                                                     <form class="variants add" action="#" method="post">
-                                                        <button class="btn cartIcon btn-addto-cart Login LoginAddToCartButtonPackage" id='<?php echo $TestID; ?>' type="button" tabindex="0"><i class="icon anm anm-bag-l"></i></button>
+                                                        <button class="btn cartIcon btn-addto-cart Login LoginAddToCartButton" id='<?php echo $TestID; ?>' type="button" tabindex="0" data-src="<?php echo $keys['Type']; ?>"><i class="icon anm anm-bag-l"></i></button>
                                                     </form>
                                                 <?php } ?>
 
@@ -383,8 +389,327 @@ $this->load->view('Header');
             </div>
         </div>
     </div>
+    <input type="hidden" value="" id="NameValue" />
+<input type="hidden" value="" id="priceValue" />
+<input type="hidden" value="" id="imageValue" />
+<input type="hidden" value="" id="TestValue" />
+<input type="hidden" value="" id="TestType" />
     <!--End Body Content-->
     <?php
 
     $this->load->view('Footer');
     ?>
+
+         
+<script>
+            $('.AddToCartButton').click(function(e) {
+        let name = $(`#Name${this.id}`).text()
+        $(`#NameValue`).val(name)
+        let price = $(`#Price${this.id}`).text()
+        $(`#priceValue`).val(price)
+        let image = $(`#Image${this.id}`).attr("data-src")
+        $(`#imageValue`).val(image)
+        let testId = this.id;
+        $(`#TestValue`).val(testId)
+        let type = $(this).attr("data-src");
+        $(`#TestType`).val(type)
+        console.log("Type", type)
+        if (type == 'Balls') {
+            $('#ballModal').modal('show');
+        } else if (type == 'Bags') {
+            $('#bagModal').modal('show');
+        } else {
+            $('#materialModal').modal('show');
+        }
+        localStorage.setItem('LoginStatus', true)
+        // let url = '<?php echo base_url(); ?>ProductDetails/setCart';
+        // $.post(url, {
+        //         'Name': name,
+        //         'Price': price,
+        //         'ImageURL': image,
+        //         'Quantity': 1,
+        //         'TestId': this.id
+        //     },
+        //     function(data, status) {
+
+        //         let htmlGet = data[1];
+        //         let htmlGetModified = htmlGet.replace(/\\/g, '');
+        //         $('#header-cart').html('');
+        //         $('#CartCount').html('');
+        //         $('#header-cart').html(htmlGetModified);
+        //         $('#CartCount').html(data[2]);
+        //         toastr.success(`Item has been added to cart. Kindly check it at top-right corner!`,`Cart Count: ${data[2]}`);
+        // toastr.options.progressBar = true;
+        // toastr.options.timeOut = 3000;
+        //     })
+    });
+
+    $('.LoginAddToCartButton').click(function(e) {
+        let name = $(`#Name${this.id}`).text()
+        let price = $(`#Price${this.id}`).text()
+        let image = $(`#Image${this.id}`).attr("data-src")
+        let testId = this.id;
+
+        $(`#NameValue`).val(name)
+        $(`#priceValue`).val(price)
+        $(`#imageValue`).val(image)
+        $(`#TestValue`).val(testId)
+        let type = $(this).attr("data-src");
+        $(`#TestType`).val(type)
+        console.log("Type", type)
+        if (type == 'Balls') {
+            $('#ballModal').modal('show');
+        } else if (type == 'Bags') {
+            $('#bagModal').modal('show');
+        } else {
+            $('#materialModal').modal('show');
+        }
+        localStorage.setItem('LoginStatus', false)
+        // let url = '<?php echo base_url(); ?>ProductDetails/LoginsetCart';
+        // let url2 = '<?php echo base_url(); ?>';
+
+        // $.post(url, {
+        //         'Name': name,
+        //         'Price': price,
+        //         'ImageURL': image,
+        //         'Quantity': 1,
+        //         'TestId': this.id
+        //     },
+        //     function(data, status) {
+
+        //         window.location = `${url2}Login`
+        //     })
+    });
+
+    $('#ballCartButton').click(function(e) {
+        let name = $(`#NameValue`).val()
+        let price = $(`#priceValue`).val()
+        let image = $(`#imageValue`).val()
+        let testId = $(`#TestValue`).val()
+        let brand = $(`#brandBall`).val();
+        let modalBall = $(`#modalBall`).val();
+        let articleBall = $(`#articleBall`).val();
+        let sizeBall = $(`#sizeBall`).val();
+        let materialTypeBall = $(`#materialTypeBall`).val();
+        let ballTypeBall = $(`#ballTypeBall`).val();
+        let descriptionBall = $(`#descriptionBall`).val();
+        let testType = $(`#TestType`).val()
+        console.log("Login Status",typeof localStorage.getItem("LoginStatus"))
+        if (localStorage.getItem("LoginStatus") == 'false') {
+            let url = '<?php echo base_url(); ?>ProductDetails/LoginsetCartBall';
+            let url2 = '<?php echo base_url(); ?>';
+
+            $.post(url, {
+                    'Name': name,
+                    'Price': price,
+                    'ImageURL': image,
+                    'Quantity': 1,
+                    'TestId': testId,
+                    'brand':brand,
+                    'modalBall':modalBall,
+                    'articleBall':articleBall,
+                    'sizeBall':sizeBall,
+                    'materialTypeBall':materialTypeBall,
+                    'ballTypeBall':ballTypeBall,
+                    'descriptionBall':descriptionBall,
+                    'TestType':testType
+                },
+                function(data, status) {
+
+                    window.location = `${url2}Login`
+                })
+        } else {
+            let url = '<?php echo base_url(); ?>ProductDetails/setCartBall';
+            $.post(url, {
+                    'Name': name,
+                    'Price': price,
+                    'ImageURL': image,
+                    'Quantity': 1,
+                    'TestId': testId,
+                    'brand':brand,
+                    'modalBall':modalBall,
+                    'articleBall':articleBall,
+                    'sizeBall':sizeBall,
+                    'materialTypeBall':materialTypeBall,
+                    'ballTypeBall':ballTypeBall,
+                    'descriptionBall':descriptionBall,
+                    'TestType':testType
+                },
+                function(data, status) {
+
+                    let htmlGet = data[1];
+                    let htmlGetModified = htmlGet.replace(/\\/g, '');
+                    $('#header-cart').html('');
+                    $('#CartCount').html('');
+                    $('#header-cart').html(htmlGetModified);
+                    $('#CartCount').html(data[2]);
+                    toastr.success(`Item has been added to cart. Kindly check it at top-right corner!`, `Cart Count: ${data[2]}`);
+                    toastr.options.progressBar = true;
+                    toastr.options.timeOut = 3000;
+                    $(".close").click()
+                    $(`#brandBall`).val('');
+                $(`#modalBall`).val('');
+                $(`#articleBall`).val('');
+                $(`#sizeBall`).val('');
+                $(`#materialTypeBall`).val('');
+                $(`#ballTypeBall`).val('');
+                $(`#descriptionBall`).val('');
+                })
+        }
+
+    });
+
+    $('#bagCartButton').click(function(e) {
+        let name = $(`#NameValue`).val()
+        let price = $(`#priceValue`).val()
+        let image = $(`#imageValue`).val()
+        let testId = $(`#TestValue`).val()
+        console.log("Test Id",   testId)
+        let brand = $(`#brandBag`).val();
+        let modalBag = $(`#modalBag`).val();
+        let articleBag = $(`#articleBag`).val();
+        let itemTypeBag = $(`#itemTypeBag`).val();
+        let CottingBag = $(`#CottingBag`).val();
+        let colorBag = $(`#colorBag`).val();
+        let bagTypeBag = $(`#bagTypeBag`).val();
+        let descriptionBag = $(`#descriptionBag`).val();
+        let testType = $(`#TestType`).val()
+        console.log("Login Status",typeof localStorage.getItem("LoginStatus"))
+        if (localStorage.getItem("LoginStatus") == 'false') {
+            let url = '<?php echo base_url(); ?>ProductDetails/LoginsetCartBags';
+            let url2 = '<?php echo base_url(); ?>';
+
+            $.post(url, {
+                    'Name': name,
+                    'Price': price,
+                    'ImageURL': image,
+                    'Quantity': 1,
+                    'TestId': testId,
+                    'brand':brand,
+                    'modalBag':modalBag,
+                    'articleBag':articleBag,
+                    'itemTypeBag':itemTypeBag,
+                    'CottingBag':CottingBag,
+                    'colorBag':colorBag,
+                    'descriptionBag':descriptionBag,
+                    'bagTypeBag':bagTypeBag,
+                    'TestType':testType
+                },
+                function(data, status) {
+
+                    window.location = `${url2}Login`
+                })
+        } else {
+            let url = '<?php echo base_url(); ?>ProductDetails/setCartBags';
+            $.post(url, {
+                    'Name': name,
+                    'Price': price,
+                    'ImageURL': image,
+                    'Quantity': 1,
+                    'TestId': testId,
+                    'brand':brand,
+                    'modalBag':modalBag,
+                    'articleBag':articleBag,
+                    'itemTypeBag':itemTypeBag,
+                    'CottingBag':CottingBag,
+                    'colorBag':colorBag,
+                    'descriptionBag':descriptionBag,
+                    'bagTypeBag':bagTypeBag,
+                    'TestType':testType
+                },
+                function(data, status) {
+
+                    let htmlGet = data[1];
+                    let htmlGetModified = htmlGet.replace(/\\/g, '');
+                    $('#header-cart').html('');
+                    $('#CartCount').html('');
+                    $('#header-cart').html(htmlGetModified);
+                    $('#CartCount').html(data[2]);
+                    toastr.success(`Item has been added to cart. Kindly check it at top-right corner!`, `Cart Count: ${data[2]}`);
+                    toastr.options.progressBar = true;
+                    toastr.options.timeOut = 3000;
+                    $(".close").click()
+                    $(`#brandBag`).val('');
+                    $(`#modalBag`).val('');
+                    $(`#articleBag`).val('');
+                    $(`#itemTypeBag`).val('');
+                    $(`#CottingBag`).val('Coating');
+                    $(`#colorBag`).val('');
+                    $(`#bagTypeBag`).val('');
+                    $(`#descriptionBag`).val('');
+                })
+        }
+
+    });
+
+    $('#materialCartButton').click(function(e) {
+        let name = $(`#NameValue`).val()
+        let price = $(`#priceValue`).val()
+        let image = $(`#imageValue`).val()
+        let testId = $(`#TestValue`).val()
+        let brandMaterial = $(`#brandMaterial`).val();
+       
+        let itemTypeMaterial = $(`#itemTypeMaterial`).val();
+        let CottingMaterial = $(`#CottingMaterial`).val();
+        let colorMaterial = $(`#colorMaterial`).val();
+        let descriptionMaterial = $(`#descriptionMaterial`).val();
+        let testType = $(`#TestType`).val()
+        console.log("Login Status",typeof localStorage.getItem("LoginStatus"))
+        if (localStorage.getItem("LoginStatus") == 'false') {
+            let url = '<?php echo base_url(); ?>ProductDetails/LoginsetCartMaterial';
+            let url2 = '<?php echo base_url(); ?>';
+
+            $.post(url, {
+                    'Name': name,
+                    'Price': price,
+                    'ImageURL': image,
+                    'Quantity': 1,
+                    'TestId': testId,
+                    'brandMaterial':brandMaterial,
+                    'itemTypeMaterial':itemTypeMaterial,
+                    'CottingMaterial':CottingMaterial,
+                    'colorMaterial':colorMaterial,
+                    'descriptionMaterial':descriptionMaterial,
+                    'TestType':testType
+                },
+                function(data, status) {
+
+                    window.location = `${url2}Login`
+                })
+        } else {
+            let url = '<?php echo base_url(); ?>ProductDetails/setCartMaterial';
+            $.post(url, {
+                    'Name': name,
+                    'Price': price,
+                    'ImageURL': image,
+                    'Quantity': 1,
+                    'TestId': testId,
+                    'brandMaterial':brandMaterial,
+                    'itemTypeMaterial':itemTypeMaterial,
+                    'CottingMaterial':CottingMaterial,
+                    'colorMaterial':colorMaterial,
+                    'descriptionMaterial':descriptionMaterial,
+                    'TestType':testType
+                },
+                function(data, status) {
+
+                    let htmlGet = data[1];
+                    let htmlGetModified = htmlGet.replace(/\\/g, '');
+                    $('#header-cart').html('');
+                    $('#CartCount').html('');
+                    $('#header-cart').html(htmlGetModified);
+                    $('#CartCount').html(data[2]);
+                    toastr.success(`Item has been added to cart. Kindly check it at top-right corner!`, `Cart Count: ${data[2]}`);
+                    toastr.options.progressBar = true;
+                    toastr.options.timeOut = 3000;
+                    $(".close").click()
+                    $(`#brandMaterial`).val('');
+                    $(`#itemTypeMaterial`).val('');
+                    $(`#CottingMaterial`).val('Coating');
+                    $(`#colorMaterial`).val('');
+                    $(`#descriptionMaterial`).val('');
+                })
+        }
+
+    });
+    </script>

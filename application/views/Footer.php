@@ -12,8 +12,8 @@
           <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
             <h4 class="h4">Quick Shop / Test</h4>
             <ul>
-              <li><a href="<?php echo base_url(); ?>TestController">Bags</a></li>
-              <li><a href="<?php echo base_url(); ?>TestController/bagtest">Balls</a></li>
+              <li><a href="<?php echo base_url(); ?>TestController">Balls</a></li>
+              <li><a href="<?php echo base_url(); ?>TestController/bagtest">Bags</a></li>
               <li><a href="<?php echo base_url(); ?>TestController/rawtest">Raw Material</a></li>
 
             </ul>
@@ -21,8 +21,8 @@
           <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
             <h4 class="h4">Quick Shop / Packages</h4>
             <ul>
-              <li><a href="<?php echo base_url(); ?>PacakgeController">Bags</a></li>
-              <li><a href="<?php echo base_url(); ?>PacakgeController/bagtest">Balls</a></li>
+              <li><a href="<?php echo base_url(); ?>PacakgeController">Balls</a></li>
+              <li><a href="<?php echo base_url(); ?>PacakgeController/bagtest">Bags</a></li>
               <li><a href="<?php echo base_url(); ?>PacakgeController/rawtest">Raw Material</a></li>
 
             </ul>
