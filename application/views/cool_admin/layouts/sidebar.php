@@ -27,7 +27,7 @@
                 </li>
                 <li>
                     <a href="<?php echo base_url() ?>Dashboard/CSRFilteration">
-                        <i class="fa fa-user"></i>CSR</a>
+                        <i class="fa fa-user"></i>Agreement Form </a>
                 </li>
                 <li>
                     <a href="<?php echo base_url() ?>Payment/verify">

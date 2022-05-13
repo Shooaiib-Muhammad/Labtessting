@@ -583,7 +583,7 @@ if ($CSR[0]['UserID'] == $this->session->userdata('user_id')) {
                                 <div class="col-md-12">
                                     <span> <b>Brand Name:</b><?php echo $testtype['BrandName']; ?></span>
                                     <span><b> Item Type:</b><?php echo $testtype['ItemType']; ?></span>
-                                   
+
                                     <span><b> Color:</b><?php echo $testtype['Color']; ?></span>
                                     <span> <b>Description:</b><?php echo $testtype['Description']; ?></span>
                                 </div>
@@ -625,7 +625,7 @@ if ($CSR[0]['UserID'] == $this->session->userdata('user_id')) {
                                     <span> <b> Model Name:</b><?php echo $testtype['Model']; ?></span>
                                     <span> <b>Article Name:</b><?php echo $testtype['Article']; ?></span>
                                     <span> <b>Matrial Type:</b><?php echo $testtype['materialType']; ?></span>
-                              
+
                                     <span> <b> Color:</b><?php echo $testtype['Color']; ?></span>
                                     <span> <b>Bag Type:</b><?php echo $testtype['BagType']; ?></span>
                                     <span> <b>Description:</b><?php echo $testtype['Description']; ?></span>
@@ -644,30 +644,30 @@ if ($CSR[0]['UserID'] == $this->session->userdata('user_id')) {
                 </div>
 
 
-                <!-- <div class="row mt-3 p-3 h-25 border border-dark">
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-1">
-                            <input type="checkbox"/>
+                <div class="row mt-3 p-3 h-25 border border-dark">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <input type="checkbox" />
 
+                            </div>
+                            <div class="col-md-6">
+                                <span>Need Detail Report in regular Format.</span>
+
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <span>Need Detail Report in regular format</span>
+                        <div class="row mt-2">
+                            <div class="col-md-1">
+                                <input type="checkbox" />
 
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-md-1">
-                            <input type="checkbox"/>
+                            </div>
+                            <div class="col-md-6">
+                                <span>Need Report in Simplified Format without UC calculations.</span>
 
-                        </div>
-                        <div class="col-md-6">
-                            <span>Need Report in Simplified Format</span>
-
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div> -->
 
                 <!-- <div class="row mt-5">
                 <div class="col-md-12">

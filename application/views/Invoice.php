@@ -222,9 +222,9 @@ $quantities = explode(",", $Invoice[0]['TQuantity']);
       </div>
       <div id="company">
         <h2 class="name">Forward Sports</h2>
-        <div>FCH8+J5C, Mander Khurd, Mundair Khurd, Sialkot, Punjab</div>
+        <div>Wazirabad Road,Adha Sahowala, Sialkot</div>
         <div> (052)-3571800</div>
-        <div><a href="mailto:fit@example.com">fit@forward.pk</a></div>
+        <div><a href="mailto:lab@example.com">lab@forward.pk</a></div>
       </div>
     </header>
     <div id="details" class="clearfix">
@@ -240,7 +240,7 @@ $quantities = explode(",", $Invoice[0]['TQuantity']);
         <!-- <div class="date">Due Date: 30/06/2014</div> -->
       </div>
     </div>
-    <table border="0" cellspacing="0" cellpadding="0">
+    <table border="1" cellspacing="0" cellpadding="0">
       <thead>
         <tr>
           <th class="no">#</th>
